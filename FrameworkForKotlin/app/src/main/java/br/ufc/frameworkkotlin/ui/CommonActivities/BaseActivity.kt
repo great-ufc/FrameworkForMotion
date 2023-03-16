@@ -62,18 +62,6 @@ abstract class BaseActivity : AppCompatActivity() {
         toast.show()
     }
 
-    fun showBackButton(isShow: Boolean = false) {
-        if (isShow) {
-            val actionbar = supportActionBar
-            actionbar?.setDisplayHomeAsUpEnabled(true)
-            actionbar?.setDisplayHomeAsUpEnabled(true)
-        }
-    }
-
-    fun setActivityTitle(title: String) {
-        supportActionBar?.title = title
-    }
-
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         finish()
