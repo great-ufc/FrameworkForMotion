@@ -2,6 +2,10 @@
 
 # Descrição Geral
 
+![Visão Geral](https://drive.google.com/file/d/15jULtV1nPb6GsmQJBKemfu93YC-weSKJ/view?usp=share_link)
+
+[Diagrama de Classes](https://drive.google.com/file/d/1-QNAw4qUGligPNhtXTZ_DeecIpvcVMOX/view?usp=sharing)
+
 ### MVC
 
 ## Sistemas Auto Adaptivos
