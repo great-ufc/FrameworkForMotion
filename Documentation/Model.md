@@ -183,15 +183,59 @@
 
 ### [monitoring]
 
+### - DataManagement.kt (main module class)
+
+### - ICollectorData.kt
+
+### - CollectACC.kt
+
+### - CollectGyr.kt
+
+### - CollectEnergy.kt
+
+### - [GoogleFit] GoogleFitAPI.kt
+
+### - [GoogleFit/Samples] GoogleFitGetAllData.kt
+
+### - [GoogleFit/Samples] GoogleFitStepData.kt
+
 ### [observers]
+
+All Observer Interfaces were created specifically to enable the use of the observer pattern by the main classes of the modules of the adaptation cycle (monitoring, analysis, planning and execution) and must not be changed. If you want to use the observer pattern for other classes, please create new observer interfaces (in a package other than mapek) for the classes you want.
+
+The "Observer" interface corresponds to observer classes that will execute the <update()> method when the class with the corresponding "Observable" interface that is being observed executes the <sendUpdateEvent()> method.
+
+Also, classes with interface "Observable" add their observers (classes with interface "Observer") using method <add()>.
 
 ### [analysis]
 
+### - DataAnalysis.kt (main module class)
+
+### - FeatureExtraction.kt 
+
+### - FeatureFunctions.kt 
+
 ### [planning]
+
+### - PlanningRolesManagement.kt (main module class)
+
+### - ReadAdaptationXML.kt
 
 ### [execution]
 
+### - ExecuteActions.kt (main module class)
+
+### - Action.kt
+
+A User app actions class template. Import methods from class Task2 from SUCCEED framework
+
+### - TextAction.kt, AudioAction.kt, LightAction.kt, VibrationAction.kt  (Optional)
+
+A sample app actions class. Import methods from class Task2 from SUCCEED framework. Can be excluded by user.
+
 ### [knowledge]
+
+### - KnowledgeMAnagement.kt (main module class)
 
 ## [path utils]
 
