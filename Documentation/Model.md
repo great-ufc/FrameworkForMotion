@@ -2,7 +2,7 @@
 
 - Summary
 - - [CloudConnection](#cloudConnection)
-- - [Entities](#entities)
+- - [Entities](entities)
 - - [MAPE-k](#mapek)
 - - - [Monitoring](#monitoring)
 - - - [Analysis](#analysis)
