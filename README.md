@@ -1,6 +1,6 @@
 # Framework Kotlin (for Assist Motion Process)
 
-<comment> Utiliza o padrão arquitetural MVC para composiação de sua arquitetua, com a adaptação de separar a camada de View em duas, sendo uma a View e outra a camada de Activities e Fragments. Também prover classe para utilizar os padrões DAO e Repositório para manipulação dos dados do banco de dados SQL Lite no dispositivo. Além disso, usa o padrão de software Observer para comunicação entre as classes principais de cada um dos módulos do Ciclo de adaptação MAPE-K. Por fim, reusa o grafo de classificação proposto por pelos autores do framework como base de conhecimento e o framework SUCCEED para auxiliar a construção das ações na etapa de Execução. </comment>
+<*--> Utiliza o padrão arquitetural MVC para composiação de sua arquitetua, com a adaptação de separar a camada de View em duas, sendo uma a View e outra a camada de Activities e Fragments. Também prover classe para utilizar os padrões DAO e Repositório para manipulação dos dados do banco de dados SQL Lite no dispositivo. Além disso, usa o padrão de software Observer para comunicação entre as classes principais de cada um dos módulos do Ciclo de adaptação MAPE-K. Por fim, reusa o grafo de classificação proposto por pelos autores do framework como base de conhecimento e o framework SUCCEED para auxiliar a construção das ações na etapa de Execução. </--*>
 
 # Descrição Geral
 
