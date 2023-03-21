@@ -249,7 +249,7 @@ A sample app actions class. Import methods from class Task2 from SUCCEED framewo
 
 ### [knowledge]
 
-### - KnowledgeMAnagement.kt (main module class)
+### - KnowledgeManagement.kt (main module class)
 
 ## [path utils]
 
