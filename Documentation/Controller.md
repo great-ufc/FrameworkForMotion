@@ -19,26 +19,39 @@ Essa classe apresenta um conjunto de métodos para controle de login usando a AP
 
 ### Methods that can be changed
 
-- 
+- signIn() - Solicita Login na API Google. A API chama o método de login implementado na classe GoogleApiUtil
+- activityResult(requestCode: Int, data: Intent?) - Quanto retornar da requisição de Login volta a activity ou informa que o login falhou
+- isLogged():Boolean - Retorna verdadeiro se o Login já foi executado
 
 ## ProfileController.kt
+  
+Essa classe apresenta métodos para coleta dos dados de perfil do usuário logado na conta google
+  
+### Methods that can be changed
+  
+- start() - Solicita Login na conta Google
+- callLogin() - Chama a tela de Login (LoginACtivity)
+- setName(textView: TextView) - seta atributo nome com o valor de um TextView
+- getName():String - Utilizando a classe GoogleApiUtil, coleta nome do usuário no perfil da conta google, caso o usuário não esteja logado, chama a tela de login
+- getEmail():String - Utilizando a classe GoogleApiUtil, coleta email do usuário no perfil da conta google, caso o usuário não esteja logado, chama a tela de login 
+- setEmail(textView: TextView) - seta atributo email com o valor de um TextView
+- isLogged():Boolean - Retorna verdadeiro se o Login já foi executado
 
-### Código que não deve ser alterado
+## [path UpdateControllersSamples] 
 
-### Código que pode ser alterado
+## - AppsExternalParametersController.kt
 
-### Código que deve ser Alterado
+Classe contendo métodos para euxiliar a liberação e download de novas releases da aplicação
 
-### Código a ser gerado pelo usuário
+### Methods that can be changed   
 
-## [path UpdateControllersSamples] - AppsExternalParametersController.kt
+- adjustApp() - ajusta parâmetros (valores Constantes) da aplicação, caso haja mudança na release
+- processExternalParams() - Veririfca se os parâmetros (exemplo, data de atualização) estão de acordo com a release mais recente
+- downloadAndInstall(version: String) - baixa  e instala nova versão do app
+- convertVersion(version: String): Int - Atualiza versão do app
+  
+  <b>obs.: Todos os valores a serem editados para uso desses métodos para seu app estão no objeto Constants.kt em model/utils/Constants.kt</b>
 
-### Código que não deve ser alterado
+## New Controlers
 
-### Código que pode ser alterado
-
-### Código que deve ser Alterado
-
-### Código a ser gerado pelo usuário
-
-## Outros Controladores
+Controladores são classes que podem ser usadas para pequenos tratamentos e para conectar activities ou fragments com algumas classe de modelo, contolados e tratando dados que são obtidos a partir de componentes na tela ou enviando dados que devem ser exibidos em componentes na tela. <b>Aconselhamos criar novos controles para tratamento de dados das de todas as telas que o desenvolvedor gerar</b>. 
