@@ -7,11 +7,16 @@
 
 [Diagrama de Classes](https://drive.google.com/file/d/1-QNAw4qUGligPNhtXTZ_DeecIpvcVMOX/view?usp=sharing)
 
+## Sistemas IoHT baseados em padrões de movimento 
+
+
 ## Sistemas Auto Adaptivos
+
+Os sistemas auto-adaptativos são capazes de monitorar e ajustar seu próprio comportamento em resposta às mudanças nas condições do ambiente, com o objetivo de melhorar sua eficiência e eficácia.
 
 ### Ciclo MAPE-K
 
-O ciclo MAPE-K permite modelar o clico da adpatação e gerenciar a execução e as adaptações em sistemas auto-adaptativos. Ele permite que o sistema monitore e ajuste seu próprio comportamento em resposta a mudanças nas condições do ambiente. O ciclo MAPE-K permite que os sistemas auto-adaptativos monitorem e ajustem seu próprio comportamento em resposta às mudanças nas condições do ambiente, com o objetivo de melhorar sua eficiência e eficácia. O modelo consiste nas seguintes fases:
+O ciclo MAPE-K permite modelar o clico da adpatação e gerenciar a execução e as adaptações em sistemas auto-adaptativos. Ele permite que o sistema monitore e ajuste seu próprio comportamento em resposta a mudanças nas condições do ambiente.  O modelo consiste nas seguintes fases:
 
 - Monitoramento 
 
@@ -32,6 +37,10 @@ Nesta fase, as ações planejadas são executadas pela aplicação. A execução
 - Conhecimento (Knowledge)
 
 Todas as etapas acima do ciclo podem ser assitidas por uma base de conhecimento que auxilie a tomada de decisões nas diversas fases do ciclo. Essa fase de conhecimento pode ser criada anteriomente a execução da aplicação. Ou criada a medida que a aplicação executa, com a possível adição de novas informações nessa base a cada ciclo.
+
+## Grafo de classificação
+
+
 
 # Manual de Uso
 
