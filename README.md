@@ -65,6 +65,12 @@ Para utilizar os dois padrões em conjunto, geralmente usa-se uma classe abstrat
 
 ### Observer Pattern
 
+O padrão Observer é um padrão de projeto de software que define uma relação de dependência um-para-muitos entre objetos, de forma que quando um objeto muda de estado, todos os seus dependentes são notificados e atualizados automaticamente. Ele é utilizado para implementar o que é conhecido como o padrão pub-sub (publicador-subscritor), onde um objeto observável (Observable) mantém uma lista de seus observadores (Observer) e notifica todos eles automaticamente quando ocorrem mudanças em seu estado interno.
+
+O padrão Observer é utilizado em situações em que é necessário manter um estado consistente em vários objetos, sem que haja acoplamento entre eles. Isso significa que o objeto Sujeito não precisa conhecer seus Observadores, nem os Observadores precisam conhecer outros Observadores. Além disso, novos Observadores podem ser adicionados ou removidos facilmente sem afetar o objeto Sujeito.
+
+Algumas vantagens do padrão Observer incluem a facilidade de extensão, uma vez que novos objetos podem ser adicionados facilmente sem afetar o código existente, e a separação clara das responsabilidades de cada objeto, tornando o código mais modular e fácil de manter.
+
 ### SUCCEED
 
 ## Grafo de classificação
