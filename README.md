@@ -40,9 +40,9 @@ Todas as etapas acima do ciclo podem ser assitidas por uma base de conhecimento 
 
 ## Grafo de classificação
 
-available in : 
+available in : https://github.com/great-ufc/ClassificationGraphSolutionforIoHT
 
-# Use Manual
+# User Manual
 
 ## Download the framework
 
