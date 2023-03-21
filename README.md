@@ -53,6 +53,6 @@ A seguir detalhamos as classes e que trechos delas devem, ou não ser alteradas,
 
 - [Views and Activities](./Documentation/UserInterface.md)
 
-- [Controllers](./Documentation/Controladores.md)
+- [Controllers](./Documentation/Controller.md)
 
 - [Models](./Documentation/Model.md)
