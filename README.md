@@ -54,19 +54,4 @@ A seguir detalhamos as classes e que trechos delas devem, ou não ser alteradas,
 
 - [Controllers](./Documentation/Controladores.md)
 
-
-
-
-
-
-## Modelo
-
-
-
-#### Código que não deve ser alterado
-
-#### Código que pode ser alterado
-
-#### Código que deve ser Alterado
-
-#### Código a ser gerado pelo usuário
+- [Models](./Documentation/Models.md)
