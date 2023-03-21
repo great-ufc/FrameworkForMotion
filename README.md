@@ -11,12 +11,17 @@
 
 [Diagrama de Classes](https://drive.google.com/file/d/1-QNAw4qUGligPNhtXTZ_DeecIpvcVMOX/view?usp=sharing)
 
-## Sistemas IoHT baseados em padrões de movimento 
+
+# Fundamentação Teórica
+
+Aqui apresentaremos uma breve fundamentação teórica sobre aplicações IoHT baseadas em dados de movimento e de Sistemas Auto Adaptativos, bem como a descriação dos elementos usados para compor o framework, contemplando padrões de projeto e artefatos de reúso.
+
+### Sistemas IoHT baseados em padrões de movimento 
 
 
-## Sistemas Auto Adaptivos
+### Sistemas Auto Adaptivos
 
-Os sistemas auto-adaptativos são capazes de monitorar e ajustar seu próprio comportamento em resposta às mudanças nas condições do ambiente, com o objetivo de melhorar sua eficiência e eficácia.
+Os sistemas auto-adaptativos são capazes de monitorar e ajustar seu próprio comportamento em resposta às mudanças nas condições do ambiente, com o objetivo de melhorar sua eficiência e eficácia. Para o desenvolimento desses sistemas é necessário implementar um ciclo de adaptação que permita monitorar o contexto e a adaptar o comportamento da aplicação  quando desejado. Esse ciclo de adaptação costuma ser modelado com base no ciclo de gerenciamento MAPE-K proposto pela IBM no incício dos anos 2000 [1]
 
 ### Ciclo MAPE-K
 
@@ -73,7 +78,7 @@ Algumas vantagens do padrão Observer incluem a facilidade de extensão, uma vez
 
 ### SUCCEED
 
-## Grafo de classificação
+### Grafo de classificação
 
 available in : https://github.com/great-ufc/ClassificationGraphSolutionforIoHT
 
@@ -116,3 +121,9 @@ A seguir detalhamos as classes e que trechos delas devem, ou não, ser alterados
 
 - [Models](./Documentation/Model.md)
 
+
+# Referências
+
+[1] IBM. 2003. An architectural blueprint for autonomic computing. Tech. rep., IBM.
+
+...
