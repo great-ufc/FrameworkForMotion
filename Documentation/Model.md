@@ -2,14 +2,14 @@
 
 - Summary
 - - [CloudConnection](#cloudConnection)
-- - [Entities] (#entities)
-- - [MAPE-k] (#mapek)
-- - - [Monitoring] (#monitoring)
-- - - [Analysis] (#analysis)
-- - - [Planning] (#planning)
-- - - [Execution] (#execution)
-- - - [Knowledge] (#knowledge)
-- - [Utils] (#utils)
+- - [Entities](#entities)
+- - [MAPE-k](#mapek)
+- - - [Monitoring](#monitoring)
+- - - [Analysis](#analysis)
+- - - [Planning](#planning)
+- - - [Execution](#execution)
+- - - [Knowledge](#knowledge)
+- - [Utils](#utils)
 
 
 
