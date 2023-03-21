@@ -1,5 +1,7 @@
 # Framework Kotlin (for Assist Motion Process)
 
+// Utiliza o padrão arquitetural MVC para composiação de sua arquitetua, com a adaptação de separar a camada de View em duas, sendo uma a View e outra a camada de Activities e Fragments. Também prover classe para utilizar os padrões DAO e Repositório para manipulação dos dados do banco de dados SQL Lite no dispositivo. Além disso, usa o padrão de software Observer para comunicação entre as classes principais de cada um dos módulos do Ciclo de adaptação MAPE-K. Por fim, reusa o grafo de classificação proposto por pelos autores do framework como base de conhecimento e o framework SUCCEED para auxiliar a construção das ações na etapa de Execução.
+
 # Descrição Geral
 
 *Visão Geral*
@@ -38,6 +40,30 @@ Nesta fase, as ações planejadas são executadas pela aplicação. A execução
 
 Todas as etapas acima do ciclo podem ser assitidas por uma base de conhecimento que auxilie a tomada de decisões nas diversas fases do ciclo. Essa fase de conhecimento pode ser criada anteriomente a execução da aplicação. Ou criada a medida que a aplicação executa, com a possível adição de novas informações nessa base a cada ciclo.
 
+### Padrão MVC
+
+O padrão MVC (Model-View-Controller) é um padrão arquitetural de software que separa a aplicação em três componentes principais: Model, View e Controller. O objetivo desse padrão é dividir a lógica de negócios da interface do usuário, facilitando o desenvolvimento, manutenção e testes de aplicativos. OS componentes desse padrão são: 
+
+- Model: é a camada responsável pela lógica de negócios e manipulação de dados. Ele contém as classes que representam os objetos do domínio da aplicação, bem como as regras de negócio que determinam como esses objetos se comportam e se relacionam entre si. O Model geralmente contém métodos para ler, criar, atualizar e excluir dados, bem como outras operações relacionadas.
+
+- View: é a camada responsável pela interface do usuário. Ele apresenta os dados do Model em um formato compreensível para o usuário e fornece uma interface interativa para que o usuário possa interagir com a aplicação. O View pode ser implementado como uma página web, janela do aplicativo, relatório, entre outros.
+
+- Controller: é a camada responsável por controlar o fluxo da aplicação e atuar como intermediário entre o Model e o View. Ele recebe as entradas do usuário e solicita as operações apropriadas ao Model para manipular os dados. Em seguida, ele atualiza a View para refletir as alterações. O Controller geralmente contém métodos para lidar com a entrada do usuário, gerenciar sessões, autenticação, autorização, entre outros.
+
+O padrão MVC é amplamente utilizado em desenvolvimento de software, incluindo aplicações android. Ele permite que os desenvolvedores separem claramente a lógica de negócios da interface do usuário, facilitando a manutenção e testes de aplicativos. Além disso, o padrão MVC pode ser facilmente estendido para incluir outras camadas, como serviços web ou bancos de dados, para criar aplicativos mais complexos e escaláveis.
+
+### DAO and Respository Patterns
+
+Tanto o padrão DAO (Data Access Object) quanto o padrão Repositório são padrões de projeto de software que têm como objetivo fornecer uma abstração para o acesso a dados em um banco de dados. 
+
+O padrão DAO tem como objetivo principal isolar o código de acesso a dados do resto do código da aplicação, separando a lógica de negócios da lógica de acesso a dados. Ele consiste em duas partes principais: a interface DAO, que define as operações que podem ser realizadas no banco de dados, e a classe DAO, que implementa a interface DAO e contém as operações específicas para acessar um determinado tipo de entidade. Cada entidade do banco de dados geralmente tem sua própria classe DAO. Já o padrão Repositório tem como objetivo fornecer uma abstração para o acesso a dados, como um objeto de coleção de entidades. Em vez de se concentrar em operações específicas do banco de dados, o Repositório fornece uma interface genérica para criar, ler, atualizar e excluir objetos de uma determinada entidade. Ele consiste em uma classe Repositório que contém as operações genéricas de acesso a dados para a entidade correspondente.
+
+Para utilizar os dois padrões em conjunto, geralmente usa-se uma classe abstrata Repositório do qual as classes específicas de cada entidade herdam, juntamente com a interface de cada uma dessas classe de acesso a dados, como no padrão DAO. Assim nas classes de dados específicas de cada entidade implementamos apenas os métodos mais específicos para a entidade e reutilizamos as funções genéricas de acesso e manipulação dos dados da classe repositório.
+
+### Observer Pattern
+
+### SUCCEED
+
 ## Grafo de classificação
 
 available in : https://github.com/great-ufc/ClassificationGraphSolutionforIoHT
@@ -66,15 +92,9 @@ Ao longo das classes e outros objetos do framework há uma série de trechos de 
 
 Nesse último caso, sugerimos ao usuário do framework utilizar o comentário <b>//------Generated by the User-----//</b> com o nome ou nickname do desenvolvedor nos trechos novos que criar para facilitar a identificação e documentação do código criados exclusivamente pelo desenvolvedor. Assim é possível manter o código mais legível e serpar os trechos de código criados pelo desenvolvedor dos trechos alterados de acordo com o que consta no Framework. Além disso,  apesar de haver trechos com a maração <b>//------Generated by the Framework and must not be changed-----//</b>, nada impede que o desenvolvedor altere esses trechos, uma vez que o framework é de código aberto, mas é sugerido que esses trechos sejam mantidos para o uso das das vantagens de reúso e boas práticas de codificação fornecidas com o framework.
 
-## Elementos do Framework e Padrões de Software
+## Elementos do Framework
 
 As classes e outros componentes do framework estão estruturados em uma série de pacotes seguindo o parão arquitetural Model-View-Controller com algumas adaptações. Todos os componentes visuais, incluindo as telas do app, como é padrão de aplicações android nativas estão no pacote <b> res </b>, sendo os componentes presentes nas pastas "layout", "navegation" e "values" os principais. Os "layouts", que correspondem as telas são dividios em Activities e Fragments e cada layout Activity e Fragment está ligada a uma classe Activitie ou Fragment presente no pacote <b> User Interface (ui) </b>. Os contoladores presentes no pacote <b> controllers </b> são usados para controle de informações relacionadas as activities.  Algumas actvities podem não ter contollers associados, caso o desenvolvedor não veja necessidade de tal. Além disso, por padrão disponibilizamos algumas classes controladoras (DataController, ProfileController e AppsExternalParametersController) que não são diretamente associadas a uma activities específicas, mas que contém elementos de controle úteis que podem ser associadas a uma ou mais activities para faciliatar o controle de dados do GoogleFit (DataController), do perfil da conta google (ProfileController) ou a disponibilização de novas releases do app ( AppsExternalParametersController). Finalmente o pacote <b> models </b> contém as classes relacionadas a conexão com APIs disponíveis em servidores na nuvem (pasta cloudConnection), ao processamento e manipulação de dados (pasta dao) e entidades (pasta entities), aos elementos do ciclo de adaptação MAPE-K (pasta mapek) e as classes e objetos úteis que contém métodos e constantes que podem ser usados por diferentes classes (pasta utils). 
-
-### Padrão MVC
-
-### Padrão Observer
-
-### SUCCEED
 
 ### Coding and Reuse - Classes, Interfaces and Objects
 
@@ -86,3 +106,4 @@ A seguir detalhamos as classes e que trechos delas devem, ou não, ser alterados
 - [Controllers](./Documentation/Controller.md)
 
 - [Models](./Documentation/Model.md)
+
