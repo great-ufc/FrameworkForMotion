@@ -55,4 +55,4 @@ A seguir detalhamos as classes e que trechos delas devem, ou não ser alteradas,
 
 - [Controllers](./Documentation/Controladores.md)
 
-- [Models](./Documentation/Models.md)
+- [Models](./Documentation/Model.md)
