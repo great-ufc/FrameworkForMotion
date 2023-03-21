@@ -2,23 +2,24 @@
 
 ## DataController.kt
 
-### Código que não deve ser alterado
+Essa classe possui um conjunto de métodos para armazenamento e tratamento de dados coletados da API do Google fit. A classe e seus métodos podem ser alterados para coleta dos dados desejados da API do Google Fit.
 
-### Código que pode ser alterado
+### Methods that can be changed
 
-### Código que deve ser Alterado
-
-### Código a ser gerado pelo usuário
+- setData(dataType: DataType, dataset: DataSet) - Seta dados do Google Fit nos atributos correspondentes nas classe usando um objeto DataSet 
+- setData(dataType: DataType, datasets: List<DataSet>)  -  Seta dados do Google Fit nos atributos correspondentes nas classe usando uma lista de objetos DataSet 
+- get<Attribute>():<Attribute Type> - Métodos get para os atributos 
+- set<Attribute>():<Attribute Type> - Métodos set para os atributos
+- getActivityDescription(value: Int): String - Retorna o tipo de atividade de acordoc o código da atividade codificada no GoogleFit
+- fullLog() - Salva o Log com todos os dados coletados
 
 ## LoginController.kt
 
-### Código que não deve ser alterado
+Essa classe apresenta um conjunto de métodos para controle de login usando a API do Google, para que seja possível o usuário fazer login usando a conta do google.
 
-### Código que pode ser alterado
+### Methods that can be changed
 
-### Código que deve ser Alterado
-
-### Código a ser gerado pelo usuário
+- 
 
 ## ProfileController.kt
 
