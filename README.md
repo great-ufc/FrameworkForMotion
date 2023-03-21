@@ -5,24 +5,22 @@
 *Visão Geral*
 ![](./Documentation/Images/VisaoGeral.png)
 
-
 [Diagrama de Classes](https://drive.google.com/file/d/1-QNAw4qUGligPNhtXTZ_DeecIpvcVMOX/view?usp=sharing)
-
-### MVC
 
 ## Sistemas Auto Adaptivos
 
-## Ciclo MAPE-K
+### Ciclo MAPE-K
 
-### Monitoramento
+- Monitoramento
 
-### Análise
+- Análise
 
-### Planejamento
+- Planejamento
 
-### Execução
+- Execução
 
-### Base de Conhecimento
+- Base de Conhecimento
+
 
 # Manual de Uso
 
@@ -48,7 +46,15 @@ Nesse último caso, sugerimos ao usuário do framework utilizar o comentário <b
 
 As classes e outros componentes do framework estão estruturados em uma série de pacotes seguindo o parão arquitetural Model-View-Controller com algumas adaptações. Todos os componentes visuais, incluindo as telas do app, como é padrão de aplicações android nativas estão no pacote <b> res </b>, sendo os componentes presentes nas pastas "layout", "navegation" e "values" os principais. Os "layouts", que correspondem as telas são dividios em Activities e Fragments e cada layout Activity e Fragment está ligada a uma classe Activitie ou Fragment presente no pacote <b> User Interface (ui) </b>. Os contoladores presentes no pacote <b> controllers </b> são usados para controle de informações relacionadas as activities.  Algumas actvities podem não ter contollers associados, caso o desenvolvedor não veja necessidade de tal. Além disso, por padrão disponibilizamos algumas classes controladoras (DataController, ProfileController e AppsExternalParametersController) que não são diretamente associadas a uma activities específicas, mas que contém elementos de controle úteis que podem ser associadas a uma ou mais activities para faciliatar o controle de dados do GoogleFit (DataController), do perfil da conta google (ProfileController) ou a disponibilização de novas releases do app ( AppsExternalParametersController). Finalmente o pacote <b> models </b> contém as classes relacionadas a conexão com APIs disponíveis em servidores na nuvem (pasta cloudConnection), ao processamento e manipulação de dados (pasta dao) e entidades (pasta entities), aos elementos do ciclo de adaptação MAPE-K (pasta mapek) e as classes e objetos úteis que contém métodos e constantes que podem ser usados por diferentes classes (pasta utils). 
 
-A seguir detalhamos as classes e que trechos delas devem, ou não ser alteradas, bem como informações sobre quais novos elementos o desenvolvedor pode criar para usar o framework proposto como base para construir sua aplicação. Para ver os detalhes, clicar no link correspodente do elemento sobre o qualquer ler sobre.  
+### Padrão MVC
+
+### Padrão Observer
+
+### SUCCEED
+
+### Coding and Reuse - Classes, Interfaces and Objects
+
+A seguir detalhamos as classes e que trechos delas devem, ou não, ser alterados. Também apresentamos informações sobre quais novos elementos o desenvolvedor pode reusar e quais outros deve criar para usar o framework proposto como base para construir sua aplicação. Para ver os detalhes, basta clicar nos links de cada compoente do Framework abaixo.  
 
 
 - [Views and Activities](./Documentation/UserInterface.md)
