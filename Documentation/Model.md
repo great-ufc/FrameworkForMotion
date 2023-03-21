@@ -18,7 +18,13 @@ Essa pasta contém as classes que devem ser criadas, se necessário, para conex�
 
 ### KnowledgeDownload.kt
 
-Essa clase contém o métodos para download do grafo de classificação, a criação do objeto no formato da entidade KnowledgeRepresentation com base nesse grafo e o download dos modelos inteligentes treinados no servidor. <font color="red"> Embora recomendemos, os desenvolvedores não são obrigados a usar o grafo de classificação, cabendo, nesse caso, aos desenvolvedores decidirem como construir a representação de sua base de conhecimento e nesse essa classe se torna opcional.</font>
+Essa clase contém o métodos para download do grafo de classificação, a criação do objeto no formato da entidade KnowledgeRepresentation com base nesse grafo e o download dos modelos inteligentes treinados no servidor. 
+
+```diff
+Nós recomendamos o uso do grafo de classificação, no entanto os desenvolvedores não são obrigados a utilizá-lo, cabendo aos 
+mesmos, no caso de não usar o grafo, decidir como construir a representação de sua base de conhecimento para  aplicação. Nessa 
+situação essa classe se torna opcional.
+```
 
 #### Methods that can be changed
 
