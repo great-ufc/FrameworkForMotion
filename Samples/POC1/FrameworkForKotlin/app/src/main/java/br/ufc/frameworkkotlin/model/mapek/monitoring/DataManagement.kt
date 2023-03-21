@@ -3,7 +3,7 @@
 
 package br.ufc.frameworkkotlin.model.mapek.monitoring
 
-import br.ufc.frameworkkotlin.model.GoogleFit.Samples.GoogleFitGetAllData
+import br.ufc.frameworkkotlin.model.mapek.monitoring.GoogleFit.Samples.GoogleFitGetAllData
 import br.ufc.frameworkkotlin.model.entities.sensors.ValuesSensor
 import br.ufc.frameworkkotlin.model.entities.sensors.typeSensor
 import br.ufc.frameworkkotlin.model.mapek.observer.*

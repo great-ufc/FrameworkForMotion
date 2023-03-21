@@ -8,7 +8,7 @@ import android.os.PersistableBundle
 import android.view.Gravity
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import br.ufc.frameworkkotlin.model.GoogleFit.GoogleFitAPI
+import br.ufc.frameworkkotlin.model.mapek.monitoring.GoogleFit.GoogleFitAPI
 import br.ufc.frameworkkotlin.model.entities.KnowledgeRepresentation
 import br.ufc.frameworkkotlin.model.entities.sensors.ValuesSensor
 import br.ufc.frameworkkotlin.model.entities.sensors.typeSensor
@@ -60,18 +60,6 @@ abstract class BaseActivity : AppCompatActivity() {
             toast.setGravity(Gravity.CENTER, 0, 0)
         }
         toast.show()
-    }
-
-    fun showBackButton(isShow: Boolean = false) {
-        if (isShow) {
-            val actionbar = supportActionBar
-            actionbar?.setDisplayHomeAsUpEnabled(true)
-            actionbar?.setDisplayHomeAsUpEnabled(true)
-        }
-    }
-
-    fun setActivityTitle(title: String) {
-        supportActionBar?.title = title
     }
 
     override fun onSupportNavigateUp(): Boolean {

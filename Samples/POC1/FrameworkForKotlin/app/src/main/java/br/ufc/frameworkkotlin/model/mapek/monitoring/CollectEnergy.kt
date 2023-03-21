@@ -6,6 +6,7 @@ package br.ufc.frameworkkotlin.model.mapek.monitoring
 import android.os.BatteryManager
 import androidx.appcompat.app.AppCompatActivity
 import br.ufc.frameworkkotlin.ui.CommonActivities.BaseActivity
+import br.ufc.frameworkkotlin.ui.MainActivity
 
 class CollectEnergy(){
     var energy: Double = 0.0
@@ -13,7 +14,7 @@ class CollectEnergy(){
     fun collectEnergy(context: BaseActivity):Double{
         val bm = context.getSystemService(AppCompatActivity.BATTERY_SERVICE) as BatteryManager
         val energy = bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY).toDouble()
-        return energy!!
+        return MainActivity.energy// energy!!
     }
 
 }
