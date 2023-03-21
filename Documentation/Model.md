@@ -12,82 +12,9 @@
 - - [Utils](#path-utils)
 
 
-
-
 ## [path cloudConnection]
-#cloudConnection
 
 ### KnowledgeDownload.kt
-
-## [path entities]
-#entities
-
-### AdaptationRules.kt
-
-### Context.kt
-
-### EdgeSensorFeature.kt
-
-### EdgeFeatureModel.kt
-
-### EdgeModelsFinalStatus.kt
-
-### KnowledgeRepresentation.kt
-
-### ResultEntry.kt
-
-### VerticeSensor.kt
-
-### VerticeFeature.kt
-
-### ValuesFeatures.kt
-
-### VerticeModel.kt
-
-### VerticeFinalStatus.kt
-
-### [sensors] -  typeSensor.kt
-
-### [sensors] -  ValuesACC.kt
-
-### [sensors] -  ValuesSensor.kt
-
-## [path mapek]
-#mapek
-
-### [monitoring]
-#monitoring
-
-### [observers]
-
-### [analysis]
-#analysis
-
-### [planning]
-#planning
-
-### [execution]
-#execution
-
-### [knowledge]
-#knowledge
-
-## [path utils]
-#utils
-
-### Constants.kt
-
-### Cryptography.kt
-
-### DateUtil.kt
-
-### GoogleApiUtil.kt
-
-### PermissionUtil.kt
-
-### Animations.kt (Optional)
-
-Have a string animation method for base sample application in the framework. Can be excluded by user.
 
 #### Código que não deve ser alterado
 
@@ -96,3 +23,230 @@ Have a string animation method for base sample application in the framework. Can
 #### Código que deve ser Alterado
 
 #### Código a ser gerado pelo usuário
+
+
+## [path entities]
+
+### AdaptationRules.kt
+
+#### Código que não deve ser alterado
+
+#### Código que pode ser alterado
+
+#### Código que deve ser Alterado
+
+#### Código a ser gerado pelo usuário
+
+### Context.kt
+
+#### Código que não deve ser alterado
+
+#### Código que pode ser alterado
+
+#### Código que deve ser Alterado
+
+#### Código a ser gerado pelo usuário
+
+### EdgeSensorFeature.kt
+
+#### Código que não deve ser alterado
+
+#### Código que pode ser alterado
+
+#### Código que deve ser Alterado
+
+#### Código a ser gerado pelo usuário
+
+### EdgeFeatureModel.kt
+
+#### Código que não deve ser alterado
+
+#### Código que pode ser alterado
+
+#### Código que deve ser Alterado
+
+#### Código a ser gerado pelo usuário
+
+### EdgeModelsFinalStatus.kt
+
+#### Código que não deve ser alterado
+
+#### Código que pode ser alterado
+
+#### Código que deve ser Alterado
+
+#### Código a ser gerado pelo usuário
+
+### KnowledgeRepresentation.kt
+
+#### Código que não deve ser alterado
+
+#### Código que pode ser alterado
+
+#### Código que deve ser Alterado
+
+#### Código a ser gerado pelo usuário
+
+### ResultEntry.kt
+
+#### Código que não deve ser alterado
+
+#### Código que pode ser alterado
+
+#### Código que deve ser Alterado
+
+#### Código a ser gerado pelo usuário
+
+### VerticeSensor.kt
+
+#### Código que não deve ser alterado
+
+#### Código que pode ser alterado
+
+#### Código que deve ser Alterado
+
+#### Código a ser gerado pelo usuário
+
+### VerticeFeature.kt
+
+#### Código que não deve ser alterado
+
+#### Código que pode ser alterado
+
+#### Código que deve ser Alterado
+
+#### Código a ser gerado pelo usuário
+
+### ValuesFeatures.kt
+
+#### Código que não deve ser alterado
+
+#### Código que pode ser alterado
+
+#### Código que deve ser Alterado
+
+#### Código a ser gerado pelo usuário
+
+### VerticeModel.kt
+
+#### Código que não deve ser alterado
+
+#### Código que pode ser alterado
+
+#### Código que deve ser Alterado
+
+#### Código a ser gerado pelo usuário
+
+### VerticeFinalStatus.kt
+
+#### Código que não deve ser alterado
+
+#### Código que pode ser alterado
+
+#### Código que deve ser Alterado
+
+#### Código a ser gerado pelo usuário
+
+### [sensors] 
+
+### - typeSensor.kt
+
+#### Código que não deve ser alterado
+
+#### Código que pode ser alterado
+
+#### Código que deve ser Alterado
+
+#### Código a ser gerado pelo usuário
+
+### - ValuesACC.kt
+
+#### Código que não deve ser alterado
+
+#### Código que pode ser alterado
+
+#### Código que deve ser Alterado
+
+#### Código a ser gerado pelo usuário
+
+### - ValuesSensor.kt
+
+#### Código que não deve ser alterado
+
+#### Código que pode ser alterado
+
+#### Código que deve ser Alterado
+
+#### Código a ser gerado pelo usuário
+
+## [path mapek]
+
+### [monitoring]
+
+### [observers]
+
+### [analysis]
+
+### [planning]
+
+### [execution]
+
+### [knowledge]
+
+## [path utils]
+
+### Constants.kt
+
+#### Código que não deve ser alterado
+
+#### Código que pode ser alterado
+
+#### Código que deve ser Alterado
+
+#### Código a ser gerado pelo usuário
+
+### Cryptography.kt
+
+#### Código que não deve ser alterado
+
+#### Código que pode ser alterado
+
+#### Código que deve ser Alterado
+
+#### Código a ser gerado pelo usuário
+
+### DateUtil.kt
+
+#### Código que não deve ser alterado
+
+#### Código que pode ser alterado
+
+#### Código que deve ser Alterado
+
+#### Código a ser gerado pelo usuário
+
+### GoogleApiUtil.kt
+
+#### Código que não deve ser alterado
+
+#### Código que pode ser alterado
+
+#### Código que deve ser Alterado
+
+#### Código a ser gerado pelo usuário
+
+### PermissionUtil.kt
+
+#### Código que não deve ser alterado
+
+#### Código que pode ser alterado
+
+#### Código que deve ser Alterado
+
+#### Código a ser gerado pelo usuário
+
+### Animations.kt (Optional)
+
+Have a string animation method for base sample application in the framework. Can be excluded by user.
+
+
