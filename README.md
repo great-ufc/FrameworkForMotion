@@ -42,7 +42,7 @@ Todas as etapas acima do ciclo podem ser assitidas por uma base de conhecimento 
 
 available in : 
 
-# Manual de Uso
+# Use Manual
 
 ## Download the framework
 
