@@ -1,29 +1,37 @@
 # Modelo
 
 - Summary
-- - [CloudConnection](#path-cloudConnection)
-- - [Entities](#path-entities)
-- - [MAPE-k](#path-mapek)
-- - - [Monitoring](#monitoring)
-- - - [Analysis](#analysis)
-- - - [Planning](#planning)
-- - - [Execution](#execution)
-- - - [Knowledge](#knowledge)
-- - [Utils](#path-utils)
+  - [CloudConnection](#path-cloudConnection)
+  - [Entities](#path-entities)
+  - [MAPE-k](#path-mapek)
+    - [Monitoring](#monitoring)
+    - [Analysis](#analysis)
+    - [Planning](#planning)
+    - [Execution](#execution)
+    - [Knowledge](#knowledge)
+  - [Utils](#path-utils)
 
 
 ## [path cloudConnection]
 
+Essa pasta contém as classes que devem ser criadas, se necessário, para conexão com uma aplicação em servidor externo que pode ou não está em um nuvem. 
+
 ### KnowledgeDownload.kt
 
-#### Código que não deve ser alterado
+Essa clase contém o métodos para download do grafo de classificação, a criação do objeto no formato da entidade KnowledgeRepresentation com base nesse grafo e o download dos modelos inteligentes treinados no servidor.
 
-#### Código que pode ser alterado
+#### Methods that can be changed
 
-#### Código que deve ser Alterado
+- update(mutableList: MutableList<VerticeFeature>, context: BaseActivity): KnowledgeRepresentation - Método que solicita o download do grafo otimizado para aplicação e gera o objeto no formato da entidade KnowledgeRepresentation com base no grafo. Também baixa os modelos treinados e adiciona a referêcia dos modelos ao objeto KnowledgeRepresentation criado.
+  - Você não precisa fazer nenhuma alteração nessa classe se não for desetável, mas o endereço do servidor para reuisição do grafo otimizado está salvo nas Constantes LAST_OPTIMIZE_GRAPH_ADDRESS (requisita o último grafo otimizado) e OPTIMIZE_GRAPH_ADDRESS (Solicita um novo grafo otimzado para os sensores e o threshold informado). Essas constantes devem ser alteradas para tratar o link do servidor com  aplicação do grafo de classificação que estiver sendo utilizada. 
+- fun updateKnowledgeRepresentationTfLite(knowledgeRepresentation: KnowledgeRepresentation, context: BaseActivity):KnowledgeRepresentation -  Instancia os modelos treinandos no objeto KnowLedgeRepresentation que utilizem a extensão TfLite.
+- fun loadModelFile(model:String,manager: AssetManager): MappedByteBuffer? - Instancia um modelo TfLite
+- fun downloadXML(url:String, context: BaseActivity):String - Executa download do grafo de classificação, salva no dispositivo e retorna o conteúdo do arquivo XML como string
+- fun downloadModels(knowledgeRepresentation: KnowledgeRepresentation, context: BaseActivity) - Executa download dos modelos inteligentes treinados
+- fun downloadModel(url: URL, outputFileName: String, context: BaseActivity) - Executa o download de uma aquivo e salva no dispositivo
+- fun readXMLGraph(xml: String, featuresList: MutableList<VerticeFeature>? = null): KnowledgeRepresentation - Constrói o objeto KnowLedgeRepresentation com base no arquivo XML que representa o Grafo de cLassificação otimizado que foi baixado
 
-#### Código a ser gerado pelo usuário
-
+<i>Note: If you don't use a trained model in TfLite format, you can add another method in this class for the trained model format you want to use.</i>
 
 ## [path entities]
 
