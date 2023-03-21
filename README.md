@@ -46,7 +46,7 @@ available in :
 
 ## Download the framework
 
-Você deve começar fazendo o download desse projeto git(https://github.com/great-ufc/FrameworkForMotion/archive/refs/heads/main.zip). O Peojeto contém A documentação do Framework, O Framework completo, que consta de um código de app android em kotlin, com todos os elementos do framework. Essa aplicação é executável como exemplo simples que pode ser usado para teste de funcionalidades, mas deve ser modificado pelo usuário para contemplar as especificidades e requistos da aplicação que se deseja desenvolver. Além do Framework e sua documentação, o projeto contém também exemplos de aplicações criadas usando o framework e o código de aplicação de API  Pyhton, usando Flask que pode ser utilizada para disponibilizar uma arquivo XML com as regras de adaptação da aplicação, seguindo um template específico. 
+Você deve começar fazendo o download desse [projeto git](https://github.com/great-ufc/FrameworkForMotion/archive/refs/heads/main.zip). O Peojeto contém A documentação do Framework, O Framework completo, que consta de um código de app android em kotlin, com todos os elementos do framework. Essa aplicação é executável como exemplo simples que pode ser usado para teste de funcionalidades, mas deve ser modificado pelo usuário para contemplar as especificidades e requistos da aplicação que se deseja desenvolver. Além do Framework e sua documentação, o projeto contém também exemplos de aplicações criadas usando o framework e o código de aplicação de API  Pyhton, usando Flask que pode ser utilizada para disponibilizar uma arquivo XML com as regras de adaptação da aplicação, seguindo um template específico. 
 
 ## First Steps
 
