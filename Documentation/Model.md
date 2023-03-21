@@ -18,12 +18,12 @@ Essa pasta contém as classes que devem ser criadas, se necessário, para conex�
 
 ### KnowledgeDownload.kt
 
-Essa clase contém o métodos para download do grafo de classificação, a criação do objeto no formato da entidade KnowledgeRepresentation com base nesse grafo e o download dos modelos inteligentes treinados no servidor.
+Essa clase contém o métodos para download do grafo de classificação, a criação do objeto no formato da entidade KnowledgeRepresentation com base nesse grafo e o download dos modelos inteligentes treinados no servidor. <font color="red"> Embora recomendemos, os desenvolvedores não são obrigados a usar o grafo de classificação, cabendo, nesse caso, aos desenvolvedores decidirem como construir a representação de sua base de conhecimento e nesse essa classe se torna opcional.</font>
 
 #### Methods that can be changed
 
 - update(mutableList: MutableList<VerticeFeature>, context: BaseActivity): KnowledgeRepresentation - Método que solicita o download do grafo otimizado para aplicação e gera o objeto no formato da entidade KnowledgeRepresentation com base no grafo. Também baixa os modelos treinados e adiciona a referêcia dos modelos ao objeto KnowledgeRepresentation criado.
-  - <i>Você não precisa fazer nenhuma alteração nessa classe se não for desetável, mas o endereço do servidor para reuisição do grafo otimizado está salvo nas Constantes LAST_OPTIMIZE_GRAPH_ADDRESS (requisita o último grafo otimizado) e OPTIMIZE_GRAPH_ADDRESS (Solicita um novo grafo otimzado para os sensores e o threshold informado). Essas constantes devem ser alteradas para tratar o link do servidor com  aplicação do grafo de classificação que estiver sendo utilizada. </i> 
+  - <i>Você não precisa fazer nenhuma alteração nessa classe se não for desejável, mas o endereço do servidor para requisição do grafo otimizado está salvo nas Constantes LAST_OPTIMIZE_GRAPH_ADDRESS (requisita o último grafo otimizado) e OPTIMIZE_GRAPH_ADDRESS (solicita um novo grafo otimzado para os sensores e o threshold informado). O valor dessas constantes devem ser alterados para o link do servidor que contém a aplicação do grafo de classificação que os desencolvedores estiverem usando, caso usem o grafo de classificação. </i> 
 - updateKnowledgeRepresentationTfLite(knowledgeRepresentation: KnowledgeRepresentation, context: BaseActivity):KnowledgeRepresentation -  Instancia os modelos treinandos no objeto KnowLedgeRepresentation que utilizem a extensão TfLite.
 - loadModelFile(model:String,manager: AssetManager): MappedByteBuffer? - Instancia um modelo TfLite
 - downloadXML(url:String, context: BaseActivity):String - Executa download do grafo de classificação, salva no dispositivo e retorna o conteúdo do arquivo XML como string
