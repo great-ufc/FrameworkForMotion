@@ -382,20 +382,78 @@ Classe para coleta do nível de bateria do celular
 - collectEnergy(context: BaseActivity):Double - coleta e apresenta o nível atual de bateria do celular
 
 ### - [GoogleFit] GoogleFitAPI.kt
+  
+Classe com os métodos bases para conexão e coleta de dados do Google Fit
+
+> Attributes
+> - activity: BaseActivity
+
+#### Methods that must not be changed
+  
+- requestFitPermission() -  Requisita permissão para acesso no Google Fit API
+  
+> Você precisa de uma credencial Auth 2.0 para acesso das APIs do Google. Recomendadmos seguir os passos da própria documentação oferecida pelo google, que pode ser acessada em: https://developers.google.com/fit/android/get-api-key
+  
+- oAuthPermissionsApproved() - verifica se a aplicação já possui acesso a Google Fit API  
+
+ - getGoogleAccount() - requisita permissão de acesso do usuário a conta do google
+  
+- getFitnessOptions() - registra quais dados da API você deseja coletar
 
 ### - [GoogleFit/Samples] GoogleFitGetAllData.kt
+  
+Exemplo de classe para coleta de diversos dados do Google Fit
+  
+> Attributes
+> - activity: BaseActivity
+  
+#### Methods that can be changed
+  
+- checkPermissionAndGetData() - Verifica permissão de acesso aos dados do Google Fit, se não houver requisita acesso
+- getData(context: Context, dataController: DataController) - Coleta dados do Google Fit e preenche objeto DataController
+- getDataStatic(context: Context, dataController: DataController) -  Coleta dados e define intervalo de coleta
+- getDataStatic(context: Context, dataController: DataController, beginDate: Long, endDate: Long) - Coleta medidas, Calorias, Batimentos cardíacos e Sono do Google Fit
+- accessGoogleFit(dataType: DataType, context: Context, dataController: DataController, beginDate: Long, endDate: Long) -  acessa dados do GoogleFit
+- getBodyMeasures(dataType: DataType, context: Context, dataController: DataController) - Coleta Medidas (e.g. Peso e ALtura) registradas no Google Fit
+- getHeartRate(context: Context, dataController: DataController, beginDate: Long, endDate: Long) - Coleta Valores de Batimento Cardíaco registrados no Google Fit
+- accessSleepData(context: Context, dataController: DataController, beginDate: Long, endDate: Long) - Coleta Valores de Qualidade de Sono registrados no Google Fit
 
 ### - [GoogleFit/Samples] GoogleFitStepData.kt
+
+Exemplo de classe para coleta de dados referente a contagem de passos do Google Fit
+  
+> Attributes
+> - activity: BaseActivity
+  
+#### Methods that can be changed
+  
+- fitSignIn(requestCode: Int) - Verifica permissão de acesso aos dados do Google Fitt, se não houver requisita acesso
+- performActionForRequestCode(requestCode: Int) - Coleta dados de contagem dos passos do Google Fit
+- insertAndReadData() - registra dados históricos
+- insertData(): Task<Void> - Coleta dos dados do Google Fit e registra em um objeto DataSet
+- readHistoryData(): Task<DataReadResponse> -  Coleta dos dados históricos do Google Fit
+- insertFitnessData(): DataSet - Coleta dos dados de contagem de passos do Google Fit e registra em um objeto DataSet
+- queryFitnessData(): DataReadRequest - Consulta lista de dados de contagem de passos coletados
+- printData(dataReadResult: DataReadResponse) - Apresenta dados coletados do Google Fit
+- dumpDataSet(dataSet: DataSet) - Salva log dos dados
+- DataPoint.getStartTimeString(): String - Retorna tempo inicial da coleta
+- DataPoint.getStartTimeString(): String - Retorna tempo final da coleta
+- deleteData() - Deleta da API os dados que já foram coletados
+- updateAndReadData() - Atualizada pesquisa dados históricos
+- updateData() - Atualiza pesquisa pelos dados a serem coletados do Google Fit
+- updateFitnessData(): - Atualiza pesquisa pelos dados de contagemd e passos a serem coletados do Google Fit
 
 ### [observers]
 
 All Observer Interfaces were created specifically to enable the use of the observer pattern by the main classes of the modules of the adaptation cycle (monitoring, analysis, planning and execution) and must not be changed. If you want to use the observer pattern for other classes, please create new observer interfaces (in a package other than mapek) for the classes you want.
 
-The "Observer" interface corresponds to observer classes that will execute the <update()> method when the class with the corresponding "Observable" interface that is being observed executes the <sendUpdateEvent()> method.
+> The "Observer" interface corresponds to observer classes that will execute the <update()> method when the class with the corresponding "Observable" interface that is being observed executes the <sendUpdateEvent()> method.
 
-Also, classes with interface "Observable" add their observers (classes with interface "Observer") using method <add()>.
+> Also, classes with interface "Observable" add their observers (classes with interface "Observer") using method <add()>.
 
 ### [analysis]
+  
+
 
 ### - DataAnalysis.kt (main module class)
 
