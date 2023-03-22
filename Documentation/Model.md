@@ -39,67 +39,208 @@ situação essa classe se torna opcional.
 
 <i>Note: If you don't use a trained model in TfLite format, you can add another method in this class for the trained model format you want to use.</i>
 
+## [path dao]
+  
+Essa pasta contém as classes de acesso a dados ddo banco SQL Lite, onde utilizamos os padrões DAO e Repository.
+
+### [data]
+
+### - UnityofWork.kt
+  
+> Attributes
+> - dbHelper: SQLiteOpenHelper
+  
+Classe para controle de trasação para operações de mudança no banco de dados
+  
+#### Methods that must not be changed.
+
+- transaction() - inicia transação para operação de mudança no banco de dados
+- commit() - finaliza transação para operação de mudança no banco de dados
+- rollback() - desfaz operações executadas durante a transação para operação de mudança no banco de dados
+  
+### [DBEntities]
+
+### - Pessoa.kt
+  
+> Attributes
+> - id: Int
+> - nome:String
+  
+#### Class that can be changed
+  
+Exemplo de entidade Pessoa para o Banco de Dados
+  
+### [interfaces]
+  
+Interfaces para padeão DAO e Repositorio. Para cada entidaade você deve criar uma interface.
+  
+### - IPessoaRepository.kt
+
+Interface para PessoaRepository
+
+#### Methods that can be changed
+  
+- Add(pessoa: Pessoa) - Adiciona um registor na tabela referente a Entidade Pessoa
+- GetPersonById(id: Int): Pessoa - Retorna um registro da tabela Pessoa
+- getAll(): MutableList<Pessoa> - Retorna todos os registros da tabela Pessoa
+
+### - IRepository.kt
+  
+Interface para Repository
+  
+#### Methods that must not be changed.
+  
+- Add(cValues:ContentValues):Int - Adiciona novo registro na tabela
+- GetById(id:Int): Cursor - Retorna um registro de uma tabela
+- GetAll(): Cursor - Retorna todos os registros da tabela
+- Update(id:Int, info:String, valor:Boolean):Boolean - Atualiza um registro
+- Update(id:Int, info:String, valor:Byte):Boolean - Atualiza um registro
+- Update(id:Int, info:String, valor:ByteArray):Boolean - Atualiza um registro
+- Update(id:Int, info:String, valor:Double):Boolean - Atualiza um registro
+- Update(id:Int, info:String, valor:Float):Boolean - Atualiza um registro
+- Update(id:Int, info:String, valor:Int):Boolean - Atualiza um registro
+- Update(id:Int, info:String, valor:Short):Boolean - Atualiza um registro
+- Update(id:Int, info:String, valor:String):Boolean - Atualiza um registro
+- Remove(id:Int): Boolean - Remove um registro
+- RemoveAll(): Boolean - Remove todos os registros
+- SaveChanges() - Confirma operação
+
+### - IUnityofWork.kt
+  
+Interface para IUnityofWork
+
+#### Methods that must not be changed.
+  
+- transaction() - inicia transação para operação de mudança no banco de dados
+- commit() - finaliza transação para operação de mudança no banco de dados
+- rollback() - desfaz operações executadas durante a transação para operação de mudança no banco de dados
+
+### [repository]
+
+Nessa pasta estão todas as classes referentes as classes repositórios para manipulação das tabelas do banco de dados
+
+### - Repository.kt
+
+Classe abstrata repositório base para as demais classes do padrão DAO
+  
+> Attributes
+> - ctx: Context
+> - TABLE_NAME:String
+> - lstColunms: MutableList<Triple<String,String,Boolean>>?
+
+#### Methods that must not be changed.
+
+- Add(cValues:ContentValues):Int - Adiciona novo registro na tabela
+- GetById(id:Int): Cursor - Retorna um registro de uma tabela
+- GetAll(): Cursor - Retorna todos os registros da tabela
+- Update(id:Int, info:String, valor:Boolean):Boolean - Atualiza um registro
+- Update(id:Int, info:String, valor:Byte):Boolean - Atualiza um registro
+- Update(id:Int, info:String, valor:ByteArray):Boolean - Atualiza um registro
+- Update(id:Int, info:String, valor:Double):Boolean - Atualiza um registro
+- Update(id:Int, info:String, valor:Float):Boolean - Atualiza um registro
+- Update(id:Int, info:String, valor:Int):Boolean - Atualiza um registro
+- Update(id:Int, info:String, valor:Short):Boolean - Atualiza um registro
+- Update(id:Int, info:String, valor:String):Boolean - Atualiza um registro
+- Remove(id:Int): Boolean - Remove um registro
+- RemoveAll(): Boolean - Remove todos os registros
+- SaveChanges() - Confirma operação
+
+### - [EntityRepositoriesSamples] PessoaRepository.kt
+
+Classe DAO para manipulação da tabela Pessoa
+  
+> Attributes
+> - context: Context
+  
+#### Methods that can be changed
+  
+- Add(pessoa: Pessoa) - Adiciona um registor na tabela referente a Entidade Pessoa
+- GetPersonById(id: Int): Pessoa - Retorna um registro da tabela Pessoa
+- getAll(): MutableList<Pessoa> - Retorna todos os registros da tabela Pessoa
+  
 ## [path entities]
 
+Pasta contendo as entidades da aplicação 
+  
 ### AdaptationRules.kt
 
-#### Código que não deve ser alterado
+Entidade referente ao conjunto de regras de adaptação
+  
+#### Methods that must not be changed.
 
-#### Código que pode ser alterado
+> Attributes
+> - adaptationList:MutableList<Adaptation>  
+  
+### - class Adaptation
+  
+Entidade adaptação
+  
+> Attributes
+> - action:String
+> - contextList: MutableList<context>
 
-#### Código que deve ser Alterado
-
-#### Código a ser gerado pelo usuário
+### - class context
+  
+Entidade contexto para regras de adaptação
+  
+> Attributes
+> - name:String
+> - signal:String
+> - value: String
 
 ### Context.kt
+  
+Entidade que representa o contexto coletado pela aplicação
+  
+#### Methods that must not be changed.
 
-#### Código que não deve ser alterado
-
-#### Código que pode ser alterado
-
-#### Código que deve ser Alterado
-
-#### Código a ser gerado pelo usuário
+> Attributes
+> - name:String
+> - value:Any
 
 ### EdgeSensorFeature.kt
+  
+Entidade que representa a aresta que liga o Sensor a Feature
 
-#### Código que não deve ser alterado
+#### Methods that must not be changed.
 
-#### Código que pode ser alterado
-
-#### Código que deve ser Alterado
-
-#### Código a ser gerado pelo usuário
+> Attributes
+> - vSensor: VerticeSensor
+> - vFeature: VerticeFeature
+> - contexts: MutableList<Context>?
 
 ### EdgeFeatureModel.kt
+  
+Entidade que representa a aresta que liga a Feature e o Modelo
 
-#### Código que não deve ser alterado
+#### Methods that must not be changed.
 
-#### Código que pode ser alterado
-
-#### Código que deve ser Alterado
-
-#### Código a ser gerado pelo usuário
+> Attributes
+> - vFeature:VerticeFeature
+> - vModel: VerticeModel
+> - contexts: MutableList<Context>?
 
 ### EdgeModelsFinalStatus.kt
 
-#### Código que não deve ser alterado
+Entidade que representa a aresta que liga o Modelo e o FinalStatus
 
-#### Código que pode ser alterado
+#### Methods that must not be changed.
 
-#### Código que deve ser Alterado
-
-#### Código a ser gerado pelo usuário
+> Attributes
+> - vModel: VerticeModel
+> - vFinalStatus: VerticeFinalStatus
+> - probability:Double?
 
 ### KnowledgeRepresentation.kt
 
-#### Código que não deve ser alterado
+Entidade para Representação da Base de Conhecimento
 
-#### Código que pode ser alterado
+#### Methods that must not be changed.
 
-#### Código que deve ser Alterado
-
-#### Código a ser gerado pelo usuário
+> Attributes
+> - edgeSensorFeature: MutableList<EdgeSensorFeature>
+> - edgeFeaturesModel: MutableList<EdgeFeatureModel>
+> - edgeModelsFinalStatus: MutableList<EdgeModelsFinalStatus>
 
 ### ResultEntry.kt
 
