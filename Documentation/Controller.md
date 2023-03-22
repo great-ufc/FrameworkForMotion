@@ -6,9 +6,9 @@ This class has a set of methods for storing and processing data collected from t
 
 > Attributes
 > - TAG:String
-> > NUM_ATTRS: Int
-> > height: Double
-> > weight: Double
+> - NUM_ATTRS: Int
+> - height: Double
+> - weight: Double
 > > lightSleep: Double
 > > deepSleep: Double
 > > remSleep: Double
