@@ -5,9 +5,9 @@
 This class has a set of methods for storing and processing data collected from the Google fit API. The class and its methods can be modified to collect the desired data from the Google Fit API.
 
 > Attributes
->> TAG:String
->> NUM_ATTRS: Int
->> height: Double
+>> - TAG:String
+>> - NUM_ATTRS: Int
+>> - height: Double
 >> weight: Double
 >> lightSleep: Double
 >> deepSleep: Double
