@@ -9,24 +9,24 @@ This class has a set of methods for storing and processing data collected from t
 > - NUM_ATTRS: Int
 > - height: Double
 > - weight: Double
-> > lightSleep: Double
-> > deepSleep: Double
-> > remSleep: Double
-> > awakeSleep: Double
-> > steps: Int
-> > caloriesSpent: Double
-> > incomingCalls: Double
-> > outgoingCalls: Double
-> > blockedCalls: Double
-> > missedCalls: Double
-> > rejectedCalls: Double
-> > incomingCallsAverageDuration: Double
-> > outgoingCallsAverageDuration: Double
-> > diffWifi: Int
-> > whatsAppReport: String
-> > heartRate: MutableList<Double>
-> > attrsFilled: Int
-> > onAttrsFilled: ((Int) -> Unit)?
+> - lightSleep: Double
+> - deepSleep: Double
+> - remSleep: Double
+> - awakeSleep: Double
+> - steps: Int
+> - caloriesSpent: Double
+> - incomingCalls: Double
+> - outgoingCalls: Double
+> - blockedCalls: Double
+> - missedCalls: Double
+> - rejectedCalls: Double
+> - incomingCallsAverageDuration: Double
+> - outgoingCallsAverageDuration: Double
+> - diffWifi: Int
+> - whatsAppReport: String
+> - heartRate: MutableList<Double>
+> - attrsFilled: Int
+> - onAttrsFilled: ((Int) -> Unit)?
 
 ### Methods that can be changed
 
