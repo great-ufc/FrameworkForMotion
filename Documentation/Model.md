@@ -314,7 +314,7 @@ Nesse pacote estão o módulos referentes ao ciclo MAPE-K
 
 ### [monitoring]
   
-Classes relacionados ao módulo d emonitoramento
+Classes relacionados ao módulo de monitoramento
 
 ### - DataManagement.kt (main module class)
   
@@ -336,7 +336,7 @@ Classe principal do módulo de monitoramento. Gerencia o monitoramento dos dados
 
 ### - ICollectorData.kt
   
-Interface para classes de coleta de dados dos sensores do smartphone
+Interface para classes de coleta de dados dos sensores do dispositivo android
   
 #### Methods that must not be changed
 
@@ -453,23 +453,37 @@ All Observer Interfaces were created specifically to enable the use of the obser
 
 ### [analysis]
   
-
+Classes relacionados ao módulo de análise
 
 ### - DataAnalysis.kt (main module class)
+  
+Classe principal do módulo de análise. Gerencia a análise do contexto
 
+  
+  
 ### - FeatureExtraction.kt 
 
 ### - FeatureFunctions.kt 
 
 ### [planning]
+  
+Classes relacionados ao módulo de planejamento
 
 ### - PlanningRolesManagement.kt (main module class)
+
+Classe principal do módulo de planejamento. Gerencia o planejamento de ações
 
 ### - ReadAdaptationXML.kt
 
 ### [execution]
-
+  
+Classes relacionados ao módulo de execução
+  
 ### - ExecuteActions.kt (main module class)
+  
+Classe principal do módulo de planejamento. Gerencia o planejamento de ações
+  
+
 
 ### - Action.kt
 
@@ -480,20 +494,25 @@ A User app actions class template. Import methods from class Task2 from SUCCEED 
 A sample app actions class. Import methods from class Task2 from SUCCEED framework. Can be excluded by user.
 
 ### [knowledge]
+  
+Classes relacionados a gerência de conhecimento
 
 ### - KnowledgeManagement.kt (main module class)
+  
+Classe principal do módulo de gerência de conhecimento. Gerencia a base de conhecimento
+
+  
+  
 
 ## [path utils]
 
 ### Constants.kt
 
-#### Código que não deve ser alterado
-
-#### Código que pode ser alterado
-
-#### Código que deve ser Alterado
-
-#### Código a ser gerado pelo usuário
+Constantes do sistema que ssão utilizadas pela demais classes para aplicação  
+  
+#### Methods that Must be changed
+  
+> Você deve alterar os valores das constantes para sua aplicação de acordo com o que deve ser implementado. Caso julgue necessário, você deve criar novas constantes para a aplicação.
 
 ### Cryptography.kt
 
@@ -507,13 +526,15 @@ A sample app actions class. Import methods from class Task2 from SUCCEED framewo
 
 ### DateUtil.kt
 
-#### Código que não deve ser alterado
-
-#### Código que pode ser alterado
-
-#### Código que deve ser Alterado
-
-#### Código a ser gerado pelo usuário
+Contém métodos para formatação e requisição de dados usados no DataController
+ 
+#### Methods that can be changed
+  
+- getBeginDateForRegisters(): Date - Retorna data atual
+- getEndDateForRegisters(): Date - Retorna hora atual
+- getBeginDateForRegistersLong(): Long - Retorna data atual para milisegundos
+- getBeginDateForRegistersLong(): Long - Retorna hora atual para milisegundos
+- getSecondsFormatted(seconds: Long) - Converte milisegundos para segundos
 
 ### GoogleApiUtil.kt
 
@@ -527,13 +548,12 @@ A sample app actions class. Import methods from class Task2 from SUCCEED framewo
 
 ### PermissionUtil.kt
 
-#### Código que não deve ser alterado
+Contém métodos para verificação e requisição de permissões de acesso ao armazenamento interno e aos componentes de hardware do dipositivo android
+  
+#### Methods that can be changed
 
-#### Código que pode ser alterado
-
-#### Código que deve ser Alterado
-
-#### Código a ser gerado pelo usuário
+- checkDevicePermission(context: BaseActivity) : Boolean - Verifica permissão de acesso ao armazenamento interno e aos sensores do dipositivo android
+-  requetPermission(context: BaseActivity) - Requisita acesso ao armazenamento interno e aos sensores do dipositivo android
 
 ### Animations.kt (Optional)
 
