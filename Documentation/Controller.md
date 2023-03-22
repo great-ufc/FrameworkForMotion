@@ -4,6 +4,30 @@
 
 This class has a set of methods for storing and processing data collected from the Google fit API. The class and its methods can be modified to collect the desired data from the Google Fit API.
 
+> Attributes
+>> TAG:String
+>> NUM_ATTRS: Int
+>> height: Double
+>> weight: Double
+>> lightSleep: Double
+>> deepSleep: Double
+>> remSleep: Double
+>> awakeSleep: Double
+>> steps: Int
+>> caloriesSpent: Double
+>> incomingCalls: Double
+>> outgoingCalls: Double
+>> blockedCalls: Double
+>> missedCalls: Double
+>> rejectedCalls: Double
+>> incomingCallsAverageDuration: Double
+>> outgoingCallsAverageDuration: Double
+>> diffWifi: Int
+>> whatsAppReport: String
+>> heartRate: MutableList<Double>
+>> attrsFilled: Int
+>> onAttrsFilled: ((Int) -> Unit)?
+
 ### Methods that can be changed
 
 - setData(dataType: DataType, dataset: DataSet) - Set Google Fit data to corresponding attributes in the class using a DataSet object 
@@ -17,6 +41,10 @@ This class has a set of methods for storing and processing data collected from t
 
 This class presents a set of methods for login control using the Google API, so that it is possible for the user to login using the google account.
 
+> Attributes
+>> activity: BaseActivity
+>> googleApiClient: GoogleApiUtil
+  
 ### Methods that can be changed
 
 - signIn() - Requests Google API Login. The API calls the login method implemented in the GoogleApiUtil class
@@ -26,6 +54,10 @@ This class presents a set of methods for login control using the Google API, so 
 ## ProfileController.kt
   
 This class presents methods for collecting profile data from the user logged into the Google account.
+  
+> Attributes
+>> activity: BaseActivity
+>> googleApiClient: GoogleApiUtil
   
 ### Methods that can be changed
   
@@ -40,6 +72,11 @@ This class presents methods for collecting profile data from the user logged int
 ## [path UpdateControllersSamples] 
 
 ## - AppsExternalParametersController.kt
+  
+> Attributes
+>> activity: BaseActivity
+>> tag: String
+>> params = hashMapOf<String, String>
 
 Class containing methods to help release and download new releases of the application
 
