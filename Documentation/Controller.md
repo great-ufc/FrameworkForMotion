@@ -42,8 +42,8 @@ This class has a set of methods for storing and processing data collected from t
 This class presents a set of methods for login control using the Google API, so that it is possible for the user to login using the google account.
 
 > Attributes
->> activity: BaseActivity
->> googleApiClient: GoogleApiUtil
+> - activity: BaseActivity
+> - googleApiClient: GoogleApiUtil
   
 ### Methods that can be changed
 
@@ -56,8 +56,8 @@ This class presents a set of methods for login control using the Google API, so 
 This class presents methods for collecting profile data from the user logged into the Google account.
   
 > Attributes
->> activity: BaseActivity
->> googleApiClient: GoogleApiUtil
+> - activity: BaseActivity
+> - googleApiClient: GoogleApiUtil
   
 ### Methods that can be changed
   
@@ -74,9 +74,9 @@ This class presents methods for collecting profile data from the user logged int
 ## - AppsExternalParametersController.kt
   
 > Attributes
->> activity: BaseActivity
->> tag: String
->> params = hashMapOf<String, String>
+> - activity: BaseActivity
+> - tag: String
+> - params = hashMapOf<String, String>
 
 Class containing methods to help release and download new releases of the application
 
