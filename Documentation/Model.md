@@ -77,8 +77,6 @@ Interfaces para padeão DAO e Repositorio. Para cada entidaade você deve criar 
 ### - IPessoaRepository.kt
 
 Interface para PessoaRepository
-
-#### Methods that can be changed
   
 - Add(pessoa: Pessoa) - Adiciona um registor na tabela referente a Entidade Pessoa
 - GetPersonById(id: Int): Pessoa - Retorna um registro da tabela Pessoa
@@ -87,8 +85,6 @@ Interface para PessoaRepository
 ### - IRepository.kt
   
 Interface para Repository
-  
-#### Methods that must not be changed.
   
 - Add(cValues:ContentValues):Int - Adiciona novo registro na tabela
 - GetById(id:Int): Cursor - Retorna um registro de uma tabela
@@ -108,8 +104,6 @@ Interface para Repository
 ### - IUnityofWork.kt
   
 Interface para IUnityofWork
-
-#### Methods that must not be changed.
   
 - transaction() - inicia transação para operação de mudança no banco de dados
 - commit() - finaliza transação para operação de mudança no banco de dados
@@ -165,8 +159,6 @@ Pasta contendo as entidades da aplicação
 ### AdaptationRules.kt
 
 Entidade referente ao conjunto de regras de adaptação
-  
-#### Methods that must not be changed.
 
 > Attributes
 > - adaptationList:MutableList<Adaptation>  
@@ -191,8 +183,6 @@ Entidade contexto para regras de adaptação
 ### Context.kt
   
 Entidade que representa o contexto coletado pela aplicação
-  
-#### Methods that must not be changed.
 
 > Attributes
 > - name:String
@@ -201,8 +191,6 @@ Entidade que representa o contexto coletado pela aplicação
 ### EdgeSensorFeature.kt
   
 Entidade que representa a aresta que liga o Sensor a Feature
-
-#### Methods that must not be changed.
 
 > Attributes
 > - vSensor: VerticeSensor
@@ -213,8 +201,6 @@ Entidade que representa a aresta que liga o Sensor a Feature
   
 Entidade que representa a aresta que liga a Feature e o Modelo
 
-#### Methods that must not be changed.
-
 > Attributes
 > - vFeature:VerticeFeature
 > - vModel: VerticeModel
@@ -223,8 +209,6 @@ Entidade que representa a aresta que liga a Feature e o Modelo
 ### EdgeModelsFinalStatus.kt
 
 Entidade que representa a aresta que liga o Modelo e o FinalStatus
-
-#### Methods that must not be changed.
 
 > Attributes
 > - vModel: VerticeModel
@@ -235,110 +219,120 @@ Entidade que representa a aresta que liga o Modelo e o FinalStatus
 
 Entidade para Representação da Base de Conhecimento
 
-#### Methods that must not be changed.
-
 > Attributes
 > - edgeSensorFeature: MutableList<EdgeSensorFeature>
 > - edgeFeaturesModel: MutableList<EdgeFeatureModel>
 > - edgeModelsFinalStatus: MutableList<EdgeModelsFinalStatus>
 
 ### ResultEntry.kt
+  
+Entidade que representa o resultado da análise, contemplando o contexto atual, a probabilidade tido como resultado da análise e estado final 
 
-#### Código que não deve ser alterado
-
-#### Código que pode ser alterado
-
-#### Código que deve ser Alterado
-
-#### Código a ser gerado pelo usuário
+> Attributes
+> - context:MutableList<Context>
+> - probability: Double
+> - finalStatus:String
 
 ### VerticeSensor.kt
 
-#### Código que não deve ser alterado
+Entidade que representa o sensor na base de conhecimento
 
-#### Código que pode ser alterado
-
-#### Código que deve ser Alterado
-
-#### Código a ser gerado pelo usuário
+> Attributes
+> - typeSensor: String
 
 ### VerticeFeature.kt
 
-#### Código que não deve ser alterado
+Entidade que representa a feature na base de conhecimento
 
-#### Código que pode ser alterado
-
-#### Código que deve ser Alterado
-
-#### Código a ser gerado pelo usuário
+> Attributes
+> - feature: Double
+> - featureName:ValuesFeatures
 
 ### ValuesFeatures.kt
 
-#### Código que não deve ser alterado
+Entidade que representa o valor da feature na base de conhecimento
 
-#### Código que pode ser alterado
-
-#### Código que deve ser Alterado
-
-#### Código a ser gerado pelo usuário
+> Attributes
+> - finalStatus:String
 
 ### VerticeModel.kt
 
-#### Código que não deve ser alterado
+Entidade que representa o modelo na base de conhecimento
 
-#### Código que pode ser alterado
+> Attributes
+> - modelName: String
+> - inFeature:Int
+> - outFeature: Int
+> - model:Interpreter?
+  
+#### Methods that must not be changed.
 
-#### Código que deve ser Alterado
-
-#### Código a ser gerado pelo usuário
+- setSmartModel(newmodel: Interpreter?) - Instancia o modelo inteligenge treinado.
 
 ### VerticeFinalStatus.kt
 
-#### Código que não deve ser alterado
+Entidade que representa o estado final na base de conhecimento
 
-#### Código que pode ser alterado
+> Attributes
+> - finalStatus:String
 
-#### Código que deve ser Alterado
-
-#### Código a ser gerado pelo usuário
-
-### [sensors] 
+### [sensors]
+  
+Nessa pasta estão as entidades específicas para manipulação dos sensores
 
 ### - typeSensor.kt
 
-#### Código que não deve ser alterado
+Enumerador que identifica o tipo de sensor
 
-#### Código que pode ser alterado
-
-#### Código que deve ser Alterado
-
-#### Código a ser gerado pelo usuário
+> Type Sensors
+> - ACC
+> - GYR
+> - GPS
+> - WIFI
+> - MIC
 
 ### - ValuesACC.kt
 
-#### Código que não deve ser alterado
+Entidade que representa os valores do acelerômetro
 
-#### Código que pode ser alterado
-
-#### Código que deve ser Alterado
-
-#### Código a ser gerado pelo usuário
+> Attributes
+> - eixoX:Double
+> - eixoY:Double
+> - eixoZ:Double
 
 ### - ValuesSensor.kt
 
-#### Código que não deve ser alterado
+Entidade que representa o valor do sensor genérico
 
-#### Código que pode ser alterado
-
-#### Código que deve ser Alterado
-
-#### Código a ser gerado pelo usuário
+> Attributes
+> - idSensor:String
+> - value:Any
 
 ## [path mapek]
+  
+Nesse pacote estão o módulos referentes ao ciclo MAPE-K
 
 ### [monitoring]
+  
+Classes relacionados ao módulo d emonitoramento
 
 ### - DataManagement.kt (main module class)
+  
+Classe principal do módulo de monitoramento. Gerencia o monitoramento dos dados
+
+> Attributes
+> - context: BaseActivity
+> - dataCollectTime:Long
+> - googleFitAllData:GoogleFitGetAllData?
+> - observers: MutableList<IMonitorObserver> 
+  
+#### Methods that must be changed
+
+- Monitoring() - gerencia o monitoramento, obtendo os dados coletados dos sensores. Quando a janela de coleta é atingida informa a classe principal do módulo de análise (executa método sendUpdateEvent())
+
+> O usuário deve informar quais os sensores são coletados. O dados coletados devem ser armazenados em um atributo compartilhado da Activity principal (é possível usar o DataController)
+  
+- update() - executa quando a classe principal do módulo de execução informa que as ações foram executadas (executa método sendUpdateEvent())
 
 ### - ICollectorData.kt
 
