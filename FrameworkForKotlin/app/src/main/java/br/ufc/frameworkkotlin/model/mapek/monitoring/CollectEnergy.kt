@@ -14,7 +14,7 @@ class CollectEnergy(){
     fun collectEnergy(context: BaseActivity):Double{
         val bm = context.getSystemService(AppCompatActivity.BATTERY_SERVICE) as BatteryManager
         val energy = bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY).toDouble()
-        return MainActivity.energy// energy!!
+        return energy
     }
 
 }

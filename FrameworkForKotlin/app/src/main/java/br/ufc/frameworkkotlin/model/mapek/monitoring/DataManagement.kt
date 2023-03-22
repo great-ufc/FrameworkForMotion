@@ -40,7 +40,7 @@ class DataManagement(val context: BaseActivity):IMonitorObservable,IExecutionObs
             //Fim Coleta Sensores
 
             //coleta de bateria
-            //context.energy = CollectEnergy().collectEnergy(context)
+            context.energy = CollectEnergy().collectEnergy(context)
 
             //Collect Data from GoogleFit
             context.dataController = br.ufc.frameworkkotlin.controllers.DataController()
