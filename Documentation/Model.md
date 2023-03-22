@@ -335,12 +335,51 @@ Classe principal do módulo de monitoramento. Gerencia o monitoramento dos dados
 - update() - executa quando a classe principal do módulo de execução informa que as ações foram executadas (executa método sendUpdateEvent())
 
 ### - ICollectorData.kt
+  
+Interface para classes de coleta de dados dos sensores do smartphone
+  
+#### Methods that must not be changed
+
+- collectData(event: SensorEvent?):Any - método de coleta dos dados
+- FormatData(value:String):Any - método para tratar os dados para posteriormente gerar as features
+- getValueData(): String - método get para os valores coletados
 
 ### - CollectACC.kt
+  
+Classe para coleta de dados do sensor de acelerômetro
+  
+> Attributes
+> - myData:String
+  
+#### Methods that must not be changed
+
+- collectData(event: SensorEvent?):Any - método de coleta dos dados do sensor de acelerômetro que é instanciado na activity principal
+- FormatData(value:String):Any - método para tratar os dados para posteriormente gerar as features
+- getValueData(): String - método get para os valores coletados
 
 ### - CollectGyr.kt
+  
+Classe para coleta de dados do sensor de giroscópio
+  
+> Attributes
+> - myData:String
+  
+#### Methods that must not be changed
+
+- collectData(event: SensorEvent?):Any - método de coleta dos dados do sensor de giroscópio que é instanciado na activity principal
+- FormatData(value:String):Any - método para tratar os dados para posteriormente gerar as features
+- getValueData(): String - método get para os valores coletados
 
 ### - CollectEnergy.kt
+  
+Classe para coleta do nível de bateria do celular
+
+> Attributes
+> - energy: Double
+  
+#### Methods that must can be changed
+
+- collectEnergy(context: BaseActivity):Double - coleta e apresenta o nível atual de bateria do celular
 
 ### - [GoogleFit] GoogleFitAPI.kt
 
