@@ -90,7 +90,7 @@ Você deve começar fazendo o download desse [projeto git](https://github.com/gr
 
 ## First Steps
 
-Uma vez feito o download do framework juntamente com todos os elementos e códigos que serão usados para auxiliar na construção de sua aplicação também é disponibilizada uma aplicação exemplo. Então você pode executá-la para verificar as fucnioalidade bases dos framework.  Recomendamos a princípio alterar nas "Strings" em "res/values/strings.xml" o nome do App para o nome que desejar. Além disso, outras informações também podém ser alteradas no string.xml
+Uma vez feito o download do framework juntamente com todos os elementos e códigos que serão usados para auxiliar na construção de sua aplicação é preciso abrir o projeto no Android Studio, uma vez que o framework foi feito para construção de aplicações nativas para android e utilizanod a linguagem kotlin. Então você pode executá-la para verificar as fucnioalidade bases dos framework.  Recomendamos a princípio alterar nas "Strings" em "res/values/strings.xml" o nome do App para o nome que desejar. Além disso, outras informações também podém ser alteradas no string.xml
 
 ### Constants
 
