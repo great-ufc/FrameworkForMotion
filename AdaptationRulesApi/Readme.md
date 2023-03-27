@@ -7,7 +7,7 @@ A versão atual do template pode ser visto [aqui](./template.xml) contemplando o
 ![](./templateXml.png)
 Figura 1. Template de regras de adaptação apenas com contextos numéricos
   
-Os tipos de contextos verificados podem ser numéricos  ou strings. No casod e contextos numéricos a verificação identifica se o valor do contexto analisado (por exemplo, o nível de bateria, ou o valor de uma <i>feature</i> de movimentação) é "igual a" (valor de sinal <i>equal</i>), "maior que" (valor de sinal <i>greaterthan</i>), ou "menor que" (valor de sinal \textit{lessthan}), ao valor limiar especificado. Já no caso de contextos string, os tipos de contextos verificados estão relacionados a valores específicos "contidos" (valor de sinal <i>containValue</i>) ou "não contidos" (valor de sinal <i>notContainValue</i>) na lista de valores especificados. 
+Os tipos de contextos verificados podem ser numéricos (Figura 1) ou strings (Figura 2). No caso de contextos numéricos a verificação identifica se o valor do contexto analisado (por exemplo, o nível de bateria, ou o valor de uma <i>feature</i> de movimentação) é "igual a" (valor de sinal <i>equal</i>), "maior que" (valor de sinal <i>greaterthan</i>), ou "menor que" (valor de sinal \textit{lessthan}), ao valor limiar especificado. Já no caso de contextos string, os tipos de contextos verificados estão relacionados a valores específicos "contidos" (valor de sinal <i>containValue</i>) ou "não contidos" (valor de sinal <i>notContainValue</i>) na lista de valores especificados. 
 
 ![](./templateXml2.png)
 Figura 2. Template de regras de adaptação apenas com contextos string
