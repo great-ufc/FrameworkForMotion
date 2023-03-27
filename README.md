@@ -76,7 +76,9 @@ O padrão Observer é utilizado em situações em que é necessário manter um e
 
 Algumas vantagens do padrão Observer incluem a facilidade de extensão, uma vez que novos objetos podem ser adicionados facilmente sem afetar o código existente, e a separação clara das responsabilidades de cada objeto, tornando o código mais modular e fácil de manter.
 
-### SUCCEED
+### SUCCEEd
+
+O Framework SUCCEEd (Junior, 2018) apresenta um conjunto de estruturas de modelagem para sistemas autoadaptativos, auxiliando a especificação de ações, estratégias e regras de adaptação. Ele pode auxiliar principalmente as etapas de planejamento e execução do loop de adaptação. Dentre de nosso framework utilizamos o SUCCEEd para auxiliar as especificação das ações, onde cada ação da aplicação herda da classe <i>Task2</i> do framework e implementa os métodos abstratos por ela fornecidos de modo a a permitie a utilização do modelo de orquestração de ações do SUCCEEd em nosso framework. 
 
 ### Grafo de classificação
 
