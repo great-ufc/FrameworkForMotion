@@ -326,13 +326,15 @@ Classe principal do módulo de monitoramento. Gerencia o monitoramento dos dados
 > - googleFitAllData:GoogleFitGetAllData?
 > - observers: MutableList<IMonitorObserver> 
   
+#### Methods that must not be changed
+  
+- update() - executa quando a classe principal do módulo de execução informa que as ações foram executadas (executa método sendUpdateEvent())
+  
 #### Methods that must be changed
 
 - Monitoring() - gerencia o monitoramento, obtendo os dados coletados dos sensores. Quando a janela de coleta é atingida informa a classe principal do módulo de análise (executa método sendUpdateEvent())
 
 > O usuário deve informar quais os sensores são coletados. O dados coletados devem ser armazenados em um atributo compartilhado da Activity principal (é possível usar o DataController)
-  
-- update() - executa quando a classe principal do módulo de execução informa que as ações foram executadas (executa método sendUpdateEvent())
 
 ### - ICollectorData.kt
   
@@ -465,10 +467,11 @@ Classe principal do módulo de análise. Gerencia a análise do contexto
 > - myFeatures:MutableList<VerticeFeature>
 > - observers: MutableList<IAnalysisObserver>
   
-#### Methods that must be not changed
+#### Methods that must not be changed
 
 - setContextList(energy:Double) - Preenche Lista de valores de Contexto (esses valores devem ser anaálisados para identificar se é preciso ou não que seja planejada uma adaptação)
 - setFeatureList(features:MutableList<VerticeFeature>) - Preenche lista de feeatures para análise e indicação do resultado a ser apresentado. Essas feeatures podem ou não fazer parte do contexto que afeta aescolha das ações e planejamento de adaptações
+-  update() - executa quando a classe principal do módulo de monitoramento informa que as ações foram executadas (executa método sendUpdateEvent())
   
 #### Methods that must be changed
 
@@ -479,12 +482,42 @@ Classe principal do módulo de análise. Gerencia a análise do contexto
   
 - KnowLedgeAnalysis(listContext:MutableList<Context>, knowledgeRepresentation:KnowledgeRepresentation ):ResultEntry - Analisa features e contexto com base na base de conhecimento e retorna a saída que deve ser apresentada ao usuário
   > Você não é obrigado a utilizar a base de conhecimento para análise, como sugerido, criando seu próprio método de análise. Caso use a base de conhecimento, é possível usar a nálise da base de conhecimento gerada a patir do grafo de classificação, como sugerido. Ou fazer uma nálise diferente e específica para aplicação sem o uso do grafo de classificação. 
-  
--  update() - executa quando a classe principal do módulo de monitoramento informa que as ações foram executadas (executa método sendUpdateEvent())
 
 ### - FeatureExtraction.kt 
 
-### - FeatureFunctions.kt 
+Classe responsável pela extração das features que são usadas para análise dos dados sos sensores
+  
+> Attributes
+> - context:BaseActivity
+  
+#### Methods that must not be changed
+  
+- SMV(axisX:Double, axisY:Double, axisZ:Double):Double - Tratamento de dado de sensores Triaxial, compilando os valores dos três sensores em apenas um valor com base na média dos quadrados dos valores de cada eixo. Esse valor é usado para preprocessamento dos valores dos sensores tiaxiais para posterior extração de features.
+  
+#### Methods that must be changed
+  
+- featureDataExtraction():MutableList<VerticeFeature> - Extrai features com base nos dados brutos coletados dos sensores
+  > O Desensolvedor deve gerar um métodos de preprocessamento dos dados brutos, caso preciso, antes de extrair as features. No exemplo base é proposto o preproessamento de valores de sensores triaxiais, como accelelerômetros e giroscóvpios, usando o valor da média dos quadrados dos valores dos eixos (square mean values - smv)
+
+- getFeatures(values:MutableList<Any>?): MutableList<VerticeFeature> - Retorna lista de features com base nos dados brutos ou preprocessados dos sensores
+  > O desenvolvedor deve modificar esse método para extrair as features que for necessa´rias para  anaálise. No caso de usar a base de conhecimento gerada a partir do grafo de classificação sugerido, é preciso que as features sejaam as mesma usadas como entrada para os modelos inteligentes treinados.
+  
+### - FeatureFunctions.kt
+  
+Classe que contém um conjunto de métodos de tratamento de dados para extração de features. Outros métodos podem ser adicionados pelo desenvolvedor.
+  
+#### Methods that must not be changed
+  
+- Mean(values: MutableList<Double>?):Double - Retorna a Média aritmética de uma lista de valores reais
+- Max(values: MutableList<Double>?):Double - Retorna o Maior valor de uma lista de valores reais
+- Min(values: MutableList<Double>?):Double - Retorna o Menor valor de uma lista de valores reais
+- STD(values: MutableList<Double>?):Double - Retorna o Desvio padrão de uma lista de valores reais
+- Kurtosis(values: MutableList<Double>?):Double - Retorna o valor de Kurtosis de uma lista de valores reais
+- Skewness(values: MutableList<Double>?):Double - Retorna o valor de Skewness de uma lista de valores reais
+- Entropy(values: MutableList<Double>?):Double - Retorna o valor de Entropia de uma lista de valores reais
+- MAD(values: MutableList<Double>?):Double - Retorna o Desvio médio absoluto de uma lista de valores reais
+- median(l:Int, n:Int):Int - Retorna do valor da Mediana de uma lista de valores
+- IQR(values: MutableList<Double>?): Double - Retorna o valor do Intervalo Interquatil de uma lista de valores reais
 
 ### [planning]
   
