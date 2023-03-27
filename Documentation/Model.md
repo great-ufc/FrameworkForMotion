@@ -471,7 +471,7 @@ Classe principal do módulo de análise. Gerencia a análise do contexto
 
 - setContextList(energy:Double) - Preenche Lista de valores de Contexto (esses valores devem ser anaálisados para identificar se é preciso ou não que seja planejada uma adaptação)
 - setFeatureList(features:MutableList<VerticeFeature>) - Preenche lista de feeatures para análise e indicação do resultado a ser apresentado. Essas feeatures podem ou não fazer parte do contexto que afeta aescolha das ações e planejamento de adaptações
--  update() - executa quando a classe principal do módulo de monitoramento informa que as ações foram executadas (executa método sendUpdateEvent())
+-  update() - executa quando a classe principal do módulo de monitoramento informa que o conjunto de dados que serão analisados já foram coletados e formatados (executa método sendUpdateEvent())
   
 #### Methods that must be changed
 
@@ -524,10 +524,34 @@ Classe que contém um conjunto de métodos de tratamento de dados para extraçã
 Classes relacionados ao módulo de planejamento
 
 ### - PlanningRolesManagement.kt (main module class)
-
+  
 Classe principal do módulo de planejamento. Gerencia o planejamento de ações
+  
+> Attributes
+> - context:BaseActivity
+> - adaptationActions:MutableList<String>
+> - resultEntry:ResultEntry?
+> - changeContext:Boolean
+> - observers: MutableList<IPlanningObserver>
 
-### - ReadAdaptationXML.kt
+#### Methods that must not be changed
+  
+- Plan() - Principal método da classe. Esse método é responsável pelo planejamento das ações que serão executas pela aplicação. Caso no módulo de análise não seja indicado que é ncessário uma adaptação, é chamdo o módulo de execução sem que um novo planejamento seja feito, casoc contrário o método de planejamento e escolha de novas ações com base nas regras de adaptação é chamada. 
+- update() - executa quando a classe principal do módulo de análise informa que a análise do contexto e features já foi executada (executa método sendUpdateEvent())
+  
+#### Methods that must be changed
+  
+- ChoiceActions(contexts:MutableList<Context>):MutableList<String> - Método responsável pelo planejemnto e escolha das ações que devem ser executadas pela aplicação caso seja necessário haver alguma adaptação ou caso seja a primeira execução do loop MAPE-K.
+> As regras de adaptação podem ser definidas no código pelo desensolvedor ou em um documento a parte. No eemplo base usamos um aquivo xml onde são especificadas as regras de adaptação seguindo o template proosto pelos autores do framework. Esse arquivo pode ser disponibilizado localmente ou para download a partir de um servidor, nesse segundo caso é proposto o uso de uma API. Um exemplo dessa API e do arquivo pode ser visto [aqui](../AdaptationRulesApi)
+
+### - ReadAdaptationXML.kt (Optional)
+
+Classe responsável pela leitura do arquivo que contém as regras de adaptação. Essa classe é opcional caso o desenvolvedor opite por não utilizar um arquivo para representação das regras de adaptação.
+  
+#### Methods that must not be changed
+  
+- readXML(context:BaseActivity) - Ler arquivo com as regras de adapção, preenche um objeto <i>AdaptationRules</i> e retorna esse objeto
+- downloadXML(url:String):String - Baixa o arquivo com o template de regras de adaptação usando a API no servidor. 
 
 ### [execution]
   
@@ -537,7 +561,25 @@ Classes relacionados ao módulo de execução
   
 Classe principal do módulo de planejamento. Gerencia o planejamento de ações
   
+> Attributes
+> - context:BaseActivity
+> - dynamicActions:MutableList<String>
+> - resultEntry:ResultEntry?
+> - observers: MutableList<IExecutionObserver>
 
+#### Methods that must not be changed
+- update() - executa quando a classe principal do módulo de planejamento informa que o planejamento foi finalizado (executa método sendUpdateEvent())
+  
+#### Methods that can be changed
+  
+- activitiesExecute() -  método principal da classe. Reponsável pela execução das ações da aplicação. 
+> Você pode modificar a maneira como verifica se ocorreu adaptação e a ordem que executa as ações, mas pode manter o mesmo procesidmento e só alterar o tempo final de espera para que um novo loop MAPE-K reinicie
+
+#### Methods that must be changed
+-  getActions(actions:MutableList<String>, currentActions:MutableList<String>):MutableList<Task2> - Seleciona as ações que devem ser executadas
+> Você deve informar aqui as ações principais que são executas pela sua aplicação
+ 
+  
 
 ### - Action.kt
 
@@ -555,7 +597,6 @@ Classes relacionados a gerência de conhecimento
   
 Classe principal do módulo de gerência de conhecimento. Gerencia a base de conhecimento
 
-  
   
 
 ## [path utils]
