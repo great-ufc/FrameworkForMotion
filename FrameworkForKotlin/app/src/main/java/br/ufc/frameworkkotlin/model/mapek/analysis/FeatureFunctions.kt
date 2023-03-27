@@ -104,10 +104,4 @@ class FeatureFunctions {
 
     }
 
-    /*
-        features.add(new VerticeFeature((float)MAD(smvValues), "accMAD"));//  Median_absolute_deviation
-        features.add(new VerticeFeature((float)IQR(smvValues), "accIQR"));//  iqr
-        */
-
-
 }

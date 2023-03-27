@@ -6,6 +6,7 @@ import android.content.Context
 import android.util.Log
 import br.ufc.frameworkkotlin.model.mapek.monitoring.GoogleFit.GoogleFitAPI
 import br.ufc.frameworkkotlin.model.utils.DateUtil
+import br.ufc.frameworkkotlin.controllers.DataController
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.fitness.Fitness
 import com.google.android.gms.fitness.data.DataSet
@@ -27,19 +28,19 @@ class GoogleFitGetAllData(val api: GoogleFitAPI) {
         }
     }
 
-    private fun getData(context: Context, dataController: br.ufc.frameworkkotlin.controllers.DataController) {
+    private fun getData(context: Context, dataController: DataController) {
         getDataStatic(context, dataController)
     }
 
     companion object{
 
-        fun getDataStatic(context: Context, dataController: br.ufc.frameworkkotlin.controllers.DataController) {
+        fun getDataStatic(context: Context, dataController: DataController) {
             val beginDate = DateUtil.getBeginDateForRegistersLong()
             val endDate = DateUtil.getEndDateForRegistersLong()
             getDataStatic(context, dataController, beginDate, endDate)
         }
 
-        fun getDataStatic(context: Context, dataController: br.ufc.frameworkkotlin.controllers.DataController, beginDate: Long, endDate: Long) {
+        fun getDataStatic(context: Context, dataController: DataController, beginDate: Long, endDate: Long) {
             val dataTypeList = mutableListOf<DataType>(
                 DataType.AGGREGATE_STEP_COUNT_DELTA,
                 DataType.AGGREGATE_CALORIES_EXPENDED,
@@ -58,7 +59,7 @@ class GoogleFitGetAllData(val api: GoogleFitAPI) {
             accessSleepData(context, dataController, beginDate, endDate)
         }
 
-        private fun accessGoogleFit(dataType: DataType, context: Context, dataController: br.ufc.frameworkkotlin.controllers.DataController, beginDate: Long, endDate: Long) {
+        private fun accessGoogleFit(dataType: DataType, context: Context, dataController: DataController, beginDate: Long, endDate: Long) {
             val readRequest = DataReadRequest.Builder()
                 .read(dataType)
                 .enableServerQueries()
@@ -99,7 +100,7 @@ class GoogleFitGetAllData(val api: GoogleFitAPI) {
             return true
         }
 
-        private fun getBodyMeasures(dataType: DataType, context: Context, dataController: br.ufc.frameworkkotlin.controllers.DataController){
+        private fun getBodyMeasures(dataType: DataType, context: Context, dataController: DataController){
             val readRequest = DataReadRequest.Builder()
                 .read(dataType)
                 .setLimit(1)
@@ -128,7 +129,7 @@ class GoogleFitGetAllData(val api: GoogleFitAPI) {
                 }
         }
 
-        private fun getHeartRate(context: Context, dataController: br.ufc.frameworkkotlin.controllers.DataController, beginDate: Long, endDate: Long){
+        private fun getHeartRate(context: Context, dataController: DataController, beginDate: Long, endDate: Long){
             val dataType = DataType.TYPE_HEART_RATE_BPM
 
             val readRequest = DataReadRequest.Builder()
@@ -161,7 +162,7 @@ class GoogleFitGetAllData(val api: GoogleFitAPI) {
                 }
         }
 
-        private fun accessSleepData(context: Context, dataController: br.ufc.frameworkkotlin.controllers.DataController, beginDate: Long, endDate: Long){
+        private fun accessSleepData(context: Context, dataController: DataController, beginDate: Long, endDate: Long){
             val dataType = DataType.TYPE_SLEEP_SEGMENT
             val request = SessionReadRequest.Builder()
                 .read(dataType)

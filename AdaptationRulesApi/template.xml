@@ -1,0 +1,42 @@
+<adaptationRules>
+	<adaptation>
+		<action>idAction1</action>
+		<contextList>
+			<context>
+				<name>idContext1</name>
+				<signal>equal</signal>
+				<value>idContext1Threshold</value>
+			</context>
+			<context>
+				<name>idContext2</name>
+				<signal>greaterthan</signal>
+				<value>idContext2Threshold</value>
+			</context>
+			<context>
+				<name>idContext3</name>
+				<signal>lessthan</signal>
+				<value>idContext3Threshold</value>		
+			</context>	
+		</contextList>		
+	</adaptation>
+		<adaptation>
+		<action>idAction2</action>
+		<contextList>
+			<context>
+				<name>idContext4</name>
+				<signal>containValue</signal>
+				<value>"value1"; "value2"; "value3"</value>
+			</context>		
+		</contextList>
+	</adaptation>
+	<adaptation>
+		<action>idAction3</action>
+		<contextList>
+			<context>
+				<name>idContext5</name>
+				<signal>notContainValue</signal>
+				<value>"value1"; "value2"; "value3"</value>
+			</context>		
+		</contextList>
+	</adaptation>
+</adaptationRules>
