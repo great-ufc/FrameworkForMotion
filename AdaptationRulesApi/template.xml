@@ -1,4 +1,5 @@
 <adaptationRules>
+	<adaptationList>
 	<adaptation>
 		<action>idAction1</action>
 		<contextList>
@@ -39,4 +40,5 @@
 			</context>		
 		</contextList>
 	</adaptation>
+	</adaptationList>
 </adaptationRules>
