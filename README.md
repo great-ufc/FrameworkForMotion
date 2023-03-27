@@ -21,7 +21,7 @@ Aqui apresentaremos uma breve fundamentação teórica sobre aplicações IoHT b
 
 ### Sistemas Auto Adaptivos
 
-Os sistemas auto-adaptativos são capazes de monitorar e ajustar seu próprio comportamento em resposta às mudanças nas condições do ambiente, com o objetivo de melhorar sua eficiência e eficácia. Para o desenvolimento desses sistemas é necessário implementar um ciclo de adaptação que permita monitorar o contexto e a adaptar o comportamento da aplicação  quando desejado. Esse ciclo de adaptação costuma ser modelado com base no ciclo de gerenciamento MAPE-K proposto pela IBM no incício dos anos 2000 [1]
+Os sistemas auto-adaptativos são capazes de monitorar e ajustar seu próprio comportamento em resposta às mudanças nas condições do ambiente, com o objetivo de melhorar sua eficiência e eficácia. Para o desenvolimento desses sistemas é necessário implementar um ciclo de adaptação que permita monitorar o contexto e a adaptar o comportamento da aplicação  quando desejado. Esse ciclo de adaptação costuma ser modelado com base no ciclo de gerenciamento MAPE-K proposto pela IBM no incício dos anos 2000 (IBM, 2003)
 
 ### Ciclo MAPE-K
 
@@ -126,6 +126,8 @@ A seguir detalhamos as classes e que trechos delas devem, ou não, ser alterados
 
 # Referências
 
-[1] IBM. 2003. An architectural blueprint for autonomic computing. Tech. rep., IBM.
+IBM. 2003. An architectural blueprint for autonomic computing. Tech. rep., IBM.
+
+JUNIOR, B. R.; ANDRADE, R. M.; MAIA, M. E.; NOGUEIRA, T. P. Succeed: Support mechanism for creating and executing workflows for decoupled sas in iot. In: IEEE. 2018 IEEE 42nd Annual Computer Software and Applications Conference (COMPSAC). [S. l.], 2018. v. 2, p. 738–743.
 
 ...
