@@ -4,7 +4,7 @@ O objetivo desse template é fornecer um mecanismo que permita auxiliar a repres
 
 A versão atual do template pode ser visto [aqui](./template.xml) contemplando os elementos usados para sua manipulação. O arquivo contém uma lista de regras de adaptações <adaptationRules>. Para cada adaptação <adaptation> existe uma ação ou plano de ação <action> e uma lista de contextos a serem verificados <contextList>. Para cada contexto em um lista <context> existe um identificador do contexto <name>, um sinal <signal>, que identifica o tipo de verificação a ser feita no contexto, e o valor limiar <value>, ou lista de valores, que o contexto deve assumir para que adaptação seja executada.
   
-![](./templateXml.png)
+<img src="./templateXml.png" width="50%" heigth="50%" >
 
 Figura 1. Template de regras de adaptação apenas com contextos numéricos
   
