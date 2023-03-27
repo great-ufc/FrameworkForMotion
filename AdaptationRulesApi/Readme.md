@@ -1,4 +1,9 @@
-# Template de Regras de Adaptação
+# Sobre essa API
+
+Essa API foi criada para disponibilizar um conjunto de regras de adaptação para uma apicação mobile que se adaptada de acordo com o nível de bateria do dispositivo. O Arquivo contendo as regras de adaptação segue o template de regras de adaptação que propomos e que é descrito abaixo e está disponível na pasta download.
+
+
+## Template de Regras de Adaptação
 
 O objetivo desse template é fornecer um mecanismo que permita auxiliar a representação das regras de adaptação com base em um mecanismo simples de inferência, que verifica, dado um valor de contexto, ou um conjunto de valores de contexto identificados, se uma ação específica deve ser tomada.  Porém, é importante destacar que o template não indica como as ações, ou planos de ações, devem ser executados, mas apenas prover um meio de auxiliar a identificação de que ação, ou plano de ação, deve ser executado, considerando cada regra especificada. A versão atual do template utiliza arquivos em formatos ".xml", que podem ser compartilhados e editados enquanto a aplicação está em execução. 
 
