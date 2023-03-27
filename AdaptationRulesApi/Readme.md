@@ -1,2 +1,2 @@
-## Template de Regras de Adaptação
+# Template de Regras de Adaptação
 
