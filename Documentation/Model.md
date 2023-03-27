@@ -459,8 +459,29 @@ Classes relacionados ao módulo de análise
   
 Classe principal do módulo de análise. Gerencia a análise do contexto
 
+> Attributes
+> - context:BaseActivity
+> - contextList:MutableList<Context>
+> - myFeatures:MutableList<VerticeFeature>
+> - observers: MutableList<IAnalysisObserver>
   
+#### Methods that must be not changed
+
+- setContextList(energy:Double) - Preenche Lista de valores de Contexto (esses valores devem ser anaálisados para identificar se é preciso ou não que seja planejada uma adaptação)
+- setFeatureList(features:MutableList<VerticeFeature>) - Preenche lista de feeatures para análise e indicação do resultado a ser apresentado. Essas feeatures podem ou não fazer parte do contexto que afeta aescolha das ações e planejamento de adaptações
   
+#### Methods that must be changed
+
+-   featureAnalysis() - Método principal da classe. Com base na base de conhecimento e/ou nas features executa análise das features e do contexto e indica aos seu observadores (modulo de planejamento) o resultado a ser apresentado e se épreciso ou não executar a adaptação das ações do app. Essa análisa das ações é feita com base nas regras de adaptação previamente projetadas e presentes no código ou em um arquivo.
+  > O autor propõe um modelo de um arquivo xml para especificação das regras de adaptação, esse arquivo xml pode ser disponibilizado localmente ou para download a partir de um servidor, nesse segundo caso é proposto o uso de uma API. Um exemplo dessa API e do arquivo pode ser visto [aqui](../AdaptationRulesApi)
+  
+- CurrentContextManager(listContext:MutableList<Context>, planRoles: PlanningRolesManagement):Boolean - Avalia se houve uma mudança no contexto que necessite que seja feita uma adaptação nas ações executadas pela aplicação.
+  
+- KnowLedgeAnalysis(listContext:MutableList<Context>, knowledgeRepresentation:KnowledgeRepresentation ):ResultEntry - Analisa features e contexto com base na base de conhecimento e retorna a saída que deve ser apresentada ao usuário
+  > Você não é obrigado a utilizar a base de conhecimento para análise, como sugerido, criando seu próprio método de análise. Caso use a base de conhecimento, é possível usar a nálise da base de conhecimento gerada a patir do grafo de classificação, como sugerido. Ou fazer uma nálise diferente e específica para aplicação sem o uso do grafo de classificação. 
+  
+-  update() - executa quando a classe principal do módulo de monitoramento informa que as ações foram executadas (executa método sendUpdateEvent())
+
 ### - FeatureExtraction.kt 
 
 ### - FeatureFunctions.kt 
