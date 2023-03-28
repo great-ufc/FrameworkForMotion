@@ -6,7 +6,11 @@ O pacote <b>res</b> contém os elmentos visuais de cada tela da aplicação. O F
 
 ## User Interface [path ui]
 
+Contém as Activities e Fragmentos que controlam as telas da aplicação e seus componentes
+
 ### [path CommonActivities] BaseActivity.kt
+
+Classe base para uso da Activity Principal e pelas classes controladoras e modelo. Contem elementos necessários para manipulação de informações do dispositivos, sensores e armazenamento de dados que s~eo necessáris para construção da aplicação IoHT au
 
 #### Código que não deve ser alterado
 
