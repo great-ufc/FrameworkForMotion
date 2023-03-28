@@ -82,7 +82,9 @@ O Framework SUCCEEd (Junior, 2018) apresenta um conjunto de estruturas de modela
 
 ### Grafo de classificação
 
-available in : https://github.com/great-ufc/ClassificationGraphSolutionforIoHT
+We propose a model to build a classification graph that aims to provide a way to handle the interoperability of sensors and the analysis of these data, providing a solution that can be reused by several IoHT applications or that can be built focusing on a specific application, also allowing to minimize part of the cost of developing IoHT applications. The proposed classification graph relates sensors, features, classification algorithms, activities, or health situations. We combine common practices in the literature to create this artifact to recognize types of movement, risk situations, or health problems from data collected from datasets with sensor data related to IoHT solutions. Also, we can use the graph to help process activities related to requirements elicitation and choice of reusable components by indicating the sensors and possible health states that can be monitored by the sensors present in them. The classification graph is also possible as a knowledge base for IoHT applications, including self-adaptive IoHT applications. Finally, we present a process to optimize the classification graph based on sensors used for each application.
+
+The code used to create a Classification Graph for the test application generted for test this framework available in : https://github.com/great-ufc/ClassificationGraphSolutionforIoHT
 
 # User Manual
 
