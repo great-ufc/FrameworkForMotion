@@ -18,14 +18,11 @@ class LoginActivity : BaseActivity() {
 
         loginController = LoginController(this)
 
-       /* btnSignIn.setOnClickListener {
+       /*
+       btnSignIn.setOnClickListener {
             loginController.signIn()
-        }*/
-
-/*
-        if(loginController.isLogged()){
-            this.startActivity(Intent(this.baseContext, MenuActivity::class.java))
-        }*/
+        }
+        */
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

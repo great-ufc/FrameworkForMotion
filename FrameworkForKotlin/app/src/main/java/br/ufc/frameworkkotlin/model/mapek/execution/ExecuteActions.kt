@@ -42,6 +42,7 @@ class ExecuteActions(val context:BaseActivity) :IExecutionObservable,IPlanningOb
             action.evaluate(resultEntry!!.finalStatus)
         }
 
+        //final wait time for a new MAPE-K loop to restart
         Thread.sleep(5000)
         sendUpdateEvent()
 

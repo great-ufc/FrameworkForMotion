@@ -87,7 +87,7 @@ class ReadAdaptationXML {
             return adaptationRules!!
         }
 
-        //Executa Download
+        //Download
         fun downloadXML(url:String):String {
             val client = OkHttpClient()
             val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()

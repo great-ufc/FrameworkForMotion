@@ -2,7 +2,9 @@
 //------Action Sample Class-----//
 package br.ufc.frameworkkotlin.model.mapek.execution
 
+import android.util.Log
 import br.ufc.frameworkkotlin.ui.CommonActivities.BaseActivity
+import br.ufc.frameworkkotlin.ui.MainActivity
 import task.Task2
 
 class AudioAction:Task2() {
@@ -13,17 +15,10 @@ class AudioAction:Task2() {
     }
 
     override fun executar() {
-        ///Choice what it should executed if a specific action triggered
-
-        /*AlarmActivity.finalStatus = MainActivity.finalStatus
-        while (!AlarmActivity.stopAction) {
-            try {
-                sleep(1000)
-            } catch (e: InterruptedException) {
-                e.printStackTrace()
-            }
-        }
-        AlarmActivity.finalStatus = ""*/
+        MainActivity.flagMonitoring = true
+        //MainActivity.texto = "Danger"
+        MainActivity.texto = BaseActivity.finalStatus !!
+        Log.i("Audio status",BaseActivity.finalStatus !! )
     }
 
     override fun retorno(): Any? {
