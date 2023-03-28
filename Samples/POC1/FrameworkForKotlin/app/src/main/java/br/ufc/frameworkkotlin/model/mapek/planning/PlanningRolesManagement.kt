@@ -14,8 +14,7 @@ import br.ufc.frameworkkotlin.ui.CommonActivities.BaseActivity
 import evaluators.Assignment
 import evaluators.Filter
 
-class PlanningRolesManagement(val context:BaseActivity):
-    Filter(),IAnalysisObserver,IPlanningObservable {
+class PlanningRolesManagement(val context:BaseActivity): IAnalysisObserver,IPlanningObservable {
 
     private var adaptationActions = mutableListOf<String>()
     override val observers: MutableList<IPlanningObserver> = mutableListOf()
@@ -81,9 +80,6 @@ class PlanningRolesManagement(val context:BaseActivity):
         return actions
     }
 
-    override fun filter(p0: Assignment?): Boolean { return false}
-    override fun evaluate():Boolean{ return false}
-    override fun execute(){}
     override fun update() {
         Plan()
     }

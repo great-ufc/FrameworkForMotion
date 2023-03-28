@@ -29,27 +29,8 @@ class DateUtil {
             return cal.time
         }
 
-        fun getBeginDateForRegisters(ref: Date): Date {
-            val cal = Calendar.getInstance()
-            cal.time = ref
-            cal.add(Calendar.DAY_OF_MONTH, -1)
-            cal.set(Calendar.HOUR_OF_DAY, START_HOUR)
-            cal.set(Calendar.MINUTE, 0)
-            cal.set(Calendar.SECOND, 0)
-            return cal.time
-        }
-
         fun getEndDateForRegisters(): Date {
             val cal = Calendar.getInstance()
-            cal.set(Calendar.HOUR_OF_DAY, END_HOUR)
-            cal.set(Calendar.MINUTE, 59)
-            cal.set(Calendar.SECOND, 59)
-            return cal.time
-        }
-
-        fun getEndDateForRegisters(ref: Date): Date {
-            val cal = Calendar.getInstance()
-            cal.time = ref
             cal.set(Calendar.HOUR_OF_DAY, END_HOUR)
             cal.set(Calendar.MINUTE, 59)
             cal.set(Calendar.SECOND, 59)

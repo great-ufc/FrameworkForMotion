@@ -59,27 +59,7 @@ class KnowledgeManagement (val context:BaseActivity) {
         return fileChannel.map(FileChannel.MapMode.READ_ONLY, startOffset, declaredLenght)
     }
 
-    //from cloud
-    private fun buildlocalKnowledgeRepresentationCloud(assetManager:AssetManager
-    ): KnowledgeRepresentation {
-        //ler arquivo
-        var knowledge = KnowledgeRepresentation( mutableListOf(),
-                                                 mutableListOf(),
-                                                 mutableListOf())
-        try {
-            val xstream = XStream(DomDriver())
-            val inputStream: InputStream = assetManager.open("graph.xml")
-            knowledge = xstream.fromXML(inputStream) as KnowledgeRepresentation
-            assetManager.close()
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
-        return knowledge
-    }
-
-
       companion object {
-
           
     //for local test
           fun buildlocalKnowledgeRepresentationLocal(
@@ -183,6 +163,6 @@ class KnowledgeManagement (val context:BaseActivity) {
         }
      }
 
-    //upload to cloud
-    fun datasetUpload(assetManager:AssetManager) {}
+    //Optional method for upload data to classification graph system on cloud server
+    fun datasetUpload() {}
 }

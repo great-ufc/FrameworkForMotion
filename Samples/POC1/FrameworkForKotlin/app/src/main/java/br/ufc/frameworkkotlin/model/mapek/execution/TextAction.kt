@@ -16,21 +16,10 @@ class TextAction: Task2() {
     }
 
     override fun executar() {
-        ///Escolha o que deve ser executado se uma ação específica for disparada
-
-        /*AlarmActivity.finalStatus = MainActivity.finalStatus
-        while (!AlarmActivity.stopAction) {
-            try {
-                sleep(1000)
-            } catch (e: InterruptedException) {
-                e.printStackTrace()
-            }
-        }
-        AlarmActivity.finalStatus = ""*/
         MainActivity.flagMonitoring = true
         //MainActivity.texto = "Danger"
         MainActivity.texto = BaseActivity.finalStatus !!
-        Log.i("status",BaseActivity.finalStatus !! )
+        Log.i("Text status",BaseActivity.finalStatus !! )
     }
 
     override fun retorno(): Any? {

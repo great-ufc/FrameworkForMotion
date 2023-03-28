@@ -8,8 +8,9 @@ import android.content.ContentValues
 import android.content.Context
 import br.ufc.frameworkkotlin.model.dao.repository.Repository
 import br.ufc.frameworkkotlin.model.dao.DBEntities.Pessoa
+import br.ufc.frameworkkotlin.model.dao.interfaces.IPessoaRepository
 
-class PessoaRepository(val context: Context ): Repository(context,TABLENAME, lstCols) {
+class PessoaRepository(val context: Context ): Repository(context,TABLENAME, lstCols), IPessoaRepository {
 
     override fun setContentValues() { }
 
@@ -19,13 +20,13 @@ class PessoaRepository(val context: Context ): Repository(context,TABLENAME, lst
             mutableListOf(Triple("Nome", "TEXT", true))
     }
 
-    fun Add(pessoa: Pessoa){
+    override fun Add(pessoa: Pessoa){
         val values = ContentValues().apply { put("Nome", pessoa.nome) }
         super.Add(values)
     }
 
     @SuppressLint("Range")
-    fun GetPersonById(id: Int): Pessoa {
+    override fun GetPersonById(id: Int): Pessoa {
         val cursor = super.GetById(id)
         cursor?.moveToFirst()
         val pessoa = Pessoa()
@@ -35,7 +36,7 @@ class PessoaRepository(val context: Context ): Repository(context,TABLENAME, lst
     }
 
     @SuppressLint("Range")
-    fun getAll(): MutableList<Pessoa> {
+    override fun getAll(): MutableList<Pessoa> {
         val cursor = super.GetAll()
         val pessoas = mutableListOf<Pessoa>()
         while(cursor!!.moveToNext()){

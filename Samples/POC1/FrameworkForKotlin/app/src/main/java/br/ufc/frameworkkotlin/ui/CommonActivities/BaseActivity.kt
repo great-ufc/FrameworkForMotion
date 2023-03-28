@@ -62,10 +62,5 @@ abstract class BaseActivity : AppCompatActivity() {
         toast.show()
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
-        finish()
-        return true
-    }
 
 }
