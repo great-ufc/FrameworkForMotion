@@ -62,16 +62,57 @@ Exemplo de classe referente ao controle da tela principal do App. Todo App Andro
 
 ```Change these attributes for specific app customize```
   
-> User customize attributes (all optionals)
+> User customize attributes (all optionals) (Only for app Framework Sample)
+> - googleFitStepData:GoogleFitStepData
+> - textview_first: TextView
+> - textview_second: TextView
+> - textview_third: TextView
+> - button: Button
+> - buttonStart: Button
+> - buttonStartMonitoring: Button
+> - buttonStop: Button
+> - buttonChangeBattery: Button
+> - appBarConfiguration: AppBarConfiguration
+> - binding: ActivityMainBinding
+> - stop:Boolean
+> - fitstepInfo: String
   
+```If you run the Framework without changing anything, it will generate an example application to test some of the framework's features.```
   
 #### Methods that must not be changed
-
+  
+- override fun onCreate(savedInstanceState: Bundle?) - Método chamado quando a activity é lançada. Alguns linhas de código/elementos nesse método são obrigrtórios, as demais linhas da classe podem ou devem ser customizadas para a plicação a ser desenvolvida. Os elementos obrigatórios são:
+> MAPE-K initiate
+   ```
+   val monitor = DataManagement(this) 
+   val analysis = DataAnalysis(this)
+   val planning = PlanningRolesManagement(this)
+   val execution = ExecuteActions(this)
+   monitor.observers += analysis
+   analysis.observers += planning
+   planning.observers += execution
+   execution.observers += monitor
+   ```
+  
 #### Methods that must  be changed
 
-#### Código que deve ser Alterado
+- onAccuracyChanged(sensor: Sensor?, accuracy: Int) - Executa quando a acurácia do sensor é alterada. É um método obrigatório para activities que herdam de <i>SensorEventListener</i>. Esse listener é usado para evento de coleta de dados dos sensores do dispositivo
 
 #### Methods that can be changed
-
   
+- override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) - Método chamado quando a tela ao qual está associada a Activity é chamada ou quando volta-se para esta tela recebendo o resultado de uma Intent
+
+#### User customize Methods (Optional) (Only for app Framework Sample)
+  
+- oAuthErrorMsg(requestCode: Int, resultCode: Int) - Apresenta mensagem de erro de acesso ao Google Fit
+- onCreateOptionsMenu(menu: Menu): Boolean - Cria Opções do Menu de Navegação
+- onOptionsItemSelected(item: MenuItem): Boolean - Executa ação ao selecionar um elemento do Menu de Navegação
+- onSupportNavigateUp(): Boolean - Cria Menu de Navegação
+- onResume() - Executa quando a tela referente a activity está em primeiro plano
+- onPause() - Executa quando a tela referente a activity deixa o primeiro plano
+- onSensorChanged(event: SensorEvent ?) - Executa quando os sensores coletam um valor.
+  
+  
+### Other Activities 
+
 Para cada tela da aplicação é comum se ter uma cativity associada para controle do componente dessas telas. Cabe a equipe de desenvolvimento projetar e implementar essas outras activities, caso necessário.
