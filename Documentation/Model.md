@@ -22,7 +22,7 @@ Essa clase contém o métodos para download do grafo de classificação, a cria�
 
 ```diff
 Nós recomendamos o uso do grafo de classificação, no entanto os desenvolvedores não são obrigados a utilizá-lo, cabendo aos 
-mesmos, no caso de não usar o grafo, decidir como construir a representação de sua base de conhecimento para  aplicação. Nessa 
+mesmos, no caso de não usar o grafo, decidir como construir a representação de sua base de conhecimento para aplicação. Nessa 
 situação essa classe se torna opcional.
 ```
 
