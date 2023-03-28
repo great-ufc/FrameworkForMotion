@@ -140,4 +140,18 @@ IBM. 2003. An architectural blueprint for autonomic computing. Tech. rep., IBM.
 
 JUNIOR, B. R.; ANDRADE, R. M.; MAIA, M. E.; NOGUEIRA, T. P. Succeed: Support mechanism for creating and executing workflows for decoupled sas in iot. In: IEEE. 2018 IEEE 42nd Annual Computer Software and Applications Conference (COMPSAC). [S. l.], 2018. v. 2, p. 738–743.
 
+] J. J. Rodrigues, D. B. D. R. Segundo, H. A. Junqueira, M. H. Sabino, R. M. Prince, J. Al-Muhtadi, and V. H. C. De Albuquerque, “Enabling technologies for the internet of health things,” IEEE Access, vol. 6, pp. 13 129–13 141, 2018
+
+P. A. M. de Oliveira, R. M. Andrade, P. d. A. S. Neto, and B. S. Oliveira, “Internet of health things for quality of life: Open challenges based on a systematic literature mapping.” in HEALTHINF, 2022, pp. 397–40
+
+H. Park, S. Hong, I. Hussain, D. Kim, Y. Seo, S. J. Park, Gait monitoring system for stroke prediction of aging adults, in: International Conference on Applied Human Factors and Ergonomics, Springer, 2020, pp. 93–97.
+
+M. Haghi, K. Thurow, R. Stoll, Wearable devices in medical internet of things: scientific research and commercially available devices, Healthcare informatics research 23 (1) (2017) 4–15.
+
+X. J. Cai, J. I. E. Ignacio, E. F. Mendoza, D. J. F. Rabino, R. P. G. Real, E. A. Roxas, Iot-based gait monitoring system for static and dynamic classification of data, in: 2018 IEEE 10th International Conference on Humanoid, Nanotechnology, Information Technology, Communication and Control, Environment and Management (HNICEM), IEEE, 2018, pp. 1–4.
+
+S. Qiu, Z. Wang, H. Zhao, L. Liu, J. Li, Y. Jiang, G. Fortino, Body sensor network based robust gait analysis: Toward clinical and at home use, IEEE Sensors Journal.
+
+I. L. de Ara ́ujo, L. Dourado, L. Fernandes, R. M. d. C. Andrade, P. A. C. Aguilar, An algorithm for fall detection using data from smartwatch, in: 2018 13th Annual Conference on System of Systems Engineering (SoSE), IEEE, 2018, pp. 124–131.
+
 ...
