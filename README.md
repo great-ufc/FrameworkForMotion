@@ -26,6 +26,9 @@ Aqui apresentaremos uma breve fundamentação teórica sobre aplicações IoHT b
 
 ### Sistemas IoHT baseados em padrões de movimento 
 
+The Internet of Health Things (IoHT) is a term used to describe the various types of connected devices and sensors that are used to monitor and track data, and health conditions (Rodrigues et al. 2018). These devices range from wearables such as fitness trackers and smartwatches to medical equipment such as heart monitors and insulin pumps to apps and services that allow users to track their diet and exercise. The data collected by these devices is then analyzed to gain insights into a person’s health status and to help them make informed decisions about their quality of life and health (Oliveira et al. 2022). 
+
+In recent years, the use IoHT applications that identify movement patters turned common. The IoHT applications, in particular, use devices for monitoring different physiological data of patients, allows identifying not only pre-existing health problems but also possible situations of health risk, such as falls or stroke (Park et al. 2016) (Haghi et al. 2017) (Cai et al. 2018) (Qiu et al. 2018) (Araújo et al. 2018).
 
 ### Sistemas Auto Adaptivos
 
