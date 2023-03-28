@@ -1,15 +1,23 @@
 # Framework Kotlin (for Assist Motion Process)
 
-...
+Esse framework foi desenvolvido em Kotlin e tem como objetivo auxiliar o desenvolvimento de aplicaçãoes IoHT autoadaptativas para dispositivos android. Nesse documento nós apresentamos os principais elementos que compõem esse framework e o manual de uso do mesmo.
 
-<*--> Utiliza o padrão arquitetural MVC para composiação de sua arquitetua, com a adaptação de separar a camada de View em duas, sendo uma a View e outra a camada de Activities e Fragments. Também prover classe para utilizar os padrões DAO e Repositório para manipulação dos dados do banco de dados SQL Lite no dispositivo. Além disso, usa o padrão de software Observer para comunicação entre as classes principais de cada um dos módulos do Ciclo de adaptação MAPE-K. Por fim, reusa o grafo de classificação proposto por pelos autores do framework como base de conhecimento e o framework SUCCEED para auxiliar a construção das ações na etapa de Execução. </--*>
 
 # Descrição Geral
 
-*Visão Geral*
-![](./Documentation/Images/VisaoGeral.png)
+A Figura 1 mostra uma visão geral do framework padrão arquitetural MVC para composição de sua arquitetua, com a adaptação de separar a camada de View em duas, sendo uma camada View, composta pelas telas da aplicação, e uma outra camada contendo as Activities e Fragments que controlam o funcionamento das telas e seus componentes. 
 
-[Diagrama de Classes](https://drive.google.com/file/d/1-QNAw4qUGligPNhtXTZ_DeecIpvcVMOX/view?usp=sharing)
+<p align="center">
+<img src="./Documentation/Images/VisaoGeral.png" width="50%" heigth="50%" >
+</p>
+  
+  <p align="center">Figura 1. Visão Geral do framework</p>
+
+As aplicações desenvolvidas usando nosso framework seguem o meta-modelo MAPE-K para implementação do loop de adaptação e para tal foram desenvolvidos módulos com classe para cada uma das etadas do loop MAPE-K. Além disso, o framework usa o padrão de software Observer para comunicação entre as classes principais de cada um dos módulos  do loop de adaptação MAPE-K. Para facilitar a composição da base de conhecimento da aplicação criamos classes que proveem métodos para download e utilização do grafo de classificação proposto pelos autores do framework que permite o relacionamento de diversos sensores, fetures baseadas nesses sensores, modelos inteligentes treinados com base nessas features e estados finais que representam padrões de movimentação ou estados de saúde que podem ser inferidos combase nos modelos inteligentes treinados. 
+
+Também propomos o reuso do template de regras de adaptação proposto pelos autores para criação de um arquivo para definição das regras de adaptação da aplicação. As regras de adaptação nesse arquivo podem ser alteradas sem que seja necessário modificar diretamente a aplicação, permitindo que essa mudança ocorra mesmo com aplicação em  execução. Além disso, utilizamos também o framework SUCCEED (Junior, 2018) para auxiliar a construção das ações na etapa de Execução. Por fim, para manipulação dos dados do banco de dados SQL Lite no dispositivo criamos um conjunto de classes utiliando os padrões DAO e Repositório. 
+
+[Clicando aqui você pode ver o Diagrama de Classes do framework](https://drive.google.com/file/d/1-QNAw4qUGligPNhtXTZ_DeecIpvcVMOX/view?usp=sharing)
 
 
 # Fundamentação Teórica
