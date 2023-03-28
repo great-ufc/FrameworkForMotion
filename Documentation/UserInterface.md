@@ -60,7 +60,7 @@ Exemplo de classe referente ao controle da tela principal do App. Todo App Andro
 > - mGyroscope : Sensor
 > - dbPessoa: IPessoaRepository (Person DBEntity Sample)
 
-´´´ Change these attributes for specific app customize´´´
+```Change these attributes for specific app customize```
   
 > User customize attributes (all optionals)
   
