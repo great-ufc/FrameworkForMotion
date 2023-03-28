@@ -5,7 +5,7 @@ Esse framework foi desenvolvido em Kotlin e tem como objetivo auxiliar o desenvo
 
 # Descrição Geral
 
-A Figura 1 mostra uma visão geral do framework padrão arquitetural MVC para composição de sua arquitetua, com a adaptação de separar a camada de View em duas, sendo uma camada View, composta pelas telas da aplicação, e uma outra camada contendo as Activities e Fragments que controlam o funcionamento das telas e seus componentes. 
+A Figura 1 mostra uma visão geral do framework padrão arquitetural MVC para composição de sua arquitetua, com a adaptação de separar a camada de View em duas, sendo uma camada View, composta pelas telas da aplicação, e uma outra camada contendo as Activities e Fragments que controlam o funcionamento das telas e seus componentes. Os compoenntes em laranja e amarelo são elementod do framework e podem ser customizados para cada aplicação. Os elementos em cinza são própios de cada aplicação e devem ser desenvolvidos pela equipe de desenvolvimento da aplicação que está usando o Framework.
 
 <p align="center">
 <img src="./Documentation/Images/VisaoGeral.png" width="50%" heigth="50%" >
