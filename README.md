@@ -26,9 +26,9 @@ Aqui apresentaremos uma breve fundamentação teórica sobre aplicações IoHT b
 
 ### Sistemas IoHT baseados em padrões de movimento 
 
-The Internet of Health Things (IoHT) is a term used to describe the various types of connected devices and sensors that are used to monitor and track data, and health conditions (Rodrigues et al. 2018). These devices range from wearables such as fitness trackers and smartwatches to medical equipment such as heart monitors and insulin pumps to apps and services that allow users to track their diet and exercise. The data collected by these devices is then analyzed to gain insights into a person’s health status and to help them make informed decisions about their quality of life and health (Oliveira et al. 2022). 
+The Internet of Health Things (IoHT) is a term used to describe the various types of connected devices and sensors that are used to monitor and track data, and health conditions (Rodrigues et al., 2018). These devices range from wearables such as fitness trackers and smartwatches to medical equipment such as heart monitors and insulin pumps to apps and services that allow users to track their diet and exercise. The data collected by these devices is then analyzed to gain insights into a person’s health status and to help them make informed decisions about their quality of life and health (Oliveira et al. 2022). 
 
-In recent years, the use IoHT applications that identify movement patters turned common. The IoHT applications, in particular, use devices for monitoring different physiological data of patients, allows identifying not only pre-existing health problems but also possible situations of health risk, such as falls or stroke (Park et al. 2016) (Haghi et al. 2017) (Cai et al. 2018) (Qiu et al. 2018) (Araújo et al. 2018).
+In recent years, the use IoHT applications that identify movement patters turned common. The IoHT applications, in particular, use devices for monitoring different physiological data of patients, allows identifying not only pre-existing health problems but also possible situations of health risk, such as falls or stroke (Park et al. 2016) (Haghi et al. 2017) (Cai et al. 2018) (Qiu et al. 2018) (De Araújo et al. 2018).
 
 ### Sistemas Auto Adaptivos
 
@@ -72,7 +72,7 @@ O padrão MVC é amplamente utilizado em desenvolvimento de software, incluindo 
 
 ### DAO and Respository Patterns
 
-Tanto o padrão DAO (Data Access Object) quanto o padrão Repositório são padrões de projeto de software que têm como objetivo fornecer uma abstração para o acesso a dados em um banco de dados. 
+Tanto o padrão DAO (Data Access Object)(NOCK, 2004) quanto o padrão Repositório (PRAJAPATI, 2019) são padrões de projeto de software que têm como objetivo fornecer uma abstração para o acesso a dados em um banco de dados. 
 
 - O padrão DAO tem como objetivo principal isolar o código de acesso a dados do resto do código da aplicação, separando a lógica de negócios da lógica de acesso a dados. Ele consiste em duas partes principais: a interface DAO, que define as operações que podem ser realizadas no banco de dados, e a classe DAO, que implementa a interface DAO e contém as operações específicas para acessar um determinado tipo de entidade. Cada entidade do banco de dados geralmente tem sua própria classe DAO. 
 - Já o padrão Repositório tem como objetivo fornecer uma abstração para o acesso a dados, como um objeto de coleção de entidades. Em vez de se concentrar em operações específicas do banco de dados, o Repositório fornece uma interface genérica para criar, ler, atualizar e excluir objetos de uma determinada entidade. Ele consiste em uma classe Repositório que contém as operações genéricas de acesso a dados para a entidade correspondente.
@@ -81,7 +81,7 @@ Para utilizar os dois padrões em conjunto, geralmente usa-se uma classe abstrat
 
 ### Observer Pattern
 
-O padrão Observer é um padrão de projeto de software que define uma relação de dependência um-para-muitos entre objetos, de forma que quando um objeto muda de estado, todos os seus dependentes são notificados e atualizados automaticamente. Ele é utilizado para implementar o que é conhecido como o padrão pub-sub (publicador-subscritor), onde um objeto observável (Observable) mantém uma lista de seus observadores (Observer) e notifica todos eles automaticamente quando ocorrem mudanças em seu estado interno.
+O padrão Observer (ANDRÉ, 2013) é um padrão de projeto de software que define uma relação de dependência um-para-muitos entre objetos, de forma que quando um objeto muda de estado, todos os seus dependentes são notificados e atualizados automaticamente. Ele é utilizado para implementar o que é conhecido como o padrão pub-sub (publicador-subscritor), onde um objeto observável (Observable) mantém uma lista de seus observadores (Observer) e notifica todos eles automaticamente quando ocorrem mudanças em seu estado interno.
 
 O padrão Observer é utilizado em situações em que é necessário manter um estado consistente em vários objetos, sem que haja acoplamento entre eles. Isso significa que o objeto Sujeito não precisa conhecer seus Observadores, nem os Observadores precisam conhecer outros Observadores. Além disso, novos Observadores podem ser adicionados ou removidos facilmente sem afetar o objeto Sujeito.
 
@@ -139,22 +139,26 @@ A seguir detalhamos as classes e que trechos delas devem, ou não, ser alterados
 
 # Referências
 
-IBM. 2003. An architectural blueprint for autonomic computing. Tech. rep., IBM.
+IBM. An architectural blueprint for autonomic computing. Tech. rep., 2003. IBM.
 
-JUNIOR, B. R.; ANDRADE, R. M.; MAIA, M. E.; NOGUEIRA, T. P. Succeed: Support mechanism for creating and executing workflows for decoupled sas in iot. In: IEEE. 2018 IEEE 42nd Annual Computer Software and Applications Conference (COMPSAC). [S. l.], 2018. v. 2, p. 738–743.
+JUNIOR, Belmondo RAA et al. Succeed: Support mechanism for creating and executing workflows for decoupled SAS in IoT. In: 2018 IEEE 42nd Annual Computer Software and Applications Conference (COMPSAC). IEEE, 2018. p. 738-743.
 
-] J. J. Rodrigues, D. B. D. R. Segundo, H. A. Junqueira, M. H. Sabino, R. M. Prince, J. Al-Muhtadi, and V. H. C. De Albuquerque, “Enabling technologies for the internet of health things,” IEEE Access, vol. 6, pp. 13 129–13 141, 2018
+RODRIGUES, Joel JPC et al. Enabling technologies for the internet of health things. Ieee Access, v. 6, p. 13129-13141, 2018.
 
-P. A. M. de Oliveira, R. M. Andrade, P. d. A. S. Neto, and B. S. Oliveira, “Internet of health things for quality of life: Open challenges based on a systematic literature mapping.” in HEALTHINF, 2022, pp. 397–40
+DE OLIVEIRA, Pedro Almir Martins et al. Internet of Health Things for Quality of Life: Open Challenges based on a Systematic Literature Mapping. In: HEALTHINF. 2022. p. 397-404.
 
-H. Park, S. Hong, I. Hussain, D. Kim, Y. Seo, S. J. Park, Gait monitoring system for stroke prediction of aging adults, in: International Conference on Applied Human Factors and Ergonomics, Springer, 2020, pp. 93–97.
+PARK, Hongkyu et al. Gait monitoring system for stroke prediction of aging adults. In: Advances in Human Factors in Wearable Technologies and Game Design: Proceedings of the AHFE 2019 International Conference on Human Factors and Wearable Technologies, and the AHFE International Conference on Game Design and Virtual Environments, July 24-28, 2019, Washington DC, USA 10. Springer International Publishing, 2020. p. 93-97
 
-M. Haghi, K. Thurow, R. Stoll, Wearable devices in medical internet of things: scientific research and commercially available devices, Healthcare informatics research 23 (1) (2017) 4–15.
+HAGHI, Mostafa; THUROW, Kerstin; STOLL, Regina. Wearable devices in medical internet of things: scientific research and commercially available devices. Healthcare informatics research, v. 23, n. 1, p. 4-15, 2017.
 
-X. J. Cai, J. I. E. Ignacio, E. F. Mendoza, D. J. F. Rabino, R. P. G. Real, E. A. Roxas, Iot-based gait monitoring system for static and dynamic classification of data, in: 2018 IEEE 10th International Conference on Humanoid, Nanotechnology, Information Technology, Communication and Control, Environment and Management (HNICEM), IEEE, 2018, pp. 1–4.
+CAI, Xiorence J. et al. IoT-based gait monitoring system for static and dynamic classification of data. In: 2018 IEEE 10th International Conference on Humanoid, Nanotechnology, Information Technology, Communication and Control, Environment and Management (HNICEM). IEEE, 2018. p. 1-4.
 
-S. Qiu, Z. Wang, H. Zhao, L. Liu, J. Li, Y. Jiang, G. Fortino, Body sensor network based robust gait analysis: Toward clinical and at home use, IEEE Sensors Journal.
+QIU, Sen et al. Body sensor network-based robust gait analysis: Toward clinical and at home use. IEEE Sensors Journal, v. 19, n. 19, p. 8393-8401, 2018.
 
-I. L. de Ara ́ujo, L. Dourado, L. Fernandes, R. M. d. C. Andrade, P. A. C. Aguilar, An algorithm for fall detection using data from smartwatch, in: 2018 13th Annual Conference on System of Systems Engineering (SoSE), IEEE, 2018, pp. 124–131.
+DE ARAUJO, Italo Linhares et al. An algorithm for fall detection using data from smartwatch. In: 2018 13th Annual Conference on System of Systems Engineering (SoSE). IEEE, 2018. p. 124-131.
 
-...
+NOCK, Clifton. Data access patterns: database interactions in object-oriented applications. Boston: Addison-Wesley, 2004.
+
+PRAJAPATI, Mukesh. ASP. NET MVC-generic repository pattern and unit of work. International Journal Of All Research Writings, v. 1, n. 1, p. 23-30, 2019.
+
+ANDRÉ, Étienne. Observer patterns for real-time systems. In: 2013 18th International Conference on Engineering of Complex Computer Systems. IEEE, 2013. p. 125-134.
