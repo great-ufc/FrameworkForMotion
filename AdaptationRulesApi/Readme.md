@@ -1,27 +1,26 @@
 # Sobre essa API
 
-Essa API foi criada para disponibilizar um conjunto de regras de adaptação para uma apicação mobile que se adaptada de acordo com o nível de bateria do dispositivo. O Arquivo contendo as regras de adaptação segue o template de regras de adaptação que propomos e que é descrito abaixo e está disponível na pasta download.
-
+This API was created to provide a set of adaptation rules for a mobile application that adjusts according to the device's battery level. The file containing the adaptation rules is available in the download folder and follows our proposed adaptation rules template, that is described below.
 
 ## Template de Regras de Adaptação
 
-O objetivo desse template é fornecer um mecanismo que permita auxiliar a representação das regras de adaptação com base em um mecanismo simples de inferência, que verifica, dado um valor de contexto, ou um conjunto de valores de contexto identificados, se uma ação específica deve ser tomada.  Porém, é importante destacar que o template não indica como as ações, ou planos de ações, devem ser executados, mas apenas prover um meio de auxiliar a identificação de que ação, ou plano de ação, deve ser executado, considerando cada regra especificada. A versão atual do template utiliza arquivos em formatos ".xml", que podem ser compartilhados e editados enquanto a aplicação está em execução. 
+The purpose of this template is to provide a mechanism that enables the representation of adaptation rules based on a simple inference mechanism, which verifies, given a context value or a set of identified context values, whether a specific action should be taken. However, it is important to note that the template does not indicate how actions or action plans should be executed, but only provides a means to assist in identifying which action or action plan should be executed, considering each specified rule. The current version of the template uses files in ".xml" formats, which can be shared and edited while the application is running.
 
-A versão atual do template pode ser visto [aqui](./template.xml) contemplando os elementos usados para sua manipulação. O arquivo contém uma lista de regras de adaptações <adaptationRules>. Para cada adaptação <adaptation> existe uma ação ou plano de ação <action> e uma lista de contextos a serem verificados <contextList>. Para cada contexto em um lista <context> existe um identificador do contexto <name>, um sinal <signal>, que identifica o tipo de verificação a ser feita no contexto, e o valor limiar <value>, ou lista de valores, que o contexto deve assumir para que adaptação seja executada.
+The current version of the template can be viewed here (./template.xml), which includes the elements used for its manipulation. The file contains a list of adaptation rules <adaptationRules>. For each adaptation <adaptation>, there is an action or action plan <action> and a list of contexts to be verified <contextList>. For each context in a list <context>, there is a context identifier <name>, a signal <signal> that identifies the type of context verification to be performed, and the threshold value <value>, or list of values, that the context must assume for the adaptation to be executed.
   
 <p align="center">
 <img src="./figures/templateXml.png" width="40%" heigth="40%" >
 </p>
 
   
-  <p align="center">Figura 1. Template de regras de adaptação apenas com contextos numéricos</p>
+  <p align="center">Figure 1. Adaptation rules template with numerical contexts only</p>
   
   
-Os tipos de contextos verificados podem ser numéricos (Figura 1) ou strings (Figura 2). No caso de contextos numéricos a verificação identifica se o valor do contexto analisado (por exemplo, o nível de bateria, ou o valor de uma <i>feature</i> de movimentação) é "igual a" (valor de sinal <i>equal</i>), "maior que" (valor de sinal <i>greaterthan</i>), ou "menor que" (valor de sinal \textit{lessthan}), ao valor limiar especificado. Já no caso de contextos string, os tipos de contextos verificados estão relacionados a valores específicos "contidos" (valor de sinal <i>containValue</i>) ou "não contidos" (valor de sinal <i>notContainValue</i>) na lista de valores especificados. 
+The types of verified contexts can be numeric (Figure 1) or strings (Figure 2). In the case of numeric contexts, the verification identifies whether the value of the analyzed context (for example, the battery level or the value of a movement feature) is "equal to" (signal value <i>equal</i>), "greater than" (signal value <i>greaterthan</i>), or "less than" (signal value <i>lessthan</i>) the specified threshold value. In the case of string contexts, the types of verified contexts are related to specific values that are either "contained" (signal value <i>containValue</i>) or "not contained" (signal value <i>notContainValue</i>) in the specified list of values. 
 
 <p align="center">
 <img src="./figures/templateXml2.png" width="40%" heigth="40%" >
   </p>  
-  <p align="center"> Figura 2. Template de regras de adaptação apenas com contextos string </p>
+  <p align="center"> Figure 2. Adaptation rules template with string contexts only </p>
   
-Esse artefato pode ser usado para auxiliar as atividades de Criação das regras de Adaptação, Projeto com reúso e Desenvolvimento presente no processo proposto.
+This artifact can be used to assist the activities of Adaptation Rule Creation, Reuse Design, and Implementation of the Development process.
