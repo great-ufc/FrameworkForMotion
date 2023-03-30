@@ -1,95 +1,96 @@
 # Framework Kotlin (for Assist Motion Process)
 
-Esse framework foi desenvolvido em Kotlin e tem como objetivo auxiliar o desenvolvimento de aplicaçãoes IoHT autoadaptativas para dispositivos android. Nesse documento nós apresentamos os principais elementos que compõem esse framework e o manual de uso do mesmo.
+This framework was developed in Kotlin and aims to assist the development of self-adaptive IoHT applications for Android devices. In this document, we present the main elements that compose this framework and the user manual for it.
 
 
-# Descrição Geral
+# Overview
 
-A Figura 1 mostra uma visão geral do framework padrão arquitetural MVC para composição de sua arquitetua, com a adaptação de separar a camada de View em duas, sendo uma camada View, composta pelas telas da aplicação, e uma outra camada contendo as Activities e Fragments que controlam o funcionamento das telas e seus componentes. Os compoenntes em laranja e amarelo são elementod do framework e podem ser customizados para cada aplicação. Os elementos em cinza são própios de cada aplicação e devem ser desenvolvidos pela equipe de desenvolvimento da aplicação que está usando o Framework.
+Figure 1 shows an overview of the standard MVC architectural framework for the composition of its architecture, with the adaptation of separating the View layer into two, one being the View layer, composed of the application screens, and another layer containing the Activities and Fragments that control the operation of the screens and their components. The components in orange and yellow are elements of the framework and can be customized for each application. The elements in gray are specific to each application and must be developed by the development team of the application that is using the Framework.
 
 <p align="center">
 <img src="./Documentation/Images/VisaoGeral.png" width="50%" heigth="50%" >
 </p>
   
-  <p align="center">Figura 1. Visão Geral do framework</p>
+  <p align="center">Figure 1. Overview of the framework</p>
 
-As aplicações desenvolvidas usando nosso framework seguem o meta-modelo MAPE-K para implementação do loop de adaptação e para tal foram desenvolvidos módulos com classe para cada uma das etadas do loop MAPE-K. Além disso, o framework usa o padrão de software Observer para comunicação entre as classes principais de cada um dos módulos  do loop de adaptação MAPE-K. Para facilitar a composição da base de conhecimento da aplicação criamos classes que proveem métodos para download e utilização do grafo de classificação proposto pelos autores do framework que permite o relacionamento de diversos sensores, fetures baseadas nesses sensores, modelos inteligentes treinados com base nessas features e estados finais que representam padrões de movimentação ou estados de saúde que podem ser inferidos combase nos modelos inteligentes treinados. 
+Applications developed using our framework follow the MAPE-K meta-model (IBM, 2003) for implementing the adaptation loop, and for that purpose, modules were developed with a class for each of the stages of the MAPE-K loop. In addition, the framework uses the Observer software pattern (ANDRÉ, 2013) for communication between the main classes of each of the MAPE-K adaptation loop modules. To facilitate the composition of the application's knowledge base, we have created classes that provide methods for downloading and using the classification graph proposed by the framework authors, which allows for the relationship of various sensors, features based on these sensors, intelligent models trained based on these features, and final states that represent movement patterns or health states that can be inferred based on the trained intelligent models.
 
-Também propomos o reuso do template de regras de adaptação proposto pelos autores para criação de um arquivo para definição das regras de adaptação da aplicação. As regras de adaptação nesse arquivo podem ser alteradas sem que seja necessário modificar diretamente a aplicação, permitindo que essa mudança ocorra mesmo com aplicação em  execução. Além disso, utilizamos também o framework SUCCEED (Junior, 2018) para auxiliar a construção das ações na etapa de Execução. Por fim, para manipulação dos dados do banco de dados SQL Lite no dispositivo criamos um conjunto de classes utiliando os padrões DAO e Repositório. 
+We also propose the reuse of the adaptation rules template proposed by the authors for creating a file to define the adaptation rules of the application. The adaptation rules in this file can be changed without directly modifying the application, allowing for changes to be made even when the application is running. Additionally, we also use the SUCCEED framework (Junior, 2018) to assist in building the actions in the Execution stage. Finally, for manipulating the data in the SQLite database on the device, we created a set of classes using the (Data Access Object)(NOCK, 2004) and Repository (PRAJAPATI, 2019) patterns. 
 
-[Clicando aqui você pode ver o Diagrama de Classes do framework](https://drive.google.com/file/d/1-QNAw4qUGligPNhtXTZ_DeecIpvcVMOX/view?usp=sharing)
+[Clicking here you can see the Class Diagram of the framework](https://drive.google.com/file/d/1-QNAw4qUGligPNhtXTZ_DeecIpvcVMOX/view?usp=sharing)
 
 
-# Fundamentação Teórica
+# Background
 
-Aqui apresentaremos uma breve fundamentação teórica sobre aplicações IoHT baseadas em dados de movimento e de Sistemas Auto Adaptativos, bem como a descriação dos elementos usados para compor o framework, contemplando padrões de projeto e artefatos de reúso.
+Here we will present a brief theoretical foundation on IoHT applications based on movement data and Self-Adaptive Systems, as well as a description of the elements used to compose the framework, including design patterns and reuse artifacts.
 
-### Sistemas IoHT baseados em padrões de movimento 
+### Internet of Health Things systems based on motion patterns 
 
 The Internet of Health Things (IoHT) is a term used to describe the various types of connected devices and sensors that are used to monitor and track data, and health conditions (Rodrigues et al., 2018). These devices range from wearables such as fitness trackers and smartwatches to medical equipment such as heart monitors and insulin pumps to apps and services that allow users to track their diet and exercise. The data collected by these devices is then analyzed to gain insights into a person’s health status and to help them make informed decisions about their quality of life and health (Oliveira et al. 2022). 
 
 In recent years, the use IoHT applications that identify movement patters turned common. The IoHT applications, in particular, use devices for monitoring different physiological data of patients, allows identifying not only pre-existing health problems but also possible situations of health risk, such as falls or stroke (Park et al. 2016) (Haghi et al. 2017) (Cai et al. 2018) (Qiu et al. 2018) (De Araújo et al. 2018).
 
-### Sistemas Auto Adaptivos
+### Self-adaptive System
 
-Os sistemas auto-adaptativos são capazes de monitorar e ajustar seu próprio comportamento em resposta às mudanças nas condições do ambiente, com o objetivo de melhorar sua eficiência e eficácia. Para o desenvolimento desses sistemas é necessário implementar um ciclo de adaptação que permita monitorar o contexto e a adaptar o comportamento da aplicação  quando desejado. Esse ciclo de adaptação costuma ser modelado com base no ciclo de gerenciamento MAPE-K proposto pela IBM no incício dos anos 2000 (IBM, 2003)
+Self-adaptive systems are capable of monitoring and adjusting their own behavior in response to changes in environmental conditions, with the goal of improving their efficiency and effectiveness. To develop these systems, it is necessary to implement an adaptation cycle that allows for monitoring the context and adapting the application's behavior when desired. This adaptation cycle is typically modeled based on the MAPE-K management cycle proposed by IBM in the early 2000s (IBM, 2003).
 
-### Ciclo MAPE-K
+### MAPE-K Loop
 
-O ciclo MAPE-K permite modelar o clico da adpatação e gerenciar a execução e as adaptações em sistemas auto-adaptativos. Ele permite que o sistema monitore e ajuste seu próprio comportamento em resposta a mudanças nas condições do ambiente.  O modelo consiste nas seguintes fases:
+The MAPE-K Loop (IBM, 2003) allows modeling the adaptation cycle and managing the execution and adaptations in self-adaptive systems. It enables the system to monitor and adjust its own behavior in response to changes in the environmental conditions. The model consists of the following phases:
 
-- Monitoramento 
+- Monitoring 
 
-Nessa etapa, o sistema monitora seu próprio comportamento e as condições do ambiente. Ele coleta dados e informações relevantes que serão analisadas para identificar o comportamento e possíveis mudanças que permitam planejar a execução da aplicação e possíveis adaptações, caso necessário.
+In this phase, the system monitors its own behavior and the environmental conditions. It collects relevant data and information that will be analyzed to identify behavior and possible changes that allow planning the application's execution and possible adaptations if necessary.
 
-- Análise
+- Analysis
 
-Nessa etapa, o sistema analisa os dados coletados na fase de Monitoramento para identificar padrões e resultados que permitam auxiliar o planejamento de ações, oportunidades de melhoria e possíveis adaptações necessárias. 
+In this phase, the system analyzes the data collected in the Monitoring phase to identify patterns and results that assist in planning actions, opportunities for improvement, and possible necessary adaptations.
 
-- Planejamento
+- Planning
 
-Nessa etapa, com base na análise dos dados, o plano de ações que devem ser executadas pelo sitema é gerado. O plano pode incluir adaptações que modifiquem a maneira como o sistemas executa suas ações ou como desempenha tarefas internas ao sistema.
+In this phase, based on the analysis of the data, a plan of actions that the system must execute is generated. The plan may include adaptations that modify the way the system performs its actions or internal tasks.
 
-- Execução
+- Execution
 
-Nesta fase, as ações planejadas são executadas pela aplicação. A execução deve ser cuidadosamente monitorada para garantir que as adaptações produzam os resultados esperados.
+In this phase, the planned actions are executed by the application. The execution must be carefully monitored to ensure that the adaptations produce the expected results.
 
-- Conhecimento (Knowledge)
+- Knowledge
 
-Todas as etapas acima do ciclo podem ser assitidas por uma base de conhecimento que auxilie a tomada de decisões nas diversas fases do ciclo. Essa fase de conhecimento pode ser criada anteriomente a execução da aplicação. Ou criada a medida que a aplicação executa, com a possível adição de novas informações nessa base a cada ciclo.
+All the above phases of the cycle can be assisted by a knowledge base that assists in decision-making in the various phases of the cycle. This knowledge phase can be created before the application's execution or created as the application executes, with the possible addition of new information to this base at each cycle.
 
-### Padrão MVC
+### Model-View-Control Pattern
 
-O padrão MVC (Model-View-Controller) é um padrão arquitetural de software que separa a aplicação em três componentes principais: Model, View e Controller. O objetivo desse padrão é dividir a lógica de negócios da interface do usuário, facilitando o desenvolvimento, manutenção e testes de aplicativos. OS componentes desse padrão são: 
+The Model-View-Controller (MVC) (BUCANEK, 2009) pattern is a software architectural pattern that separates an application into three main components: Model, View, and Controller. The purpose of this pattern is to divide business logic from the user interface, making it easier to develop, maintain, and test applications. The components of this pattern are:
 
-- Model: é a camada responsável pela lógica de negócios e manipulação de dados. Ele contém as classes que representam os objetos do domínio da aplicação, bem como as regras de negócio que determinam como esses objetos se comportam e se relacionam entre si. O Model geralmente contém métodos para ler, criar, atualizar e excluir dados, bem como outras operações relacionadas.
+- Model: It is the layer responsible for business logic and data manipulation. It contains the classes that represent application domain objects, as well as business rules that determine how these objects behave and relate to each other. The Model usually contains methods to read, create, update, and delete data, as well as other related operations.
 
-- View: é a camada responsável pela interface do usuário. Ele apresenta os dados do Model em um formato compreensível para o usuário e fornece uma interface interativa para que o usuário possa interagir com a aplicação. O View pode ser implementado como uma página web, janela do aplicativo, relatório, entre outros.
+- View: It is the layer responsible for the user interface. It presents the Model data in a format understandable to the user and provides an interactive interface for the user to interact with the application. The View can be implemented as a web page, application window, report, among others.
 
-- Controller: é a camada responsável por controlar o fluxo da aplicação e atuar como intermediário entre o Model e o View. Ele recebe as entradas do usuário e solicita as operações apropriadas ao Model para manipular os dados. Em seguida, ele atualiza a View para refletir as alterações. O Controller geralmente contém métodos para lidar com a entrada do usuário, gerenciar sessões, autenticação, autorização, entre outros.
+- Controller: It is the layer responsible for controlling the application flow and acting as an intermediary between the Model and the View. It receives user inputs and requests the appropriate operations to the Model to manipulate data. Then, it updates the View to reflect the changes. The Controller usually contains methods to handle user input, manage sessions, authentication, authorization, among others.
 
-O padrão MVC é amplamente utilizado em desenvolvimento de software, incluindo aplicações android. Ele permite que os desenvolvedores separem claramente a lógica de negócios da interface do usuário, facilitando a manutenção e testes de aplicativos. Além disso, o padrão MVC pode ser facilmente estendido para incluir outras camadas, como serviços web ou bancos de dados, para criar aplicativos mais complexos e escaláveis.
+The MVC pattern  is widely used in software development, including Android applications. It allows developers to clearly separate business logic from the user interface, making it easier to maintain and test applications. In addition, the MVC pattern can be easily extended to include other layers, such as web services or databases, to create more complex and scalable applications.
 
 ### DAO and Respository Patterns
 
-Tanto o padrão DAO (Data Access Object)(NOCK, 2004) quanto o padrão Repositório (PRAJAPATI, 2019) são padrões de projeto de software que têm como objetivo fornecer uma abstração para o acesso a dados em um banco de dados. 
+Both the DAO (Data Access Object) pattern (NOCK, 2004) and the Repository pattern (PRAJAPATI, 2019) are software design patterns that aim to provide an abstraction for accessing data in a database.
 
-- O padrão DAO tem como objetivo principal isolar o código de acesso a dados do resto do código da aplicação, separando a lógica de negócios da lógica de acesso a dados. Ele consiste em duas partes principais: a interface DAO, que define as operações que podem ser realizadas no banco de dados, e a classe DAO, que implementa a interface DAO e contém as operações específicas para acessar um determinado tipo de entidade. Cada entidade do banco de dados geralmente tem sua própria classe DAO. 
-- Já o padrão Repositório tem como objetivo fornecer uma abstração para o acesso a dados, como um objeto de coleção de entidades. Em vez de se concentrar em operações específicas do banco de dados, o Repositório fornece uma interface genérica para criar, ler, atualizar e excluir objetos de uma determinada entidade. Ele consiste em uma classe Repositório que contém as operações genéricas de acesso a dados para a entidade correspondente.
+The main goal of the DAO pattern is to isolate the data access code from the rest of the application code, separating the business logic from the data access logic. It consists of two main parts: the DAO interface, which defines the operations that can be performed on the database, and the DAO class, which implements the DAO interface and contains the specific operations for accessing a particular type of entity. Each entity in the database typically has its own DAO class.
 
-Para utilizar os dois padrões em conjunto, geralmente usa-se uma classe abstrata Repositório do qual as classes específicas de cada entidade herdam, juntamente com a interface de cada uma dessas classe de acesso a dados, como no padrão DAO. Assim nas classes de dados específicas de cada entidade implementamos apenas os métodos mais específicos para a entidade e reutilizamos as funções genéricas de acesso e manipulação dos dados da classe repositório.
+On the other hand, the Repository pattern aims to provide an abstraction for data access, such as a collection object of entities. Instead of focusing on specific database operations, the Repository provides a generic interface for creating, reading, updating, and deleting objects of a particular entity. It consists of a Repository class that contains generic data access operations for the corresponding entity.
+
+To use both patterns together, an abstract Repository class is usually used, which is inherited by specific entity classes, along with the interface of each of these data access classes, as in the DAO pattern. This way, in the specific data classes of each entity, we only implement the most specific methods for the entity and reuse the generic data access and manipulation functions of the Repository class.
 
 ### Observer Pattern
 
-O padrão Observer (ANDRÉ, 2013) é um padrão de projeto de software que define uma relação de dependência um-para-muitos entre objetos, de forma que quando um objeto muda de estado, todos os seus dependentes são notificados e atualizados automaticamente. Ele é utilizado para implementar o que é conhecido como o padrão pub-sub (publicador-subscritor), onde um objeto observável (Observable) mantém uma lista de seus observadores (Observer) e notifica todos eles automaticamente quando ocorrem mudanças em seu estado interno.
+The Observer pattern (ANDRÉ, 2013) is a software design pattern that defines a one-to-many dependency relationship between objects, such that when an object changes state, all its dependents are automatically notified and updated. It is used to implement what is known as the pub-sub (publisher-subscriber) pattern, where an observable object maintains a list of its observers and automatically notifies all of them when changes occur in its internal state.
 
-O padrão Observer é utilizado em situações em que é necessário manter um estado consistente em vários objetos, sem que haja acoplamento entre eles. Isso significa que o objeto Sujeito não precisa conhecer seus Observadores, nem os Observadores precisam conhecer outros Observadores. Além disso, novos Observadores podem ser adicionados ou removidos facilmente sem afetar o objeto Sujeito.
+The Observer pattern is used in situations where it is necessary to maintain a consistent state across multiple objects, without coupling them. This means that the Subject object does not need to know its Observers, nor do the Observers need to know other Observers. Additionally, new Observers can be easily added or removed without affecting the Subject object.
 
-Algumas vantagens do padrão Observer incluem a facilidade de extensão, uma vez que novos objetos podem ser adicionados facilmente sem afetar o código existente, e a separação clara das responsabilidades de cada objeto, tornando o código mais modular e fácil de manter.
+Some advantages of the Observer pattern include ease of extension, since new objects can be easily added without affecting existing code, and clear separation of responsibilities for each object, making the code more modular and easier to maintain.
 
 ### SUCCEEd
 
-O Framework SUCCEEd (Junior, 2018) apresenta um conjunto de estruturas de modelagem para sistemas autoadaptativos, auxiliando a especificação de ações, estratégias e regras de adaptação. Ele pode auxiliar principalmente as etapas de planejamento e execução do loop de adaptação. Dentre de nosso framework utilizamos o SUCCEEd para auxiliar as especificação das ações, onde cada ação da aplicação herda da classe <i>Task2</i> do framework e implementa os métodos abstratos por ela fornecidos de modo a a permitie a utilização do modelo de orquestração de ações do SUCCEEd em nosso framework. 
+The SUCCEEd Framework (Junior, 2018) presents a set of modeling structures for self-adaptive systems, assisting in the specification of actions, strategies, and adaptation rules. It can mainly assist in the planning and execution stages of the adaptation loop. Within our framework, we use SUCCEEd to assist in the specification of actions, where each action of the application inherits from the <i>Task2</i> class of the framework and implements the abstract methods provided by it, allowing the use of SUCCEEd's action orchestration model in our framework.
 
 ### Grafo de classificação
 
@@ -101,34 +102,33 @@ The code used to create a Classification Graph for the test application generted
 
 ## Download the framework
 
-Você deve começar fazendo o download desse [projeto git](https://github.com/great-ufc/FrameworkForMotion/archive/refs/heads/main.zip). O Peojeto contém A documentação do Framework, O Framework completo, que consta de um código de app android em kotlin, com todos os elementos do framework. Essa aplicação é executável como exemplo simples que pode ser usado para teste de funcionalidades, mas deve ser modificado pelo usuário para contemplar as especificidades e requistos da aplicação que se deseja desenvolver. Além do Framework e sua documentação, o projeto contém também exemplos de aplicações criadas usando o framework e o código de aplicação de API  Pyhton, usando Flask que pode ser utilizada para disponibilizar uma arquivo XML com as regras de adaptação da aplicação, seguindo um template específico. 
+You should start by downloading this git project (https://github.com/great-ufc/FrameworkForMotion/archive/refs/heads/main.zip). The project contains the Framework documentation and the complete Framework code for an Android app in Kotlin, including all the Framework elements. This application is executable as a simple example that can be used for testing functionalities, but it should be modified by the user to meet the specificities and requirements of the application being developed. In addition to the Framework and its documentation, the project also contains examples of applications created using the Framework and the code for a Python API application using Flask that can be used to provide an XML file with the adaptation rules of the application, following a specific template.
 
 ## First Steps
 
-Uma vez feito o download do framework juntamente com todos os elementos e códigos que serão usados para auxiliar na construção de sua aplicação é preciso abrir o projeto no Android Studio, uma vez que o framework foi feito para construção de aplicações nativas para android e utilizanod a linguagem kotlin. Então você pode executá-la para verificar as fucnioalidade bases dos framework.  Recomendamos a princípio alterar nas "Strings" em "res/values/strings.xml" o nome do App para o nome que desejar. Além disso, outras informações também podém ser alteradas no string.xml
+After downloading the framework along with all the elements and codes that will be used to assist in the construction of your application, it is necessary to open the project in Android Studio, as the framework was made for native Android application development using the Kotlin language. Then, you can run it to check the basic functionalities of the framework. We recommend initially changing the app name in the "Strings" in "res/values/strings.xml" to the desired name. In addition, other information can also be changed in string.xml.
 
 ### Constants
 
-Para cada aplicação uma série de valores constantes deve ser utilizado.  Então a princípio é importante que esse valores sejam alterados para sua aplicação específica. Verifique então o arquivo Constants.kt em "models/utils/Constants.kt". As constantes que devem ser alteradas obrigaotriamente são o email do administrador da aplicação, o endereço do servidor onde está hospedada a API de acesso ao grafo de classificação, caso queira o utilizar como base de conhecimento na constante "BACKEND_IP_PORT" e também, caso haja,  o endereço do servidor onde está hospedada a API de acesso ao template de regras de adaptação na constante "BACKEND_IP_PORT_ADAPTATION_RULES". As demais constantes são opcionais e devm ser alteradas apenas se for necessário de acordo com aplicação  ser desenvolvida. Você também pode, caso deseje,  adicionar outras contantes nesse arquivo Constants.kt.
+For each application, a series of constant values should be used. Therefore, it is important to initially modify these values for your specific application. Check the Constants.kt file in "models/utils/Constants.kt". The constants that must be changed are the email of the application administrator, the server address where the API for accessing the classification graph is hosted, if you want to use it as a knowledge base in the "BACKEND_IP_PORT" constant, and also, if any, the server address where the API for accessing the adaptation rules template is hosted in the "BACKEND_IP_PORT_ADAPTATION_RULES" constant. The other constants are optional and should only be changed if necessary according to the application being developed. You can also add other constants to this Constants.kt file if desired.
 
-### Autentificação para uso das APIs do Google
+### Authentication for using Google APIs
 
-Esse framework disponibiliza suporte ao de uso de pelo menos uma da Google, o  que não impede que o desenvolvedor use outras APIs. Para utilizar essas APIS é obrigado criar uma chave/credencial Auth 2.0 em seua conta de desenvolvedor no Google Cloud (mesmo que não utiliza outros recursos da nuvem da Google). Para criar sua credencial Auth 2.0 recomendadmos seguir os passos da própria documentação oferecida pelo google, que pode ser acessada em: [https://developers.google.com/fit/android/get-api-key](https://developers.google.com/fit/android/get-api-key)
+This framework provides support for at least one Google API, but it does not prevent developers from using other APIs. To use these APIs, it is necessary to create an Auth 2.0 key/credential in your developer account on Google Cloud (even if you do not use other Google Cloud resources). To create your Auth 2.0 credential, we recommend following the steps provided in the Google documentation, which can be accessed at: https://developers.google.com/fit/android/get-api-key
 
-## Separação em Comentários
+## Significant Comments
 
-Ao longo das classes e outros objetos do framework há uma série de trechos de código que devem ou não ser alterados. Separamos quatro identificadores padrões para auxiliar na hosra de identificar o que não deve ser alterado (<b>//------Generated by the Framework and must not be changed-----//</b>), o que deve ser alterado para cada aplicação (<b>//------Generated by the Framework and must be changed-----//</b>), o que pode ser alterado, mas também pode ser mantido como está (<b>//------Generated by the Framework and can be changed-----//</b>) e o que é código do desenvolvedor da aplicação, então pode ser removido do exemplo e adicionado novo (<b>//------Generated by the User-----//</b>). 
+Throughout the classes and other objects of the framework, there are several code snippets that should or should not be changed. We have separated four standard identifiers to assist in identifying what should not be changed (<b>//------Generated by the Framework and must not be changed-----//</b>), what should be changed for each application (<b>//------Generated by the Framework and must be changed-----//</b>), what can be changed but can also be kept as it is (<b>//------Generated by the Framework and can be changed-----//</b>), and what is the application developer's own code, which can be removed from the example and new code added (<b>//------Generated by the User-----//</b>).
 
-Nesse último caso, sugerimos ao usuário do framework utilizar o comentário <b>//------Generated by the User-----//</b> com o nome ou nickname do desenvolvedor nos trechos novos que criar para facilitar a identificação e documentação do código criados exclusivamente pelo desenvolvedor. Assim é possível manter o código mais legível e serpar os trechos de código criados pelo desenvolvedor dos trechos alterados de acordo com o que consta no Framework. Além disso,  apesar de haver trechos com a maração <b>//------Generated by the Framework and must not be changed-----//</b>, nada impede que o desenvolvedor altere esses trechos, uma vez que o framework é de código aberto, mas é sugerido que esses trechos sejam mantidos para o uso das das vantagens de reúso e boas práticas de codificação fornecidas com o framework.
+In the latter case, we suggest that the user of the framework use the comment <b>//------Generated by the User-----//</b> with the name or nickname of the developer in the new snippets created to facilitate the identification and documentation of code created exclusively by the developer. This way, it is possible to keep the code more readable and separate the code snippets created by the developer from the altered snippets according to what is specified in the framework. Additionally, although there are code snippets marked with <b>//------Generated by the Framework and must not be changed-----//</b>, nothing prevents the developer from changing these snippets, as the framework is open source. However, it is suggested that these snippets be kept for the advantages of reuse and good coding practices provided with the framework.
 
-## Elementos do Framework
+## Framework Elements
 
-As classes e outros componentes do framework estão estruturados em uma série de pacotes seguindo o parão arquitetural Model-View-Controller com algumas adaptações. Todos os componentes visuais, incluindo as telas do app, como é padrão de aplicações android nativas estão no pacote <b> res </b>, sendo os componentes presentes nas pastas "layout", "navegation" e "values" os principais. Os "layouts", que correspondem as telas são dividios em Activities e Fragments e cada layout Activity e Fragment está ligada a uma classe Activitie ou Fragment presente no pacote <b> User Interface (ui) </b>. Os contoladores presentes no pacote <b> controllers </b> são usados para controle de informações relacionadas as activities.  Algumas actvities podem não ter contollers associados, caso o desenvolvedor não veja necessidade de tal. Além disso, por padrão disponibilizamos algumas classes controladoras (DataController, ProfileController e AppsExternalParametersController) que não são diretamente associadas a uma activities específicas, mas que contém elementos de controle úteis que podem ser associadas a uma ou mais activities para faciliatar o controle de dados do GoogleFit (DataController), do perfil da conta google (ProfileController) ou a disponibilização de novas releases do app ( AppsExternalParametersController). Finalmente o pacote <b> models </b> contém as classes relacionadas a conexão com APIs disponíveis em servidores na nuvem (pasta cloudConnection), ao processamento e manipulação de dados (pasta dao) e entidades (pasta entities), aos elementos do ciclo de adaptação MAPE-K (pasta mapek) e as classes e objetos úteis que contém métodos e constantes que podem ser usados por diferentes classes (pasta utils). 
+The classes and other components of the framework are structured into a series of packages following the Model-View-Controller architectural pattern with some adaptations. All visual components, including app screens, as is standard for native Android applications, are located in the <b>res</b> package, with the components in the "layout", "navigation", and "values" folders being the main ones. The "layouts", which correspond to screens, are divided into Activities and Fragments, and each Activity or Fragment layout is linked to an Activity or Fragment class in the <b>User Interface (UI)</b> package. The controllers present in the <b>controllers</b> package are used for information control related to the activities. Some activities may not have associated controllers if the developer does not see the need for them. Additionally, we provide some controller classes by default (DataController, ProfileController, and AppsExternalParametersController) that are not directly associated with a specific activity but contain useful control elements that can be associated with one or more activities to facilitate control of GoogleFit data (DataController), the Google account profile (ProfileController), or the availability of new app releases (AppsExternalParametersController). Finally, the <b>models</b> package contains classes related to connection with APIs available on cloud servers (in the cloudConnection folder), data processing and manipulation (in the dao folder), entities (in the entities folder), MAPE-K adaptation cycle elements (in the mapek folder), and useful classes and objects that contain methods and constants that can be used by different classes (in the utils folder).
 
 ### Coding and Reuse - Classes, Interfaces and Objects
 
-A seguir detalhamos as classes e que trechos delas devem, ou não, ser alterados. Também apresentamos informações sobre quais novos elementos o desenvolvedor pode reusar e quais outros deve criar para usar o framework proposto como base para construir sua aplicação. Para ver os detalhes, basta clicar nos links de cada compoente do Framework abaixo.  
-
+Below we detail the classes and which parts of them should or should not be modified. We also provide information on which new elements the developer can reuse and which ones they should create to use the proposed framework as a basis for building their application. To see the details, simply click on the links of each component of the Framework below.
 
 - [Views and Activities](./Documentation/UserInterface.md)
 
@@ -137,7 +137,7 @@ A seguir detalhamos as classes e que trechos delas devem, ou não, ser alterados
 - [Models](./Documentation/Model.md)
 
 
-# Referências
+# References
 
 IBM. An architectural blueprint for autonomic computing. Tech. rep., 2003. IBM.
 
@@ -162,3 +162,5 @@ NOCK, Clifton. Data access patterns: database interactions in object-oriented ap
 PRAJAPATI, Mukesh. ASP. NET MVC-generic repository pattern and unit of work. International Journal Of All Research Writings, v. 1, n. 1, p. 23-30, 2019.
 
 ANDRÉ, Étienne. Observer patterns for real-time systems. In: 2013 18th International Conference on Engineering of Complex Computer Systems. IEEE, 2013. p. 125-134.
+
+BUCANEK, James. Model-view-controller pattern. Learn Objective-C for Java Developers, p. 353-402, 2009.
