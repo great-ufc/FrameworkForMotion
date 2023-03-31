@@ -2,15 +2,15 @@
 
 ## Views [path res]
 
-O pacote <b>res</b> contém os elmentos visuais de cada tela da aplicação. O Framework proposto no entanto não apresenta nenhum elemento específico para contrução de views, pois entendemos que a maneira como cada tela deve ser sontruída depende exclusivamente de cada aplicação e cabe aos desenvolvedores e UX Designers do time de desenvolvimento da aplicação definir quais elmentos visuais a aplicação irá utilizar. A única restrição do framework é a necessidade de o app tenha ao menos uma tela principal que inicie a coleta de dados e o ciclo de adaptação, linkando assim essa tela a classe MainActivity. Essa tela não precisa ser a primeira tela da aplicação, inclusive, caso necessário sugerimos haver uma tela anterior a esta para que o usuário efetue login, mas é importante que exista uma tela principal (MainActivity) para o APP, como é de praze parq aulquer aplicação mobile.
+The <b>res</b> package contains the visual elements of each screen in the application. However, the proposed framework does not include any specific elements for building views, as we understand that the way each screen should be constructed depends exclusively on each application. It is up to the developers and UX designers of the application development team to define which visual elements the application will use. The only restriction of the framework is the requirement that the app has at least one main screen that initiates data collection and the adaptation cycle, thus linking this screen to the MainActivity class. This screen does not need to be the first screen of the application. In fact, if necessary, we suggest having a screen prior to this for the user to log in.
 
 ## User Interface [path ui]
 
-Contém as Activities e Fragmentos que controlam as telas da aplicação e seus componentes
+This package contains Activities and Fragments that control the screens of the application and their components
 
 ### [path CommonActivities] BaseActivity.kt
 
-Classe base para uso da Activity Principal e pelas classes controladoras e modelo. Contem elementos necessários para manipulação de informações do dispositivos, sensores e armazenamento de dados que são necessáris para construção da aplicação IoHT autoadaptativas.
+Base class for use of the Main Activity and by the controller and model classes. It contains the necessary elements for manipulating device information, sensors, and data storage that are required for building self-adaptive IoHT applications.
 
 > Attributes
 > - toast: Toast
@@ -29,30 +29,30 @@ Classe base para uso da Activity Principal e pelas classes controladoras e model
 
 #### Methods that must not be changed
 
-- onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) - Método chamado quando a activity é lançada
-- showLongToast(text: String, isCenter: Boolean) - Apresenta uma mensagem longa em um Toast
-- showShortToast(text: String, isCenter: Boolean) - Apresenta uma mensagem curta em um Toast
-- showToast(text: String, mode: Int, isCenter: Boolean) - Apresenta a mensagem em um Toast
+- onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) - Method called when the activity is launched
+- showLongToast(text: String, isCenter: Boolean) - Displays a long message in a Toast
+- showShortToast(text: String, isCenter: Boolean) - Displays a short message in a Toast
+- showToast(text: String, mode: Int, isCenter: Boolean) - Displays the message in a Toast
 
 ### [path CommonActivities] - LoginActivity.kt
   
-Classe Activity exemplo para tela de Login usando a conta Google
+Example Activity class for a Login screen using Google account.
   
 > Attributes
 > - loginController: LoginController
 
 #### Methods that must not be changed
   
-- onCreate(savedInstanceState: Bundle?) - Método chamado quando a activity é lançada
-- onActivityResult(requestCode: Int, resultCode: Int, data: Intent?)  - Método chamado quando a tela ao qual está associada a Activity é chamada ou quando volta-se para esta tela recebendo o resultado de uma Intent
+- onCreate(savedInstanceState: Bundle?) - Method called when the activity is launched
+- onActivityResult(requestCode: Int, resultCode: Int, data: Intent?)  - Method called when the screen to which the Activity is associated is called or when returning to this screen receiving the result of an Intent
 
 #### Optional componnent
   
-btnSignIn: Button - Botão de Login na conta Google
+btnSignIn: Button - Google account login button
 
 ### MainActivity.ht
   
-Exemplo de classe referente ao controle da tela principal do App. Todo App Android contruído com esse framework tem de ter uma Activity relacionada  uma tela principal que irá iniciar o loop MAPE-K e será usada para coleta de dados dos sensores. É possível coletar sensores em outras telas, nesse caso é sugerido que qualquer tela que colete dados de sensores para aplicação, tenha associado uma Activity que herde a calsse <i>BaseActivity.kt</i> 
+Example of a class for controlling the main screen of the App. Every Android App built with this framework must have an Activity related to a main screen that will start the MAPE-K loop and be used for sensor data collection. It is possible to collect sensors in other screens, in which case it is suggested that any screen that collects sensor data for the application be associated with an Activity that inherits the <i>BaseActivity.kt</i> class.
 
 > Framework Attributes
 > - sensorManager: SensorManager
@@ -81,7 +81,7 @@ Exemplo de classe referente ao controle da tela principal do App. Todo App Andro
   
 #### Methods that must not be changed
   
-- override fun onCreate(savedInstanceState: Bundle?) - Método chamado quando a activity é lançada. Alguns linhas de código/elementos nesse método são obrigrtórios, as demais linhas da classe podem ou devem ser customizadas para a plicação a ser desenvolvida. Os elementos obrigatórios são:
+- override fun onCreate(savedInstanceState: Bundle?) - Method called when the activity is launched. Some lines of code/elements in this method are mandatory, while the remaining lines of the class can or should be customized for the application to be developed. The mandatory elements are:
 > MAPE-K initiate
    ```
    val monitor = DataManagement(this) 
@@ -96,23 +96,23 @@ Exemplo de classe referente ao controle da tela principal do App. Todo App Andro
   
 #### Methods that must  be changed
 
-- onAccuracyChanged(sensor: Sensor?, accuracy: Int) - Executa quando a acurácia do sensor é alterada. É um método obrigatório para activities que herdam de <i>SensorEventListener</i>. Esse listener é usado para evento de coleta de dados dos sensores do dispositivo
+- onAccuracyChanged(sensor: Sensor?, accuracy: Int) - Executes when the accuracy of the sensor is changed. It is a mandatory method for activities that inherit from <i>SensorEventListener</i>. This listener is used for sensor data collection events on the device.
 
 #### Methods that can be changed
   
-- override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) - Método chamado quando a tela ao qual está associada a Activity é chamada ou quando volta-se para esta tela recebendo o resultado de uma Intent
+- override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) - Method called when the screen associated with the Activity is called or when returning to this screen receiving the result of an Intent.
 
 #### User customize Methods (Optional) (Only for app Framework Sample)
   
-- oAuthErrorMsg(requestCode: Int, resultCode: Int) - Apresenta mensagem de erro de acesso ao Google Fit
-- onCreateOptionsMenu(menu: Menu): Boolean - Cria Opções do Menu de Navegação
-- onOptionsItemSelected(item: MenuItem): Boolean - Executa ação ao selecionar um elemento do Menu de Navegação
-- onSupportNavigateUp(): Boolean - Cria Menu de Navegação
-- onResume() - Executa quando a tela referente a activity está em primeiro plano
-- onPause() - Executa quando a tela referente a activity deixa o primeiro plano
-- onSensorChanged(event: SensorEvent ?) - Executa quando os sensores coletam um valor.
+- oAuthErrorMsg(requestCode: Int, resultCode: Int) - Displays error message accessing Google Fit
+- onCreateOptionsMenu(menu: Menu): Boolean - Create Navigation Menu Options
+- onOptionsItemSelected(item: MenuItem): Boolean - Performs action when selecting an element from the Navigation Menu
+- onSupportNavigateUp(): Boolean - Create Navigation Menu
+- onResume() - Runs when the activity's screen is in the foreground
+- onPause() - Runs when the activity's screen leaves the foreground
+- onSensorChanged(event: SensorEvent ?) - Runs when sensors collect a value
   
   
 ### Other Activities 
 
-Para cada tela da aplicação é comum se ter uma cativity associada para controle do componente dessas telas. Cabe a equipe de desenvolvimento projetar e implementar essas outras activities, caso necessário.
+For each screen of the application, it is common to have an associated activity for controlling the components of these screens. It is up to the development team to design and implement these other activities if necessary.
