@@ -1,4 +1,4 @@
-# Modelo
+# Model
 
 - Summary
   - [CloudConnection](#path-cloudConnection)
@@ -695,5 +695,3 @@ This class contains methods for checking and requesting access permissions to th
 ### Animations.kt (Optional)
 
 Have a string animation method for base sample application in the framework. Can be excluded by user.
-
-
