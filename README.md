@@ -106,7 +106,7 @@ You should start by downloading this git project (https://github.com/great-ufc/F
 
 ## First Steps
 
-After downloading the framework along with all the elements and codes that will be used to assist in the construction of your application, it is necessary to open the project in Android Studio, as the framework was made for native Android application development using the Kotlin language. Then, you can run it to check the basic functionalities of the framework. We recommend initially changing the app name in the "Strings" in "res/values/strings.xml" to the desired name. In addition, other information can also be changed in string.xml.
+After downloading the framework along with all the elements and codes that will be used to assist in the construction of your application, it is necessary to open the project in Android Studio, as the framework was made for native Android application development using the Kotlin language. Then, you can run it to check the basic functionalities of the framework. We recommend initially changing the app name in the "Strings" in "res/values/strings.xml" to the desired name. In addition, other information can also be changed in string.xml. Note: After downloading the framework, you can change the project name from <frameworkkotlin> to your app name before opening the project in Android Studio.
 
 ### Constants
 
