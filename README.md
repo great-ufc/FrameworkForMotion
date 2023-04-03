@@ -104,7 +104,7 @@ The code used to create a Classification Graph for the test application generted
 
 You should start by downloading this git project (https://github.com/great-ufc/FrameworkForMotion/archive/refs/heads/main.zip). The project contains the Framework documentation and the complete Framework code for an Android app in Kotlin, including all the Framework elements. This application is executable as a simple example that can be used for testing functionalities, but it should be modified by the user to meet the specificities and requirements of the application being developed. In addition to the Framework and its documentation, the project also contains examples of applications created using the Framework and the code for a Python API application using Flask that can be used to provide an XML file with the adaptation rules of the application, following a specific template.
 
-Note: After downloading the framework, you can change the project name from <frameworkkotlin> to your app name before opening the project in Android Studio.
+Note: After downloading the framework, you can change the project name from <i>frameworkkotlin</i> to your app name before opening the project in Android Studio.
 
 ## First Steps
 
