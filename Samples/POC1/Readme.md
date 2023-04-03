@@ -1,4 +1,4 @@
-# Sobre essa POC
+# REALER - Risk movEment ALERt
 
 <b>Objetivo:</b> Alertar situações de risco (quedas) e registro de atividades
 
