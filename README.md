@@ -5,7 +5,7 @@ This framework was developed in Kotlin and aims to assist the development of sel
 
 # Overview
 
-Figure 1 shows an overview of the standard MVC architectural framework for the composition of its architecture, with the adaptation of separating the View layer into two, one being the View layer, composed of the application screens, and another layer containing the Activities and Fragments that control the operation of the screens and their components. The components in orange and yellow are elements of the framework and can be customized for each application. The elements in gray are specific to each application and must be developed by the development team of the application that is using the Framework.
+Figure 1 shows an overview of the framework components. We use the pattern MVC for the composition of its architecture, adapting the View layer into two layers, one being the View layer, composed of the application screens, and another layer containing the Activities and Fragments that control the operation of the screens and their components. The components in orange and yellow are elements of the framework and can be customized for each application. The elements in gray are specific to each application and must be developed by the development team of the application that is using the Framework.
 
 <p align="center">
 <img src="./Documentation/Images/VisaoGeral.png" width="50%" heigth="50%" >
