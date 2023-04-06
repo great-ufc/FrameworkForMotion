@@ -1,4 +1,4 @@
-# Framework Kotlin (for Assist Motion Process)
+# KREATION: Kotlin fRamework for sElf-AdapTive Internet Of health thiNgs applications
 
 This framework was developed in Kotlin and aims to assist the development of self-adaptive IoHT applications for Android devices. In this document, we present the main elements that compose this framework and the user manual for it.
 
