@@ -3,12 +3,17 @@
 
 package br.ufc.POC1.model.mapek.execution
 
+import android.content.Intent
 import android.util.Log
+import br.ufc.POC1.ui.AlertActivity
 import br.ufc.POC1.ui.MainActivity
 import br.ufc.POC1.ui.CommonActivities.BaseActivity
 import task.Task2
 
 class TextAction: Task2() {
+
+    lateinit var context:BaseActivity
+
     override fun recebeToken(o: Any?) {}
 
     override fun retornaToken(): Any? {
@@ -20,6 +25,12 @@ class TextAction: Task2() {
         //MainActivity.texto = "Danger"
         MainActivity.texto = BaseActivity.finalStatus !!
         Log.i("Text status",BaseActivity.finalStatus !! )
+
+        AlertActivity.actions.add("texto")
+
+        val intent = Intent(context, AlertActivity::class.java)
+        context.startActivity(intent)
+
     }
 
     override fun retorno(): Any? {
@@ -27,13 +38,15 @@ class TextAction: Task2() {
     }
 
     override fun evaluate(o: Any) {
-        BaseActivity.finalStatus = o as String
+        val result = o as Pair<String,BaseActivity>
+        BaseActivity.finalStatus  = o.first
 
         ///Inicio verificação de Status especiais
-       // if (BaseActivity.finalStatus !!.contains("Clapping Standing") || BaseActivity.finalStatus !!.contains("Fall"))
+        context = o.second
+        if (BaseActivity.finalStatus !!.contains("Clapping Standing") || BaseActivity.finalStatus !!.contains("Fall")||
+            BaseActivity.finalStatus !!.contains("Hitting a wall"))
             executar()
         ///Fim de verificação de Status especiais
-
     }
 
     override fun run() {

@@ -6,8 +6,10 @@ package br.ufc.POC1.ui.CommonActivities
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Toast
 import br.ufc.POC1.R
 import br.ufc.POC1.controllers.LoginController
+import br.ufc.POC1.ui.MainActivity
 
 class LoginActivity : BaseActivity() {
 
@@ -21,6 +23,8 @@ class LoginActivity : BaseActivity() {
 
         val btnSignIn = findViewById<Button>(R.id.btnLogin)
 
+        if(loginController.isLogged())
+            startActivity(Intent(this, MainActivity::class.java))
 
         btnSignIn.setOnClickListener {
                 loginController.signIn()
@@ -31,5 +35,6 @@ class LoginActivity : BaseActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         loginController.activityResult(requestCode, data)
+
     }
 }

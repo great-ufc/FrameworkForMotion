@@ -4,11 +4,15 @@
 package br.ufc.POC1.model.mapek.execution
 
 import android.util.Log
+import br.ufc.POC1.ui.AlertActivity
 import br.ufc.POC1.ui.CommonActivities.BaseActivity
 import br.ufc.POC1.ui.MainActivity
 import task.Task2
 
 class LightAction:Task2() {
+
+    lateinit var context:BaseActivity
+
     override fun recebeToken(o: Any?) {}
 
     override fun retornaToken(): Any? {
@@ -20,6 +24,8 @@ class LightAction:Task2() {
         //MainActivity.texto = "Danger"
         MainActivity.texto = BaseActivity.finalStatus !!
         Log.i("Light status",BaseActivity.finalStatus !! )
+
+        AlertActivity.actions.add("luz")
     }
 
     override fun retorno(): Any? {
@@ -27,13 +33,19 @@ class LightAction:Task2() {
     }
 
     override fun evaluate(o: Any) {
-        BaseActivity.finalStatus  = o as String
+        val result = o as Pair<String,BaseActivity>
+        BaseActivity.finalStatus  = o.first
 
         ///Begin verification of special Status
-        if (BaseActivity.finalStatus !!.contains("Fall") || BaseActivity.finalStatus!!.contains("Bump"))
-            Thread(
-            this
-        ).start()
+        //if (BaseActivity.finalStatus !!.contains("Fall") || BaseActivity.finalStatus!!.contains("Bump"))
+        //    Thread(
+        //    this
+        //).start()
+
+        context = o.second
+        if (BaseActivity.finalStatus !!.contains("Clapping Standing") || BaseActivity.finalStatus !!.contains("Fall")||
+            BaseActivity.finalStatus !!.contains("Hitting a wall"))
+            executar()
         ///End verification of special Status
 
     }

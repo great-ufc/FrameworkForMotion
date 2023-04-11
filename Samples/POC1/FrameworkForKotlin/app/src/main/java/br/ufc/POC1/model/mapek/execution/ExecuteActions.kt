@@ -81,6 +81,11 @@ class ExecuteActions(val context:BaseActivity) :IExecutionObservable,IPlanningOb
         return currentTaskActions
     }
 
+    fun executeActionAlertTest(){
+        val action = Action()
+        action.evaluate(Pair(context,"alarm"))
+    }
+
     override fun update() {
         activitiesExecute()
     }

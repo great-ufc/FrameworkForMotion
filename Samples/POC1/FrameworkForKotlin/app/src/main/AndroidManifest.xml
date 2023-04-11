@@ -15,13 +15,13 @@
     <uses-feature
         android:name="android.hardware.bluetooth_le"
         android:required="false" />
+
     <meta-data
         android:name="com.google.android.gms.version"
         android:value="@integer/google_play_services_version" />
 
     <application
         android:allowBackup="true"
-        android:usesCleartextTraffic="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
@@ -29,10 +29,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyAppKotlin"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
-
         <activity
-            android:name="br.ufc.POC1.ui.CommonActivities.LoginActivity"
+            android:name=".ui.AlertActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.RegisterListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.CaregiverListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.HistoricActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.CaregiverActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.CommonActivities.LoginActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.MyAppKotlin.NoActionBar">
@@ -43,12 +61,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="br.ufc.POC1.ui.MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.MyAppKotlin.NoActionBar">
-        </activity>
-
+            android:theme="@style/Theme.MyAppKotlin.NoActionBar" />
     </application>
 
 </manifest>
