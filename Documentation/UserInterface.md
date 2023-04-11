@@ -2,7 +2,7 @@
 
 ## Views [path res]
 
-The <b>res</b> package contains the visual elements of each screen in the application. However, the proposed framework does not include any specific elements for building views, as we understand that the way each screen should be constructed depends exclusively on each application. It is up to the developers and UX designers of the application development team to define which visual elements the application will use. The only restriction of the framework is the requirement that the app has at least one main screen that initiates data collection and the adaptation cycle, thus linking this screen to the MainActivity class. This screen does not need to be the first screen of the application. In fact, if necessary, we suggest having a screen prior to this for the user to log in.
+The <b>res</b> package contains the visual elements of each screen in the application. However, the proposed framework does not include any specific elements for building screens, as we understand that the way each screen should be constructed depends exclusively on the application. It is up to the developers and UX designers of the application development team to define these visual elements. The only restriction of the framework is the requirement that the app has at least one main screen for initiating sensor data collection and the adaptation cycle, thus linking this screen to the MainActivity class. This screen does not need to be the first screen of the application. In fact, if necessary, we suggest having a screen prior to this for the user to log in.
 
 ## User Interface [path ui]
 

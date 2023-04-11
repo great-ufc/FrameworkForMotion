@@ -1,11 +1,11 @@
-# Framework Kotlin (for Assist Motion Process)
+# KREATION: Kotlin fRamework for sElf-AdapTive Internet Of health thiNgs applications
 
 This framework was developed in Kotlin and aims to assist the development of self-adaptive IoHT applications for Android devices. In this document, we present the main elements that compose this framework and the user manual for it.
 
 
 # Overview
 
-Figure 1 shows an overview of the standard MVC architectural framework for the composition of its architecture, with the adaptation of separating the View layer into two, one being the View layer, composed of the application screens, and another layer containing the Activities and Fragments that control the operation of the screens and their components. The components in orange and yellow are elements of the framework and can be customized for each application. The elements in gray are specific to each application and must be developed by the development team of the application that is using the Framework.
+Figure 1 shows an overview of the framework components. We use the pattern MVC for the composition of its architecture, adapting the View layer into two layers, one being the View layer, composed of the application screens, and another layer containing the Activities and Fragments that control the operation of the screens and their components. The components in orange and yellow are elements of the framework and can be customized for each application. The elements in gray are specific to each application and must be developed by the development team of the application that is using the Framework.
 
 <p align="center">
 <img src="./Documentation/Images/VisaoGeral.png" width="50%" heigth="50%" >
@@ -104,9 +104,11 @@ The code used to create a Classification Graph for the test application generted
 
 You should start by downloading this git project (https://github.com/great-ufc/FrameworkForMotion/archive/refs/heads/main.zip). The project contains the Framework documentation and the complete Framework code for an Android app in Kotlin, including all the Framework elements. This application is executable as a simple example that can be used for testing functionalities, but it should be modified by the user to meet the specificities and requirements of the application being developed. In addition to the Framework and its documentation, the project also contains examples of applications created using the Framework and the code for a Python API application using Flask that can be used to provide an XML file with the adaptation rules of the application, following a specific template.
 
+Note: After downloading the framework, you can change the project name from <i>FrameworkKotlin</i> to your app name before opening the project in Android Studio.
+
 ## First Steps
 
-After downloading the framework along with all the elements and codes that will be used to assist in the construction of your application, it is necessary to open the project in Android Studio, as the framework was made for native Android application development using the Kotlin language. Then, you can run it to check the basic functionalities of the framework. We recommend initially changing the app name in the "Strings" in "res/values/strings.xml" to the desired name. In addition, other information can also be changed in string.xml.
+After downloading the framework along with all the elements and codes that will be used to assist in the construction of your application, it is necessary to open the project in Android Studio, as the framework was made for native Android application development using the Kotlin language. Then, you can run it to check the basic functionalities of the framework. We recommend initially changing the app name in the "Strings" in "res/values/strings.xml" to the desired name. In addition, other information can also be changed in string.xml. 
 
 ### Constants
 
