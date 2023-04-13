@@ -10,6 +10,7 @@ import br.ufc.POC1.model.mapek.observer.*
 import br.ufc.POC1.model.utils.Animations
 import br.ufc.POC1.model.utils.Constants
 import br.ufc.POC1.ui.CommonActivities.BaseActivity
+import br.ufc.POC1.ui.MainActivity
 
 class DataManagement(val context: BaseActivity):IMonitorObservable,IExecutionObserver {
     private var dataCollectTime:Long = 0
@@ -19,10 +20,13 @@ class DataManagement(val context: BaseActivity):IMonitorObservable,IExecutionObs
 
     fun Monitoring(){
 
-        //Remove
+        ///-----USER GENERATED----////
+        //MainActivity Monitoring Text Animation
+        MainActivity.flagMonitoring = false
         Thread{
             Animations.monitoring()
         }.start()
+        ///-----END USER GENERATED----////
 
         //Coletar os dados dos sensores
         if (this.dataCollectTime == (0).toLong())

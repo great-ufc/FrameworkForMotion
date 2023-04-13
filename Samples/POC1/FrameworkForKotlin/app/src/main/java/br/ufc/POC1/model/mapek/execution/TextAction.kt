@@ -23,7 +23,6 @@ class TextAction: Task2() {
     override fun executar() {
         MainActivity.flagMonitoring = true
         //MainActivity.texto = "Danger"
-        MainActivity.texto = BaseActivity.finalStatus !!
         Log.i("Text status",BaseActivity.finalStatus !! )
 
         AlertActivity.actions.add("texto")
@@ -43,8 +42,12 @@ class TextAction: Task2() {
 
         ///Inicio verificação de Status especiais
         context = o.second
-        if (BaseActivity.finalStatus !!.contains("Clapping Standing") || BaseActivity.finalStatus !!.contains("Fall")||
-            BaseActivity.finalStatus !!.contains("Hitting a wall"))
+
+        //stop monitoring animation
+        MainActivity.flagMonitoring = true
+
+        if (BaseActivity.finalStatus !!.contains("Clapping Standing") || BaseActivity.finalStatus !!.contains("Fall"))//||
+            //BaseActivity.finalStatus !!.contains("Hitting a wall"))
             executar()
         ///Fim de verificação de Status especiais
     }

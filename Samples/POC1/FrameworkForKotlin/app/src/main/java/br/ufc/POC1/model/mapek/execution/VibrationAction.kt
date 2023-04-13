@@ -21,9 +21,7 @@ class VibrationAction: Task2() {
     override fun executar() {
         MainActivity.flagMonitoring = true
         //MainActivity.texto = "Danger"
-        MainActivity.texto = BaseActivity.finalStatus !!
         Log.i("Vibration status",BaseActivity.finalStatus !! )
-
         AlertActivity.actions.add("vibracao")
     }
 
@@ -41,8 +39,8 @@ class VibrationAction: Task2() {
         //).start()
 
         context = o.second
-        if (BaseActivity.finalStatus !!.contains("Clapping Standing") || BaseActivity.finalStatus !!.contains("Fall")||
-            BaseActivity.finalStatus !!.contains("Hitting a wall"))
+        if (BaseActivity.finalStatus !!.contains("Clapping Standing") || BaseActivity.finalStatus !!.contains("Fall"))//||
+        //BaseActivity.finalStatus !!.contains("Hitting a wall"))
             executar()
         ///End verification of special Status
 

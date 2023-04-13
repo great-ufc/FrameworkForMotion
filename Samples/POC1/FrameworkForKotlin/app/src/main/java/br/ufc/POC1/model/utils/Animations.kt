@@ -9,7 +9,6 @@ class Animations {
         fun monitoring() {
             var flag = true
             while (!MainActivity.flagMonitoring) {
-
                 if (flag || MainActivity.texto == "Monitoring..."
                 ) {
                     MainActivity.texto = "Monitoring"

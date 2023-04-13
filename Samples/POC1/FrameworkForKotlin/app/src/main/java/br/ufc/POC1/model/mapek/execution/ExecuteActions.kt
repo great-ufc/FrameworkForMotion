@@ -8,6 +8,7 @@ import br.ufc.POC1.model.mapek.observer.IExecutionObservable
 import br.ufc.POC1.model.mapek.observer.IExecutionObserver
 import br.ufc.POC1.model.mapek.observer.IPlanningObserver
 import br.ufc.POC1.ui.CommonActivities.BaseActivity
+import br.ufc.POC1.ui.MainActivity
 import task.Task2
 
 class ExecuteActions(val context:BaseActivity) :IExecutionObservable,IPlanningObserver {
@@ -39,12 +40,13 @@ class ExecuteActions(val context:BaseActivity) :IExecutionObservable,IPlanningOb
         }
         ///Execute actions
         for(action in  currentActions) {
-            action.evaluate(resultEntry!!.finalStatus)
+            action.evaluate(Pair(resultEntry!!.finalStatus, context))
         }
 
         //final wait time for a new MAPE-K loop to restart
-        Thread.sleep(5000)
-        sendUpdateEvent()
+        Thread.sleep(3000)
+        if (!(BaseActivity.finalStatus !!.contains("Clapping Standing") || BaseActivity.finalStatus !!.contains("Fall")))
+            sendUpdateEvent()
 
     }
 
@@ -53,12 +55,6 @@ class ExecuteActions(val context:BaseActivity) :IExecutionObservable,IPlanningOb
         val currentTaskActions = mutableListOf<Task2>()
 
         //Instance of actions what can be executed
-
-        if(actions.contains("Text")){
-            val textAdaptation = TextAction()
-            currentTaskActions.add(textAdaptation)
-            currentActions.add("Text")
-        }
 
         if(actions.contains("Vibration")){
             val vibrationAdaptation = VibrationAction()
@@ -74,6 +70,12 @@ class ExecuteActions(val context:BaseActivity) :IExecutionObservable,IPlanningOb
             val lightAdaptation =  LightAction()
             currentTaskActions.add(lightAdaptation)
             currentActions.add("Light")
+        }
+
+        if(actions.contains("Text")){
+            val textAdaptation = TextAction()
+            currentTaskActions.add(textAdaptation)
+            currentActions.add("Text")
         }
 
         //End Instance of actions what can be executed
