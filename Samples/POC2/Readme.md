@@ -1,4 +1,4 @@
-# Sobre Essa POC
+# ARCANA - Activity Recognition and Cardiology ANAlysis
 
 <b> Objetivo: </b> Reconhecimento de atividades e análise cardiológica
 
