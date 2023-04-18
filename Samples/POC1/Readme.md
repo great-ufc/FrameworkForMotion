@@ -14,4 +14,11 @@
 - Fazer Login
 - Apresentar atividades registradas e logs
 
-<b>Mockups Funcionais:</b> 
+<b>Functional Mockups:</b> 
+
+<p align="center">
+<img src="./Documentation/figures/MockupsFuncionais.png" width="50%" heigth="50%" >
+</p>
+
+  
+  <p align="center">Figure 1. Functional Mockups and Actvities Flow</p>
