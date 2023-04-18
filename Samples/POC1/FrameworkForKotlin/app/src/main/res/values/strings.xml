@@ -3,16 +3,12 @@
     <string name="app_name">REALER - Risk movEment ALERt</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">Main Movement Monitor</string>
-    <string name="second_fragment_label">Risk Situation Alert</string>
     <string name="Monitor">Start Monitor</string>
     <string name="Register">Historic</string>
     <string name="back">Back to Main Screen</string>
     <string name="stopalarm">Stop Alarm</string>
     <string name="help">Request Help</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    
     <string name="downloading_message">Downloading new app version…</string>
     <string name="permission_updates_title">Permission Required</string>
     <string name="permission_updates_message">To install apps from unknown sources, you need to grant permissions to install apps from unknown sources</string>

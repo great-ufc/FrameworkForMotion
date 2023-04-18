@@ -1,6 +1,6 @@
 <!--String Resources-->
 <resources>
-    <string name="app_name">POC 2</string>
+    <string name="app_name">ARCANA - Activity Recognition and Cardiology ANAlysis</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">Main</string>
