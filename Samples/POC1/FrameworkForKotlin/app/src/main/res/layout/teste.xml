@@ -36,8 +36,8 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
 
-            android:scaleType="centerCrop"
-            android:background="@drawable/circle"/>
+            android:background="@drawable/circle"
+            android:scaleType="centerCrop" />
 
     </RelativeLayout>
 

@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import br.ufc.POC1.R
+import br.ufc.POC1.ui.CommonActivities.BaseActivity
 
 
 class AlertActivity : AppCompatActivity() {
@@ -47,7 +48,7 @@ class AlertActivity : AppCompatActivity() {
     fun TextAct(){
         Runnable( {
             runOnUiThread{
-                txtRiskSituation.setText(Html.fromHtml("<font color=\"red\";><b>"+MainActivity.texto+"</b></font> Detected"))
+                txtRiskSituation.setText(Html.fromHtml("<font color=\"red\";><b>"+BaseActivity.finalStatus+"</b></font> Detected"))
             }
         }).run()
     }

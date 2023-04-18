@@ -38,7 +38,7 @@ class KnowledgeDownload {
                 Log.i("Download Error","Não foi possível baixar o Grafo")
             }
 
-            //Se não conseguir baixar tentausar o último grafo baixado
+            //Se não conseguir baixar tenta usar o último grafo baixado
             if(knowledgeGraph == null){
                 try {
                     knowledgeGraph = BufferedReader(FileReader(File(context.baseDirectory+"/KnowledgeGraph.xml"))).readText()
