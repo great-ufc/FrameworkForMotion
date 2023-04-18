@@ -1,4 +1,4 @@
-# ARCANA - Activity Recognition and Aardiology ANAlysis
+# ARCANA - Activity Recognition and Cardiology ANAlysis
 
 <b> Objetivo: </b> Reconhecimento de atividades e análise cardiológica
 
