@@ -13,3 +13,5 @@
   - Salvar logs quando ocorrer situações de risco e qual recurso de alerta estava disponível nesse momento
 - Fazer Login
 - Apresentar atividades registradas e logs
+
+<b>Mockups Funcionais:</b> 
