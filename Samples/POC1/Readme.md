@@ -3,7 +3,7 @@
 <b>Objetivo:</b> Alertar situações de risco (quedas) e registro de atividades
 
 <b>Requisitos Macro:</b>
-- Coletar dados de acelerômetro e giroscópio celular do usuário e comparar com dataset para reconhecer situações de risco
+- Coletar dados de acelerômetro do celular do usuário e comparar com dataset para reconhecer situações de risco
 - Alertar na tela do aplicativo usando diversos recursos (texto, áudio, lanterna) e enviar email para cuidador
   - Os recursos do Alarme devem ser adaptados de acordo com o nível de bateria.
 - Cadastrar atividade que quer registrar
