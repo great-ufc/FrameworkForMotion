@@ -21,3 +21,4 @@
 - Apresentar histórico de batimentos cardíacos
 
 
+<b>Functional Mockups:</b> [view here](./Documentation/FunctionalMockups.md)
