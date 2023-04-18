@@ -3,7 +3,7 @@
 <b> Objetivo: </b> Reconhecimento de atividades e análise cardiológica
 
 <b> Requisitos Macro: </b> 
-- Coletar dados de acelerômetro celular do usuário e comparar com dataset para reconhecer atividades
+- Coletar dados de acelerômetro e giroscópio celular do usuário e comparar com dataset para reconhecer atividades
 - Coletar dados de batimento cardíaco
 - Iniciar monitoramento de atividade
 - Cadastrar nova atividade
