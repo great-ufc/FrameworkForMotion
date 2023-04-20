@@ -8,7 +8,8 @@
     <string name="back">Back to Main Screen</string>
     <string name="stopalarm">Stop Alarm</string>
     <string name="help">Request Help</string>
-    
+    <string name="lastActivity"><b>Last Actvity Recognized:</b></string>
+
     <string name="downloading_message">Downloading new app version…</string>
     <string name="permission_updates_title">Permission Required</string>
     <string name="permission_updates_message">To install apps from unknown sources, you need to grant permissions to install apps from unknown sources</string>

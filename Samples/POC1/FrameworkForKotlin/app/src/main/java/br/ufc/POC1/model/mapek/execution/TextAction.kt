@@ -21,15 +21,11 @@ class TextAction: Task2() {
     }
 
     override fun executar() {
-        MainActivity.flagMonitoring = true
         //MainActivity.texto = "Danger"
         Log.i("Text status",BaseActivity.finalStatus !! )
-
         AlertActivity.actions.add("texto")
-
-        val intent = Intent(context, AlertActivity::class.java)
-        context.startActivity(intent)
-
+        //set alert information to call AlertActivity
+        MainActivity.alarm = true
     }
 
     override fun retorno(): Any? {
@@ -40,14 +36,12 @@ class TextAction: Task2() {
         val result = o as Pair<String,BaseActivity>
         BaseActivity.finalStatus  = o.first
 
-        ///Inicio verificação de Status especiais
+        //if need to use context data
         context = o.second
 
-        //stop monitoring animation
-        MainActivity.flagMonitoring = true
-
-        if (BaseActivity.finalStatus !!.contains("Clapping Standing") || BaseActivity.finalStatus !!.contains("Fall"))//||
-            //BaseActivity.finalStatus !!.contains("Hitting a wall"))
+        ///Inicio verificação de Status especiais
+        if (BaseActivity.finalStatus !!.contains("Clapping Standing") || BaseActivity.finalStatus !!.contains("Fall") ||
+            BaseActivity.finalStatus !!.contains("Hitting a wall"))
             executar()
         ///Fim de verificação de Status especiais
     }

@@ -45,7 +45,8 @@ class ExecuteActions(val context:BaseActivity) :IExecutionObservable,IPlanningOb
 
         //final wait time for a new MAPE-K loop to restart
         Thread.sleep(3000)
-        if (!(BaseActivity.finalStatus !!.contains("Clapping Standing") || BaseActivity.finalStatus !!.contains("Fall")))
+        if (!(BaseActivity.finalStatus !!.contains("Clapping Standing") || BaseActivity.finalStatus !!.contains("Fall") ||
+              BaseActivity.finalStatus !!.contains("Hitting a wall")))
             sendUpdateEvent()
 
     }

@@ -20,7 +20,7 @@ class LightAction:Task2() {
     }
 
     override fun executar() {
-        MainActivity.flagMonitoring = true
+        //MainActivity.flagMonitoring = true
         //MainActivity.texto = "Danger"
         Log.i("Light status",BaseActivity.finalStatus !! )
 
@@ -36,14 +36,8 @@ class LightAction:Task2() {
         BaseActivity.finalStatus  = o.first
 
         ///Begin verification of special Status
-        //if (BaseActivity.finalStatus !!.contains("Fall") || BaseActivity.finalStatus!!.contains("Bump"))
-        //    Thread(
-        //    this
-        //).start()
-
-        context = o.second
-        if (BaseActivity.finalStatus !!.contains("Clapping Standing") || BaseActivity.finalStatus !!.contains("Fall"))//||
-        //BaseActivity.finalStatus !!.contains("Hitting a wall"))
+        if (BaseActivity.finalStatus !!.contains("Clapping Standing") || BaseActivity.finalStatus !!.contains("Fall") ||
+        BaseActivity.finalStatus !!.contains("Hitting a wall"))
             executar()
         ///End verification of special Status
 
