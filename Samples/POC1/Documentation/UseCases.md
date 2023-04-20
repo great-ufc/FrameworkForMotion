@@ -1,7 +1,7 @@
 Below is list of Application Use Cases:
 
 * [UC01: Login](./UseCases/UC01-Login.md)
-* UC02: Collect device accelerometer sensor data
+* [UC02: Collect device accelerometer sensor data](./UseCases/UC02.md)
 * UC03: Monitor Accelerometer Data
 * UC04: Monitor Battery Data
 * UC05: Extract features from Accelerometer
