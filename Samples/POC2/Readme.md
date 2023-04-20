@@ -1,24 +1,24 @@
 # ARCANA - Activity Recognition and Cardiology ANAlysis
 
-<b> Objective: </b> Reconhecimento de atividades e análise cardiológica
+<b> Objective: </b> Activity recognition and cardiology analysis
 
-<b> Requisitos Macro: </b> 
-- Coletar dados de acelerômetro e giroscópio celular do usuário e comparar com dataset para reconhecer atividades
-- Coletar dados de batimento cardíaco
-- Iniciar monitoramento de atividade
-- Cadastrar nova atividade
-	- salvar log de dados
-	- analisa dadaos para composição de base de atividade para análise com algoritmo de threshold
-	- Adaptar sistema para verificar atividades similar usando algorimo de threshold
-- Confirmar a atividade monitorada
-	- Caso a atividade seja confirmada como errada, solicitar cadastro de nova atividade e 
-- Alertar (texto e som) situação  de batimento cardíaco fora do comum
-	- Os recursos do Alarme devem ser adaptados de acordo com o nível de bateria.
-- Salvar Histórico
-	- Salvar logs de quanto ocorreu a atividade
-	- Salvar nível de batimento cardíaco ao longo do dia
-- Fazer Login
-- Apresentar histórico de batimentos cardíacos
+<b> Functional Requirements: </b>
+1. Login
+2. Collect user cell accelerometer and gyroscope data and compare with dataset to recognize activities
+3. Collect heartbeat data
+4. Start activity tracking
+5. Register new activity
+	- Save data log
+	- Analyze data for activity base composition for analysis with threshold algorithm
+	- Adapt system to verify similar activity using threshold algorithm
+6. Confirm monitored activity
+	- If the activity is confirmed as wrong, request registration of a new activity
+7. Alert (text and sound) unusual heartbeat situation
+	- Alarm features must be adapted according to battery level
+8. Save History
+	- Save logs when activity occurred
+	- Save heartbeat level throughout the day
+9. Display heartbeat history
 
 <b>Use Cases:</b> [view here](./Documentation/UseCases.md)
 
