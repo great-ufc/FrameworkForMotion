@@ -20,5 +20,6 @@
 - Fazer Login
 - Apresentar histórico de batimentos cardíacos
 
+<b>Use Cases:</b> [view here](./Documentation/UseCases.md)
 
 <b>Functional Mockups:</b> [view here](./Documentation/FunctionalMockups.md)
