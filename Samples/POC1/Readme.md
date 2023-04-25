@@ -4,15 +4,15 @@
 
 <b>Functional Requirements:</b>
 1. Login
-2. Coletar dados de acelerômetro do celular do usuário e comparar com dataset para reconhecer situações de risco
-3. Alertar na tela do aplicativo usando diversos recursos (texto, vibração e lanterna) e enviar email para cuidador
-    - Os recursos do Alarme devem ser adaptados de acordo com o nível de bateria.
-4. Cadastrar atividade que quer registrar
-5. Cadastrar cuidador
-6. Salvar Logs
-    - Salvar logs de quanto ocorreu a atividade cadastrada
-    - Salvar logs quando ocorrer situações de risco e qual recurso de alerta estava disponível nesse momento
-7. Apresentar atividades registradas e logs
+2. Collect accelerometer data from the user's cell phone and compare it with the dataset to recognize risk situations
+3. Alert on app screen using various features (text, vibration and flashlight) and send email to caregiver
+    - Alarm features must be adapted according to battery level.
+4. Register activity you want to register
+5. Register caregiver
+6. Save logs
+    - Save logs when registered activity occurs
+    - Save logs when risk situations occur and what alert feature was available at that time
+7. Display logged activities and logs
 
 <b>Use Cases:</b> [view here](./Documentation/UseCases.md)
 
