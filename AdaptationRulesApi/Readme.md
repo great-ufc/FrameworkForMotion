@@ -2,7 +2,7 @@
 
 This API was created to provide a set of adaptation rules for a mobile application that adjusts according to the device's battery level. The file containing the adaptation rules is available in the download folder and follows our proposed adaptation rules template, that is described below.
 
-## Adaptation Rules Template
+## ART - Adaptation Rules Template
 
 The purpose of this template is to provide a mechanism that enables the representation of adaptation rules based on a simple inference mechanism, which verifies, given a context value or a set of identified context values, whether a specific action should be taken. However, it is important to note that the template does not indicate how actions or action plans should be executed, but only provides a means to assist in identifying which action or action plan should be executed, considering each specified rule. The current version of the template uses files in ".xml" formats, which can be shared and edited while the application is running.
 
