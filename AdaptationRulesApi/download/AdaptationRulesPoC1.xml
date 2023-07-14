@@ -1,0 +1,34 @@
+<adaptationRules>
+	<adaptationList>
+		<adaptation>
+			<action>Light</action>
+			<contextList>
+				<context>
+					<name>Battery</name>
+					<signal>greaterthan</signal>
+					<value>70</value>
+				</context>	
+			</contextList>		
+		</adaptation>
+		<adaptation>
+			<action>Vibration</action>
+			<contextList>
+				<context>
+					<name>Battery</name>
+					<signal>greaterthan</signal>
+					<value>40</value>
+				</context>
+			</contextList>		
+		</adaptation>
+		<adaptation>
+			<action>Text</action>
+			<contextList>
+				<context>
+					<name>Battery</name>
+					<signal>greaterthan</signal>
+					<value>0</value>
+				</context>	
+			</contextList>		
+		</adaptation>
+	</adaptationList>
+</adaptationRules>

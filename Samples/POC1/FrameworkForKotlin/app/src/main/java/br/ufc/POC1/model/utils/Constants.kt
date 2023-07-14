@@ -5,10 +5,12 @@ package br.ufc.POC1.model.utils
 
 object Constants {
     const val ADMIN_EMAIL       = "adm@email.com"
+    //const val BACKEND_IP_PORT   = "http://192.168.153.85:5000" //Server API for Classification Graph
     const val BACKEND_IP_PORT   = "http://ec2-3-86-153-243.compute-1.amazonaws.com:3000" //Server API for Classification Graph
     const val BACKEND_IP_PORT_ADAPTATION_RULES   = "http://ec2-3-86-153-243.compute-1.amazonaws.com:3001/POC1"
+    //const val BACKEND_IP_PORT_ADAPTATION_RULES   = "http://192.168.153.85:5001/"
     const val LAST_OPTIMIZE_GRAPH_ADDRESS   = BACKEND_IP_PORT+"/OptimizeGraphRequest/download.xml"
-    const val OPTIMIZE_GRAPH_ADDRESS   = BACKEND_IP_PORT+"/OptimizeGraphRequest/acc/70" // 70% IS THE THRESHOLD FOR TRAINED MODELS. CAN BE CHANGE
+    const val OPTIMIZE_GRAPH_ADDRESS   = BACKEND_IP_PORT+"/OptimizeGraphRequest/acc/60" // 60% IS THE THRESHOLD FOR TRAINED MODELS. CAN BE CHANGE
     const val SAVED_MODELS_ADDRESS   = BACKEND_IP_PORT+"/saved_model/"
 
     const val WINDOW = 1 //Window Data Time
