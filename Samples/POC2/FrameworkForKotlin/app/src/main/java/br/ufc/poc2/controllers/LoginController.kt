@@ -8,6 +8,7 @@ import br.ufc.poc2.model.utils.Constants
 import br.ufc.poc2.model.utils.GoogleApiUtil
 import br.ufc.poc2.ui.CommonActivities.BaseActivity
 import br.ufc.poc2.R
+import br.ufc.poc2.ui.MainActivity
 
 class LoginController(private val activity: BaseActivity) {
 
@@ -19,7 +20,7 @@ class LoginController(private val activity: BaseActivity) {
 
     fun activityResult(requestCode: Int, data: Intent?) {
         if (requestCode == Constants.SIGN_IN && googleApiClient.googleResult(data) == true) {
-  //          activity.startActivity(Intent(activity.baseContext, MenuActivity::class.java))
+            activity.startActivity(Intent(activity.baseContext, MainActivity::class.java))
         } else {
             activity.showLongToast(activity.getString(R.string.login_failed), false)
         }
