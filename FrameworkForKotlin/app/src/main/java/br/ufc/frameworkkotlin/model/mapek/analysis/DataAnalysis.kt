@@ -127,7 +127,8 @@ class DataAnalysis(val context:BaseActivity):IMonitorObserver,IAnalysisObservabl
                 }
             }
 
-            for(modelName in modelNames){
+            //The models tflite is not run in this version
+            /*for(modelName in modelNames){
                 Log.i("Model:", modelName.first.modelName)
                 if(modelName.first.modelName.split(".")[1] == "tflite"){
                     if(maxModelProbability < modelName.second){
@@ -135,7 +136,9 @@ class DataAnalysis(val context:BaseActivity):IMonitorObserver,IAnalysisObservabl
                         finalStatus = KnowledgeManagement.doInference(myFeatures, modelName.first, vfs);
                     }
                 }
-            }
+            }*/
+
+            finalStatus = "no fall"
         }
 
         return ResultEntry(contextList, maxModelProbability,finalStatus);

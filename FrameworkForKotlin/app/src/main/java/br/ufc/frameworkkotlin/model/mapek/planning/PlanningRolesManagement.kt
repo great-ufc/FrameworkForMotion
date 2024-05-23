@@ -38,7 +38,7 @@ class PlanningRolesManagement(val context:BaseActivity): IAnalysisObserver,IPlan
         val actions:MutableList<String> = mutableListOf<String>()
 
         //Ler Arquivo com Regras de Adaptação
-        val adaptationRules:AdaptationRules = ReadAdaptationXML.readXML(context)
+        val adaptationRules:AdaptationRules = ReadAdaptationXML.readXML(context,context.assetManager)
 
 
         //Verifica ações com base nos contextos

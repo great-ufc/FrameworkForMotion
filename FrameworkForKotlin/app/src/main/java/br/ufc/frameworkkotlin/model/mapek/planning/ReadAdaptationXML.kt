@@ -3,6 +3,7 @@
 
 package br.ufc.frameworkkotlin.model.mapek.planning
 
+import android.content.res.AssetManager
 import android.os.StrictMode
 import android.util.Log
 import br.ufc.frameworkkotlin.model.entities.AdaptationRules
@@ -16,12 +17,13 @@ import java.lang.Exception
 class ReadAdaptationXML {
 
     companion object {
-        fun readXML(context:BaseActivity) : AdaptationRules{
+        fun readXML(context:BaseActivity, assetManager:AssetManager) : AdaptationRules{
             var adaptationRules:AdaptationRules? = null
             //baixa o template
             var adaptationsXML:List<String>? = null
             try {
-                val xml = downloadXML(Constants.BACKEND_IP_PORT_ADAPTATION_RULES)
+                val xml = assetManager.open("AdaptationRules.xml").bufferedReader().readText()
+                    //downloadXML(Constants.BACKEND_IP_PORT_ADAPTATION_RULES)
                 var  fileW = BufferedWriter(FileWriter(File(context.baseDirectory+"/AdaptationRules.xml")))
                 fileW.write(xml)
                 fileW.close()
